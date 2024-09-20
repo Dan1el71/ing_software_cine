@@ -1,0 +1,63 @@
+Descargar extensión dotenv official
+Descargar extensión vscode-icons
+
+npm init
+npm i cors
+npm i -g typescript
+npm i express
+npm i morgannp
+npm i pg-promise
+npm i bcryptjs
+npm i jsonwebtoken
+npm i dotenv --save-dev
+npm i nodemon --save-dev
+npm i @types/cors --save-dev
+npm i @types/morgan --save-dev
+npm i @types/express --save-dev
+
+tsc --init
+
+ctrl + f = outdir
+Descomentar outdir y colorcar "./build"
+
+ctrl + f = resolvejson
+Descomentar resolveJsonModule
+
+Dentro de package.json debes tenerlo así:
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -w",
+    "dev": "nodemon build/index.js"
+  }
+
+md src
+md database
+md src/app
+md src/config
+md src/config/api
+md src/config/connection
+md src/config/domain
+md src/config/utilities
+md src/middleware
+md src/external_files
+md src/external_files/pdf
+md src/external_files/excel
+md src/external_files/img
+
+md src/app/salas
+md src/app/salas/route
+md src/app/salas/controller
+md src/app/salas/dao
+md src/app/salas/repository
+md src/app/salas/entity
+
+md src/app/accesos
+md src/app/accesos/route
+md src/app/accesos/controller
+md src/app/accesos/dao
+md src/app/accesos/repository
+md src/app/accesos/entity
+
+Dentro de connection crea un ts, llamado dbConnection.ts
+Luego crea un archivo llamado variables.env

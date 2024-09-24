@@ -5,6 +5,7 @@ import apiSalaRuta from "../../app/salas/route/SalaRuta";
 import apiRutaComida from "../../app/comidas/route/ComidaRuta";
 import apiReservacionRuta from "../../app/reservaciones/route/ReservacionesRuta";
 import { apiClienteRuta } from "../../app/cliente/route/ClienteRuta";
+import apiPeliculaCarteleraRuta from "../../app/carteleras/route/PeliculaCarteleraRuta"
 
 class Servidor {
     public app: express.Application;
@@ -20,6 +21,7 @@ class Servidor {
         this.app.use("/food", apiRutaComida);
         this.app.use("/reservation", apiReservacionRuta);
         this.app.use("/cliente", apiClienteRuta);
+        this.app.use("/billboard", apiPeliculaCarteleraRuta);
     }
 
     public cargarConfiguracion(): void {

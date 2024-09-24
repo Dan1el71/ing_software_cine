@@ -1217,206 +1217,206 @@ insert into Reservaciones (id_cliente, id_silla, id_horario, precio) values ( 43
 insert into Reservaciones (id_cliente, id_silla, id_horario, precio) values ( 68, 46, 73, '$197.28');
 insert into Reservaciones (id_cliente, id_silla, id_horario, precio) values ( 55, 38, 83, '$203.64');
 
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (11, 62, '2024-08-05 05:56:59', '2024-04-22 09:49:57');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (17, 12, '2024-02-05 20:06:05', '2024-08-03 17:19:41');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (56, 56, '2024-01-09 22:06:10', '2024-01-01 08:29:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (47, 21, '2024-05-28 23:23:58', '2023-09-22 14:21:54');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (87, 93, '2023-10-17 17:09:20', '2023-12-13 12:48:25');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (14, 84, '2024-06-29 20:47:58', '2023-09-03 10:56:18');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (94, 76, '2024-01-22 00:03:28', '2024-05-13 10:45:00');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (30, 22, '2023-11-15 19:22:46', '2023-08-28 07:34:27');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values (79, 63, '2024-05-21 14:48:09', '2023-10-24 21:31:44');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 67, 68, '2024-06-25 19:32:55', '2024-04-23 13:08:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 53, 88, '2023-12-04 05:57:27', '2023-12-20 21:39:30');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 18, 52, '2023-08-29 01:12:04', '2023-12-12 03:37:37');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 60, 18, '2023-10-25 13:33:32', '2023-09-29 08:06:30');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 20, 98, '2023-12-24 05:03:15', '2024-08-23 05:57:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 9, 29, '2024-05-01 19:46:51', '2023-09-29 05:32:27');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 88, 26, '2023-10-30 20:22:06', '2024-01-10 02:42:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 28, 45, '2024-02-15 06:35:13', '2024-05-13 08:52:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 77, 34, '2023-12-01 15:00:19', '2023-11-15 15:36:01');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 60, 44, '2023-08-28 07:57:09', '2024-06-26 00:48:05');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 59, 8, '2024-05-05 10:29:30', '2023-10-18 17:26:12');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 53, 92, '2024-02-14 01:25:11', '2023-11-29 16:18:31');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 37, 48, '2023-10-07 23:28:08', '2024-05-29 16:54:08');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 83, 11, '2023-10-06 10:06:11', '2023-10-13 09:37:25');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 34, 29, '2023-12-12 19:29:24', '2024-01-11 18:07:08');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 33, 38, '2024-04-01 00:04:50', '2024-02-22 15:01:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 84, 42, '2024-04-01 14:32:32', '2023-11-08 13:54:49');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 82, 6, '2024-02-29 02:11:13', '2024-06-25 23:20:58');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 89, 75, '2024-03-09 21:25:50', '2023-10-01 17:37:54');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 99, 58, '2024-02-19 08:12:11', '2024-08-24 11:29:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 34, 24, '2024-07-17 06:55:49', '2024-03-21 01:22:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 10, 57, '2023-08-31 18:20:38', '2023-10-16 08:15:10');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 35, 40, '2024-01-05 01:40:24', '2023-11-13 06:05:52');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 28, 52, '2023-11-09 05:40:19', '2023-12-07 17:13:43');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 90, 19, '2024-02-11 22:53:55', '2023-10-07 23:27:42');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 60, 71, '2024-04-21 06:35:03', '2024-01-20 07:45:33');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 51, 36, '2024-08-13 14:20:12', '2023-12-21 04:47:18');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 34, 61, '2024-06-08 16:28:20', '2023-11-12 12:53:25');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 97, 39, '2023-09-17 04:41:57', '2023-10-27 16:01:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 8, 46, '2023-09-12 09:27:05', '2023-09-20 06:35:01');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 25, 41, '2023-09-03 17:00:03', '2024-05-02 22:37:49');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 77, 22, '2024-05-26 11:20:40', '2024-01-14 21:39:40');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 6, 96, '2024-08-14 19:36:04', '2024-07-11 19:41:53');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 62, 30, '2024-03-27 03:43:37', '2024-02-12 09:49:09');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 72, 18, '2023-10-12 03:37:06', '2024-03-31 05:15:55');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 86, 47, '2024-04-25 10:21:31', '2024-02-19 03:25:36');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 41, 69, '2024-04-13 08:52:10', '2024-02-14 16:29:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 2, 17, '2024-04-17 18:21:23', '2024-05-08 06:00:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 96, 75, '2024-02-17 23:54:35', '2024-06-15 17:51:02');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 95, 42, '2024-03-13 18:50:17', '2023-10-23 08:18:07');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 87, 60, '2024-03-28 03:21:55', '2024-03-21 02:05:12');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 67, 42, '2024-03-19 14:56:36', '2023-11-15 10:43:33');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 18, 33, '2023-12-09 00:54:43', '2023-12-21 09:00:23');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 92, 11, '2023-11-15 16:26:49', '2024-06-19 20:01:11');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 75, 33, '2024-04-17 08:48:42', '2023-09-28 12:42:24');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 23, 43, '2024-05-04 14:12:41', '2024-04-11 14:53:07');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 54, 86, '2024-01-08 17:44:03', '2023-12-14 10:06:49');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 91, 3, '2024-08-10 00:51:58', '2023-09-17 08:14:10');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 47, 50, '2023-11-12 04:26:20', '2023-09-28 18:34:18');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 21, 93, '2023-12-20 13:45:53', '2024-01-23 02:03:28');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 84, 22, '2024-01-21 10:47:20', '2023-10-27 16:20:25');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 12, 39, '2024-07-13 15:10:13', '2024-07-01 23:05:46');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 3, 71, '2024-04-20 12:36:39', '2023-10-19 14:39:05');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 82, 95, '2024-02-10 12:28:35', '2023-11-02 23:26:07');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 58, 42, '2023-11-24 10:10:05', '2024-04-26 01:45:47');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 57, 71, '2023-09-01 22:51:12', '2024-06-21 17:37:21');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 8, 54, '2023-10-24 07:23:39', '2024-03-06 22:19:10');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 74, 56, '2024-07-12 19:48:13', '2024-03-26 23:21:42');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 54, 57, '2024-04-17 14:21:27', '2024-02-29 16:54:25');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 28, 31, '2023-08-28 04:39:00', '2024-06-14 23:43:14');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 92, 18, '2024-02-25 01:43:52', '2024-05-07 03:08:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 68, 26, '2023-11-17 00:28:52', '2023-10-03 14:28:57');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 81, 85, '2024-01-23 13:12:15', '2023-11-30 12:32:06');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 51, 77, '2024-08-24 04:29:44', '2024-03-18 04:26:22');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 70, 89, '2024-07-12 05:18:28', '2024-08-13 22:47:51');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 38, 55, '2023-11-17 03:12:56', '2024-01-29 17:36:19');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 10, 91, '2024-01-16 17:08:46', '2024-04-29 08:05:30');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 27, 21, '2024-04-23 21:49:28', '2023-12-16 11:35:21');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 3, 24, '2024-02-18 12:53:30', '2024-03-30 08:04:17');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 33, 87, '2024-06-21 05:09:32', '2023-10-17 09:32:31');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 99, 100, '2024-01-07 23:23:46', '2023-10-28 17:22:23');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 66, 25, '2023-10-13 12:26:48', '2024-04-22 03:17:35');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 78, 83, '2024-05-05 04:23:50', '2023-12-18 10:57:00');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 91, 96, '2024-03-28 12:22:16', '2024-06-21 21:37:27');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 1, 51, '2024-08-01 12:25:20', '2024-02-19 06:59:27');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 15, 47, '2024-08-18 00:29:22', '2023-11-17 01:01:06');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 3, 64, '2023-09-22 16:30:51', '2024-07-01 16:38:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 36, 79, '2023-12-25 10:08:39', '2024-04-09 21:37:18');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 79, 72, '2023-08-30 01:13:38', '2023-11-29 07:38:05');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 99, 80, '2024-07-11 04:04:53', '2024-03-07 19:51:27');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 10, 96, '2024-01-02 02:33:02', '2023-08-26 15:35:22');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 22, 29, '2024-03-08 03:25:46', '2023-12-18 02:21:47');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 38, 78, '2023-09-08 21:29:30', '2024-05-27 23:28:06');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 72, 92, '2024-01-12 05:40:29', '2024-08-05 08:35:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 50, 8, '2023-12-13 18:07:18', '2024-08-16 04:05:45');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 24, 88, '2024-06-14 04:43:59', '2024-08-25 07:23:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 54, 42, '2024-07-12 21:13:11', '2024-02-12 11:26:35');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 31, 87, '2024-05-22 02:47:23', '2024-06-18 08:08:48');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 6, 87, '2024-01-07 19:48:22', '2024-07-29 02:30:03');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 72, 67, '2024-07-26 17:21:18', '2023-10-31 01:44:22');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 6, 4, '2024-01-08 21:18:25', '2024-08-21 09:25:48');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 50, 51, '2023-10-16 04:07:22', '2023-12-05 12:41:21');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 28, 73, '2024-07-01 02:46:33', '2023-12-27 05:14:13');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 98, 64, '2024-06-27 10:45:21', '2023-09-28 23:19:26');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 61, 81, '2024-04-08 03:51:26', '2023-09-09 05:11:17');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 93, 19, '2024-03-04 15:40:34', '2023-09-09 13:08:52');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 77, 45, '2023-09-08 07:00:03', '2023-09-26 18:19:31');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 51, 51, '2024-03-03 02:00:11', '2024-08-06 14:42:56');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 22, 88, '2023-10-01 18:34:56', '2024-06-16 04:48:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 6, 58, '2024-03-17 05:30:18', '2023-12-25 21:12:31');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 29, 86, '2024-04-05 19:03:22', '2024-03-07 17:51:26');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 26, 81, '2023-09-12 20:06:03', '2023-12-07 08:16:45');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 40, 67, '2023-08-29 10:53:29', '2023-12-17 15:26:02');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 27, 83, '2024-06-12 23:13:07', '2023-11-13 05:25:21');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 1, 30, '2024-01-20 14:39:25', '2024-08-02 21:37:25');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 70, 47, '2024-01-15 01:06:29', '2023-11-11 03:39:28');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 70, 11, '2023-12-12 10:51:28', '2024-05-21 08:04:21');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 67, 31, '2024-07-27 04:19:01', '2024-02-29 15:23:53');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 63, 15, '2023-09-27 18:02:57', '2024-05-22 05:33:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 88, 4, '2024-05-14 06:40:04', '2024-07-31 01:50:44');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 83, 23, '2023-09-08 10:32:40', '2023-09-26 06:08:01');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 2, 2, '2023-11-19 19:23:58', '2023-10-11 00:31:28');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 10, 62, '2024-08-03 11:53:39', '2024-06-11 09:09:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 95, 28, '2023-12-30 18:42:37', '2023-12-19 14:32:40');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 5, 61, '2024-02-24 04:57:10', '2024-03-20 08:57:26');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 63, 32, '2023-11-28 22:19:26', '2023-10-19 03:35:19');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 26, 7, '2024-08-21 23:37:14', '2023-12-22 15:27:42');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 34, 83, '2024-05-10 22:28:00', '2023-08-27 10:13:35');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 50, 15, '2024-06-15 06:20:35', '2023-09-07 22:04:27');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 71, 5, '2024-02-08 12:26:19', '2024-04-27 00:43:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 44, 61, '2024-04-08 00:10:53', '2023-09-12 09:38:52');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 38, 64, '2024-02-21 20:14:06', '2024-06-04 00:48:24');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 78, 87, '2023-12-15 12:39:57', '2024-01-09 06:23:41');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 28, 20, '2024-01-14 16:41:02', '2023-12-03 07:13:47');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 81, 95, '2023-12-28 08:21:29', '2023-09-19 09:02:26');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 99, 23, '2023-11-04 10:02:38', '2024-08-06 03:46:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 96, 88, '2023-11-12 21:23:49', '2023-11-01 17:55:23');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 74, 8, '2023-10-28 09:42:05', '2024-04-08 23:54:52');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 26, 15, '2024-03-01 18:07:21', '2023-12-15 22:24:08');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 68, 96, '2024-04-05 22:43:08', '2024-01-03 14:21:35');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 65, 32, '2023-08-31 07:29:45', '2024-06-26 02:41:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 45, 98, '2024-05-17 11:48:03', '2024-03-28 11:51:57');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 41, 54, '2024-08-13 04:19:23', '2023-11-07 02:57:30');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 8, 42, '2024-08-20 14:12:50', '2023-09-26 22:35:08');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 97, 51, '2024-01-04 11:42:35', '2023-12-06 15:39:34');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 66, 100, '2024-06-17 19:48:21', '2023-08-28 17:18:37');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 89, 22, '2024-05-03 14:07:11', '2023-09-28 20:53:49');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 73, 48, '2023-11-24 08:59:45', '2024-03-02 19:04:41');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 13, 87, '2024-01-19 16:49:06', '2023-09-03 11:18:57');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 33, 38, '2023-10-28 01:09:32', '2024-05-29 01:01:39');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 11, 85, '2024-03-13 08:54:41', '2023-12-14 01:55:58');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 36, 40, '2024-05-21 15:26:12', '2023-12-11 17:56:40');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 8, 41, '2024-01-13 00:51:19', '2023-11-10 22:14:29');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 91, 99, '2023-11-07 06:46:28', '2024-06-11 11:06:08');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 71, 42, '2024-05-07 21:42:20', '2023-12-10 00:29:35');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 47, 34, '2024-07-07 16:57:01', '2024-07-12 14:21:22');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 64, 55, '2024-03-16 09:14:47', '2024-03-03 22:35:03');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 23, 47, '2024-02-08 11:42:29', '2023-09-08 09:33:42');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 78, 38, '2023-09-23 07:44:44', '2024-07-08 01:43:40');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 55, 52, '2023-11-09 01:52:09', '2023-12-07 14:12:51');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 4, 81, '2023-11-28 23:05:04', '2024-06-04 17:48:43');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 80, 42, '2023-09-21 01:28:54', '2024-07-15 15:01:56');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 100, 53, '2024-08-16 11:15:34', '2023-10-12 11:17:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 30, 4, '2024-04-15 00:05:56', '2023-09-22 03:27:23');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 4, 33, '2023-12-04 18:15:37', '2024-05-17 22:50:32');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 94, 100, '2023-11-26 15:56:57', '2024-05-02 12:16:29');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 95, 78, '2023-11-30 07:15:29', '2023-10-11 01:27:23');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 33, 50, '2024-06-06 08:28:22', '2024-05-28 10:07:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 14, 31, '2024-01-19 06:37:00', '2024-06-16 14:55:09');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 78, 19, '2023-12-18 12:28:34', '2024-07-21 15:56:38');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 52, 91, '2024-04-16 05:51:06', '2024-06-23 23:08:38');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 73, 60, '2023-11-08 19:20:25', '2024-08-07 21:21:02');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 84, 58, '2023-09-12 19:35:38', '2024-02-22 21:30:50');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 13, 22, '2023-10-17 10:32:40', '2023-09-11 01:20:15');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 52, 38, '2023-12-15 09:52:08', '2023-09-21 08:50:29');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 49, 99, '2024-06-04 22:34:46', '2024-07-16 08:46:51');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 94, 100, '2023-11-07 20:46:39', '2024-06-30 17:29:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 98, 34, '2023-09-12 01:58:59', '2024-02-07 11:09:36');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 17, 49, '2023-09-18 05:52:47', '2023-10-29 20:55:51');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 66, 44, '2024-08-03 08:57:22', '2023-12-25 19:47:40');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 88, 14, '2023-11-12 14:01:28', '2024-06-27 17:36:22');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 52, 69, '2024-04-29 16:19:44', '2024-02-27 13:20:16');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 58, 83, '2023-12-19 04:58:56', '2023-12-29 23:05:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 26, 35, '2024-04-02 23:31:47', '2023-11-12 15:25:55');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 1, 46, '2024-08-01 14:40:21', '2023-11-09 02:22:56');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 36, 51, '2023-11-08 22:45:58', '2024-02-18 20:21:46');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 81, 26, '2024-02-23 22:15:27', '2024-04-08 13:48:23');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 74, 98, '2024-01-19 19:11:41', '2023-09-04 00:03:59');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 10, 6, '2024-04-24 09:50:42', '2024-05-23 07:09:24');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 20, 78, '2023-09-10 00:21:09', '2024-08-06 23:40:40');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 95, 89, '2024-03-17 03:43:35', '2023-09-29 10:34:36');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 12, 10, '2023-12-11 20:10:51', '2024-08-10 18:10:58');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 87, 97, '2024-04-24 14:35:23', '2023-09-30 03:43:52');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 97, 31, '2024-06-16 07:28:02', '2024-08-24 23:57:31');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 4, 53, '2024-05-01 14:12:35', '2024-03-11 06:25:29');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 54, 16, '2024-01-26 14:10:29', '2023-12-10 03:58:14');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 27, 3, '2024-07-13 19:40:56', '2023-11-26 01:57:35');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 48, 26, '2023-11-21 04:25:05', '2024-03-30 20:19:36');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 2, 6, '2023-12-25 22:24:57', '2023-09-09 14:48:56');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 60, 12, '2023-11-18 09:01:02', '2023-10-28 08:12:04');
-insert into Peliculas_carteleras (id_pelicula, fecha_inicio, fecha_final) values ( 3, 70, '2024-07-07 02:19:32', '2023-08-30 03:30:41');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (11, 62, '2024-08-05 05:56:59', '2024-04-22 09:49:57');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (17, 12, '2024-02-05 20:06:05', '2024-08-03 17:19:41');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (56, 56, '2024-01-09 22:06:10', '2024-01-01 08:29:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (47, 21, '2024-05-28 23:23:58', '2023-09-22 14:21:54');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (87, 93, '2023-10-17 17:09:20', '2023-12-13 12:48:25');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (14, 84, '2024-06-29 20:47:58', '2023-09-03 10:56:18');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (94, 76, '2024-01-22 00:03:28', '2024-05-13 10:45:00');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (30, 22, '2023-11-15 19:22:46', '2023-08-28 07:34:27');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values (79, 63, '2024-05-21 14:48:09', '2023-10-24 21:31:44');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 67, 68, '2024-06-25 19:32:55', '2024-04-23 13:08:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 53, 88, '2023-12-04 05:57:27', '2023-12-20 21:39:30');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 18, 52, '2023-08-29 01:12:04', '2023-12-12 03:37:37');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 60, 18, '2023-10-25 13:33:32', '2023-09-29 08:06:30');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 20, 98, '2023-12-24 05:03:15', '2024-08-23 05:57:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 9, 29, '2024-05-01 19:46:51', '2023-09-29 05:32:27');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 88, 26, '2023-10-30 20:22:06', '2024-01-10 02:42:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 28, 45, '2024-02-15 06:35:13', '2024-05-13 08:52:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 77, 34, '2023-12-01 15:00:19', '2023-11-15 15:36:01');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 60, 44, '2023-08-28 07:57:09', '2024-06-26 00:48:05');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 59, 8, '2024-05-05 10:29:30', '2023-10-18 17:26:12');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 53, 92, '2024-02-14 01:25:11', '2023-11-29 16:18:31');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 37, 48, '2023-10-07 23:28:08', '2024-05-29 16:54:08');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 83, 11, '2023-10-06 10:06:11', '2023-10-13 09:37:25');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 34, 29, '2023-12-12 19:29:24', '2024-01-11 18:07:08');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 33, 38, '2024-04-01 00:04:50', '2024-02-22 15:01:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 84, 42, '2024-04-01 14:32:32', '2023-11-08 13:54:49');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 82, 6, '2024-02-29 02:11:13', '2024-06-25 23:20:58');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 89, 75, '2024-03-09 21:25:50', '2023-10-01 17:37:54');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 99, 58, '2024-02-19 08:12:11', '2024-08-24 11:29:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 34, 24, '2024-07-17 06:55:49', '2024-03-21 01:22:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 10, 57, '2023-08-31 18:20:38', '2023-10-16 08:15:10');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 35, 40, '2024-01-05 01:40:24', '2023-11-13 06:05:52');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 28, 52, '2023-11-09 05:40:19', '2023-12-07 17:13:43');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 90, 19, '2024-02-11 22:53:55', '2023-10-07 23:27:42');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 60, 71, '2024-04-21 06:35:03', '2024-01-20 07:45:33');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 51, 36, '2024-08-13 14:20:12', '2023-12-21 04:47:18');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 34, 61, '2024-06-08 16:28:20', '2023-11-12 12:53:25');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 97, 39, '2023-09-17 04:41:57', '2023-10-27 16:01:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 8, 46, '2023-09-12 09:27:05', '2023-09-20 06:35:01');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 25, 41, '2023-09-03 17:00:03', '2024-05-02 22:37:49');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 77, 22, '2024-05-26 11:20:40', '2024-01-14 21:39:40');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 6, 96, '2024-08-14 19:36:04', '2024-07-11 19:41:53');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 62, 30, '2024-03-27 03:43:37', '2024-02-12 09:49:09');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 72, 18, '2023-10-12 03:37:06', '2024-03-31 05:15:55');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 86, 47, '2024-04-25 10:21:31', '2024-02-19 03:25:36');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 41, 69, '2024-04-13 08:52:10', '2024-02-14 16:29:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 2, 17, '2024-04-17 18:21:23', '2024-05-08 06:00:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 96, 75, '2024-02-17 23:54:35', '2024-06-15 17:51:02');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 95, 42, '2024-03-13 18:50:17', '2023-10-23 08:18:07');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 87, 60, '2024-03-28 03:21:55', '2024-03-21 02:05:12');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 67, 42, '2024-03-19 14:56:36', '2023-11-15 10:43:33');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 18, 33, '2023-12-09 00:54:43', '2023-12-21 09:00:23');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 92, 11, '2023-11-15 16:26:49', '2024-06-19 20:01:11');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 75, 33, '2024-04-17 08:48:42', '2023-09-28 12:42:24');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 23, 43, '2024-05-04 14:12:41', '2024-04-11 14:53:07');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 54, 86, '2024-01-08 17:44:03', '2023-12-14 10:06:49');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 91, 3, '2024-08-10 00:51:58', '2023-09-17 08:14:10');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 47, 50, '2023-11-12 04:26:20', '2023-09-28 18:34:18');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 21, 93, '2023-12-20 13:45:53', '2024-01-23 02:03:28');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 84, 22, '2024-01-21 10:47:20', '2023-10-27 16:20:25');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 12, 39, '2024-07-13 15:10:13', '2024-07-01 23:05:46');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 3, 71, '2024-04-20 12:36:39', '2023-10-19 14:39:05');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 82, 95, '2024-02-10 12:28:35', '2023-11-02 23:26:07');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 58, 42, '2023-11-24 10:10:05', '2024-04-26 01:45:47');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 57, 71, '2023-09-01 22:51:12', '2024-06-21 17:37:21');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 8, 54, '2023-10-24 07:23:39', '2024-03-06 22:19:10');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 74, 56, '2024-07-12 19:48:13', '2024-03-26 23:21:42');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 54, 57, '2024-04-17 14:21:27', '2024-02-29 16:54:25');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 28, 31, '2023-08-28 04:39:00', '2024-06-14 23:43:14');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 92, 18, '2024-02-25 01:43:52', '2024-05-07 03:08:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 68, 26, '2023-11-17 00:28:52', '2023-10-03 14:28:57');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 81, 85, '2024-01-23 13:12:15', '2023-11-30 12:32:06');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 51, 77, '2024-08-24 04:29:44', '2024-03-18 04:26:22');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 70, 89, '2024-07-12 05:18:28', '2024-08-13 22:47:51');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 38, 55, '2023-11-17 03:12:56', '2024-01-29 17:36:19');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 10, 91, '2024-01-16 17:08:46', '2024-04-29 08:05:30');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 27, 21, '2024-04-23 21:49:28', '2023-12-16 11:35:21');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 3, 24, '2024-02-18 12:53:30', '2024-03-30 08:04:17');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 33, 87, '2024-06-21 05:09:32', '2023-10-17 09:32:31');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 99, 100, '2024-01-07 23:23:46', '2023-10-28 17:22:23');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 66, 25, '2023-10-13 12:26:48', '2024-04-22 03:17:35');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 78, 83, '2024-05-05 04:23:50', '2023-12-18 10:57:00');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 91, 96, '2024-03-28 12:22:16', '2024-06-21 21:37:27');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 1, 51, '2024-08-01 12:25:20', '2024-02-19 06:59:27');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 15, 47, '2024-08-18 00:29:22', '2023-11-17 01:01:06');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 3, 64, '2023-09-22 16:30:51', '2024-07-01 16:38:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 36, 79, '2023-12-25 10:08:39', '2024-04-09 21:37:18');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 79, 72, '2023-08-30 01:13:38', '2023-11-29 07:38:05');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 99, 80, '2024-07-11 04:04:53', '2024-03-07 19:51:27');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 10, 96, '2024-01-02 02:33:02', '2023-08-26 15:35:22');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 22, 29, '2024-03-08 03:25:46', '2023-12-18 02:21:47');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 38, 78, '2023-09-08 21:29:30', '2024-05-27 23:28:06');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 72, 92, '2024-01-12 05:40:29', '2024-08-05 08:35:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 50, 8, '2023-12-13 18:07:18', '2024-08-16 04:05:45');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 24, 88, '2024-06-14 04:43:59', '2024-08-25 07:23:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 54, 42, '2024-07-12 21:13:11', '2024-02-12 11:26:35');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 31, 87, '2024-05-22 02:47:23', '2024-06-18 08:08:48');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 6, 87, '2024-01-07 19:48:22', '2024-07-29 02:30:03');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 72, 67, '2024-07-26 17:21:18', '2023-10-31 01:44:22');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 6, 4, '2024-01-08 21:18:25', '2024-08-21 09:25:48');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 50, 51, '2023-10-16 04:07:22', '2023-12-05 12:41:21');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 28, 73, '2024-07-01 02:46:33', '2023-12-27 05:14:13');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 98, 64, '2024-06-27 10:45:21', '2023-09-28 23:19:26');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 61, 81, '2024-04-08 03:51:26', '2023-09-09 05:11:17');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 93, 19, '2024-03-04 15:40:34', '2023-09-09 13:08:52');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 77, 45, '2023-09-08 07:00:03', '2023-09-26 18:19:31');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 51, 51, '2024-03-03 02:00:11', '2024-08-06 14:42:56');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 22, 88, '2023-10-01 18:34:56', '2024-06-16 04:48:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 6, 58, '2024-03-17 05:30:18', '2023-12-25 21:12:31');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 29, 86, '2024-04-05 19:03:22', '2024-03-07 17:51:26');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 26, 81, '2023-09-12 20:06:03', '2023-12-07 08:16:45');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 40, 67, '2023-08-29 10:53:29', '2023-12-17 15:26:02');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 27, 83, '2024-06-12 23:13:07', '2023-11-13 05:25:21');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 1, 30, '2024-01-20 14:39:25', '2024-08-02 21:37:25');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 70, 47, '2024-01-15 01:06:29', '2023-11-11 03:39:28');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 70, 11, '2023-12-12 10:51:28', '2024-05-21 08:04:21');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 67, 31, '2024-07-27 04:19:01', '2024-02-29 15:23:53');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 63, 15, '2023-09-27 18:02:57', '2024-05-22 05:33:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 88, 4, '2024-05-14 06:40:04', '2024-07-31 01:50:44');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 83, 23, '2023-09-08 10:32:40', '2023-09-26 06:08:01');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 2, 2, '2023-11-19 19:23:58', '2023-10-11 00:31:28');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 10, 62, '2024-08-03 11:53:39', '2024-06-11 09:09:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 95, 28, '2023-12-30 18:42:37', '2023-12-19 14:32:40');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 5, 61, '2024-02-24 04:57:10', '2024-03-20 08:57:26');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 63, 32, '2023-11-28 22:19:26', '2023-10-19 03:35:19');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 26, 7, '2024-08-21 23:37:14', '2023-12-22 15:27:42');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 34, 83, '2024-05-10 22:28:00', '2023-08-27 10:13:35');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 50, 15, '2024-06-15 06:20:35', '2023-09-07 22:04:27');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 71, 5, '2024-02-08 12:26:19', '2024-04-27 00:43:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 44, 61, '2024-04-08 00:10:53', '2023-09-12 09:38:52');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 38, 64, '2024-02-21 20:14:06', '2024-06-04 00:48:24');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 78, 87, '2023-12-15 12:39:57', '2024-01-09 06:23:41');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 28, 20, '2024-01-14 16:41:02', '2023-12-03 07:13:47');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 81, 95, '2023-12-28 08:21:29', '2023-09-19 09:02:26');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 99, 23, '2023-11-04 10:02:38', '2024-08-06 03:46:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 96, 88, '2023-11-12 21:23:49', '2023-11-01 17:55:23');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 74, 8, '2023-10-28 09:42:05', '2024-04-08 23:54:52');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 26, 15, '2024-03-01 18:07:21', '2023-12-15 22:24:08');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 68, 96, '2024-04-05 22:43:08', '2024-01-03 14:21:35');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 65, 32, '2023-08-31 07:29:45', '2024-06-26 02:41:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 45, 98, '2024-05-17 11:48:03', '2024-03-28 11:51:57');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 41, 54, '2024-08-13 04:19:23', '2023-11-07 02:57:30');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 8, 42, '2024-08-20 14:12:50', '2023-09-26 22:35:08');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 97, 51, '2024-01-04 11:42:35', '2023-12-06 15:39:34');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 66, 100, '2024-06-17 19:48:21', '2023-08-28 17:18:37');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 89, 22, '2024-05-03 14:07:11', '2023-09-28 20:53:49');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 73, 48, '2023-11-24 08:59:45', '2024-03-02 19:04:41');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 13, 87, '2024-01-19 16:49:06', '2023-09-03 11:18:57');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 33, 38, '2023-10-28 01:09:32', '2024-05-29 01:01:39');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 11, 85, '2024-03-13 08:54:41', '2023-12-14 01:55:58');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 36, 40, '2024-05-21 15:26:12', '2023-12-11 17:56:40');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 8, 41, '2024-01-13 00:51:19', '2023-11-10 22:14:29');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 91, 99, '2023-11-07 06:46:28', '2024-06-11 11:06:08');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 71, 42, '2024-05-07 21:42:20', '2023-12-10 00:29:35');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 47, 34, '2024-07-07 16:57:01', '2024-07-12 14:21:22');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 64, 55, '2024-03-16 09:14:47', '2024-03-03 22:35:03');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 23, 47, '2024-02-08 11:42:29', '2023-09-08 09:33:42');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 78, 38, '2023-09-23 07:44:44', '2024-07-08 01:43:40');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 55, 52, '2023-11-09 01:52:09', '2023-12-07 14:12:51');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 4, 81, '2023-11-28 23:05:04', '2024-06-04 17:48:43');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 80, 42, '2023-09-21 01:28:54', '2024-07-15 15:01:56');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 100, 53, '2024-08-16 11:15:34', '2023-10-12 11:17:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 30, 4, '2024-04-15 00:05:56', '2023-09-22 03:27:23');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 4, 33, '2023-12-04 18:15:37', '2024-05-17 22:50:32');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 94, 100, '2023-11-26 15:56:57', '2024-05-02 12:16:29');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 95, 78, '2023-11-30 07:15:29', '2023-10-11 01:27:23');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 33, 50, '2024-06-06 08:28:22', '2024-05-28 10:07:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 14, 31, '2024-01-19 06:37:00', '2024-06-16 14:55:09');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 78, 19, '2023-12-18 12:28:34', '2024-07-21 15:56:38');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 52, 91, '2024-04-16 05:51:06', '2024-06-23 23:08:38');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 73, 60, '2023-11-08 19:20:25', '2024-08-07 21:21:02');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 84, 58, '2023-09-12 19:35:38', '2024-02-22 21:30:50');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 13, 22, '2023-10-17 10:32:40', '2023-09-11 01:20:15');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 52, 38, '2023-12-15 09:52:08', '2023-09-21 08:50:29');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 49, 99, '2024-06-04 22:34:46', '2024-07-16 08:46:51');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 94, 100, '2023-11-07 20:46:39', '2024-06-30 17:29:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 98, 34, '2023-09-12 01:58:59', '2024-02-07 11:09:36');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 17, 49, '2023-09-18 05:52:47', '2023-10-29 20:55:51');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 66, 44, '2024-08-03 08:57:22', '2023-12-25 19:47:40');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 88, 14, '2023-11-12 14:01:28', '2024-06-27 17:36:22');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 52, 69, '2024-04-29 16:19:44', '2024-02-27 13:20:16');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 58, 83, '2023-12-19 04:58:56', '2023-12-29 23:05:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 26, 35, '2024-04-02 23:31:47', '2023-11-12 15:25:55');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 1, 46, '2024-08-01 14:40:21', '2023-11-09 02:22:56');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 36, 51, '2023-11-08 22:45:58', '2024-02-18 20:21:46');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 81, 26, '2024-02-23 22:15:27', '2024-04-08 13:48:23');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 74, 98, '2024-01-19 19:11:41', '2023-09-04 00:03:59');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 10, 6, '2024-04-24 09:50:42', '2024-05-23 07:09:24');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 20, 78, '2023-09-10 00:21:09', '2024-08-06 23:40:40');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 95, 89, '2024-03-17 03:43:35', '2023-09-29 10:34:36');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 12, 10, '2023-12-11 20:10:51', '2024-08-10 18:10:58');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 87, 97, '2024-04-24 14:35:23', '2023-09-30 03:43:52');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 97, 31, '2024-06-16 07:28:02', '2024-08-24 23:57:31');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 4, 53, '2024-05-01 14:12:35', '2024-03-11 06:25:29');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 54, 16, '2024-01-26 14:10:29', '2023-12-10 03:58:14');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 27, 3, '2024-07-13 19:40:56', '2023-11-26 01:57:35');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 48, 26, '2023-11-21 04:25:05', '2024-03-30 20:19:36');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 2, 6, '2023-12-25 22:24:57', '2023-09-09 14:48:56');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 60, 12, '2023-11-18 09:01:02', '2023-10-28 08:12:04');
+insert into Peliculas_carteleras (id_cine, id_pelicula, fecha_inicio, fecha_final) values ( 3, 70, '2024-07-07 02:19:32', '2023-08-30 03:30:41');
 
 insert into Cargos (nombre_cargo, descripcion_cargo) values ('Architect', 'Zygomycosis, unspecified');
 insert into Cargos (nombre_cargo, descripcion_cargo) values ('Construction Manager', 'Poisoning by opth drugs and preparations, assault, init');
@@ -1620,206 +1620,110 @@ insert into Cargos (nombre_cargo, descripcion_cargo) values ( 'Project Manager',
 insert into Cargos (nombre_cargo, descripcion_cargo) values ( 'Construction Expeditor', 'Lacerat msl/fasc/tnd post grp at thi lev, left thigh, subs');
 
 
-insert into Trabajadores (id_persona, id_cargo) values (48, 86);
-insert into Trabajadores (id_persona, id_cargo) values (9, 70);
-insert into Trabajadores (id_persona, id_cargo) values (74, 59);
-insert into Trabajadores (id_persona, id_cargo) values (70, 19);
-insert into Trabajadores (id_persona, id_cargo) values (6, 13);
-insert into Trabajadores (id_persona, id_cargo) values (14, 25);
-insert into Trabajadores (id_persona, id_cargo) values (83, 51);
-insert into Trabajadores (id_persona, id_cargo) values (79, 74);
-insert into Trabajadores (id_persona, id_cargo) values (78, 7);
-insert into Trabajadores (id_persona, id_cargo) values ( 29, 73);
-insert into Trabajadores (id_persona, id_cargo) values ( 98, 7);
-insert into Trabajadores (id_persona, id_cargo) values ( 27, 64);
-insert into Trabajadores (id_persona, id_cargo) values ( 26, 35);
-insert into Trabajadores (id_persona, id_cargo) values ( 77, 56);
-insert into Trabajadores (id_persona, id_cargo) values ( 64, 97);
-insert into Trabajadores (id_persona, id_cargo) values ( 63, 8);
-insert into Trabajadores (id_persona, id_cargo) values ( 92, 95);
-insert into Trabajadores (id_persona, id_cargo) values ( 94, 41);
-insert into Trabajadores (id_persona, id_cargo) values ( 46, 42);
-insert into Trabajadores (id_persona, id_cargo) values ( 37, 64);
-insert into Trabajadores (id_persona, id_cargo) values ( 95, 93);
-insert into Trabajadores (id_persona, id_cargo) values ( 35, 95);
-insert into Trabajadores (id_persona, id_cargo) values ( 68, 79);
-insert into Trabajadores (id_persona, id_cargo) values ( 58, 23);
-insert into Trabajadores (id_persona, id_cargo) values ( 9, 91);
-insert into Trabajadores (id_persona, id_cargo) values ( 19, 81);
-insert into Trabajadores (id_persona, id_cargo) values ( 66, 80);
-insert into Trabajadores (id_persona, id_cargo) values ( 5, 59);
-insert into Trabajadores (id_persona, id_cargo) values ( 75, 84);
-insert into Trabajadores (id_persona, id_cargo) values ( 98, 86);
-insert into Trabajadores (id_persona, id_cargo) values ( 58, 19);
-insert into Trabajadores (id_persona, id_cargo) values ( 38, 100);
-insert into Trabajadores (id_persona, id_cargo) values ( 23, 4);
-insert into Trabajadores (id_persona, id_cargo) values ( 72, 85);
-insert into Trabajadores (id_persona, id_cargo) values ( 39, 68);
-insert into Trabajadores (id_persona, id_cargo) values ( 83, 77);
-insert into Trabajadores (id_persona, id_cargo) values ( 98, 70);
-insert into Trabajadores (id_persona, id_cargo) values ( 6, 78);
-insert into Trabajadores (id_persona, id_cargo) values ( 73, 7);
-insert into Trabajadores (id_persona, id_cargo) values ( 67, 4);
-insert into Trabajadores (id_persona, id_cargo) values ( 79, 81);
-insert into Trabajadores (id_persona, id_cargo) values ( 17, 40);
-insert into Trabajadores (id_persona, id_cargo) values ( 96, 41);
-insert into Trabajadores (id_persona, id_cargo) values ( 29, 18);
-insert into Trabajadores (id_persona, id_cargo) values ( 43, 72);
-insert into Trabajadores (id_persona, id_cargo) values ( 32, 20);
-insert into Trabajadores (id_persona, id_cargo) values ( 38, 79);
-insert into Trabajadores (id_persona, id_cargo) values ( 27, 27);
-insert into Trabajadores (id_persona, id_cargo) values ( 13, 4);
-insert into Trabajadores (id_persona, id_cargo) values ( 16, 32);
-insert into Trabajadores (id_persona, id_cargo) values ( 28, 20);
-insert into Trabajadores (id_persona, id_cargo) values ( 44, 72);
-insert into Trabajadores (id_persona, id_cargo) values ( 59, 27);
-insert into Trabajadores (id_persona, id_cargo) values ( 39, 49);
-insert into Trabajadores (id_persona, id_cargo) values ( 41, 94);
-insert into Trabajadores (id_persona, id_cargo) values ( 93, 85);
-insert into Trabajadores (id_persona, id_cargo) values ( 23, 47);
-insert into Trabajadores (id_persona, id_cargo) values ( 67, 6);
-insert into Trabajadores (id_persona, id_cargo) values ( 5, 77);
-insert into Trabajadores (id_persona, id_cargo) values ( 54, 57);
-insert into Trabajadores (id_persona, id_cargo) values ( 52, 62);
-insert into Trabajadores (id_persona, id_cargo) values ( 98, 45);
-insert into Trabajadores (id_persona, id_cargo) values ( 32, 72);
-insert into Trabajadores (id_persona, id_cargo) values ( 22, 97);
-insert into Trabajadores (id_persona, id_cargo) values ( 70, 37);
-insert into Trabajadores (id_persona, id_cargo) values ( 87, 27);
-insert into Trabajadores (id_persona, id_cargo) values ( 36, 61);
-insert into Trabajadores (id_persona, id_cargo) values ( 91, 69);
-insert into Trabajadores (id_persona, id_cargo) values ( 17, 78);
-insert into Trabajadores (id_persona, id_cargo) values ( 87, 39);
-insert into Trabajadores (id_persona, id_cargo) values ( 85, 40);
-insert into Trabajadores (id_persona, id_cargo) values ( 77, 96);
-insert into Trabajadores (id_persona, id_cargo) values ( 35, 2);
-insert into Trabajadores (id_persona, id_cargo) values ( 92, 96);
-insert into Trabajadores (id_persona, id_cargo) values ( 81, 24);
-insert into Trabajadores (id_persona, id_cargo) values ( 44, 96);
-insert into Trabajadores (id_persona, id_cargo) values ( 100, 57);
-insert into Trabajadores (id_persona, id_cargo) values ( 61, 24);
-insert into Trabajadores (id_persona, id_cargo) values ( 84, 96);
-insert into Trabajadores (id_persona, id_cargo) values ( 34, 42);
-insert into Trabajadores (id_persona, id_cargo) values ( 87, 47);
-insert into Trabajadores (id_persona, id_cargo) values ( 32, 6);
-insert into Trabajadores (id_persona, id_cargo) values ( 74, 91);
-insert into Trabajadores (id_persona, id_cargo) values ( 44, 93);
-insert into Trabajadores (id_persona, id_cargo) values ( 25, 10);
-insert into Trabajadores (id_persona, id_cargo) values ( 25, 100);
-insert into Trabajadores (id_persona, id_cargo) values ( 9, 41);
-insert into Trabajadores (id_persona, id_cargo) values ( 12, 33);
-insert into Trabajadores (id_persona, id_cargo) values ( 6, 41);
-insert into Trabajadores (id_persona, id_cargo) values ( 52, 75);
-insert into Trabajadores (id_persona, id_cargo) values ( 54, 57);
-insert into Trabajadores (id_persona, id_cargo) values ( 14, 63);
-insert into Trabajadores (id_persona, id_cargo) values ( 8, 84);
-insert into Trabajadores (id_persona, id_cargo) values ( 5, 63);
-insert into Trabajadores (id_persona, id_cargo) values ( 8, 12);
-insert into Trabajadores (id_persona, id_cargo) values ( 31, 82);
-insert into Trabajadores (id_persona, id_cargo) values ( 64, 1);
-insert into Trabajadores (id_persona, id_cargo) values ( 12, 5);
-insert into Trabajadores (id_persona, id_cargo) values ( 46, 52);
-insert into Trabajadores (id_persona, id_cargo) values ( 39, 45);
-insert into Trabajadores (id_persona, id_cargo) values ( 33, 29);
-insert into Trabajadores (id_persona, id_cargo) values ( 29, 92);
-insert into Trabajadores (id_persona, id_cargo) values ( 21, 31);
-insert into Trabajadores (id_persona, id_cargo) values ( 56, 55);
-insert into Trabajadores (id_persona, id_cargo) values ( 69, 65);
-insert into Trabajadores (id_persona, id_cargo) values ( 58, 78);
-insert into Trabajadores (id_persona, id_cargo) values ( 7, 61);
-insert into Trabajadores (id_persona, id_cargo) values ( 65, 81);
-insert into Trabajadores (id_persona, id_cargo) values ( 18, 88);
-insert into Trabajadores (id_persona, id_cargo) values ( 59, 34);
-insert into Trabajadores (id_persona, id_cargo) values ( 67, 93);
-insert into Trabajadores (id_persona, id_cargo) values ( 45, 75);
-insert into Trabajadores (id_persona, id_cargo) values ( 44, 2);
-insert into Trabajadores (id_persona, id_cargo) values ( 62, 48);
-insert into Trabajadores (id_persona, id_cargo) values ( 46, 25);
-insert into Trabajadores (id_persona, id_cargo) values ( 72, 57);
-insert into Trabajadores (id_persona, id_cargo) values ( 54, 37);
-insert into Trabajadores (id_persona, id_cargo) values ( 42, 15);
-insert into Trabajadores (id_persona, id_cargo) values ( 23, 26);
-insert into Trabajadores (id_persona, id_cargo) values ( 38, 92);
-insert into Trabajadores (id_persona, id_cargo) values ( 93, 71);
-insert into Trabajadores (id_persona, id_cargo) values ( 93, 82);
-insert into Trabajadores (id_persona, id_cargo) values ( 32, 55);
-insert into Trabajadores (id_persona, id_cargo) values ( 54, 17);
-insert into Trabajadores (id_persona, id_cargo) values ( 12, 85);
-insert into Trabajadores (id_persona, id_cargo) values ( 17, 60);
-insert into Trabajadores (id_persona, id_cargo) values ( 90, 10);
-insert into Trabajadores (id_persona, id_cargo) values ( 57, 42);
-insert into Trabajadores (id_persona, id_cargo) values ( 69, 15);
-insert into Trabajadores (id_persona, id_cargo) values ( 71, 60);
-insert into Trabajadores (id_persona, id_cargo) values ( 79, 95);
-insert into Trabajadores (id_persona, id_cargo) values ( 94, 100);
-insert into Trabajadores (id_persona, id_cargo) values ( 56, 22);
-insert into Trabajadores (id_persona, id_cargo) values ( 23, 35);
-insert into Trabajadores (id_persona, id_cargo) values ( 74, 45);
-insert into Trabajadores (id_persona, id_cargo) values ( 5, 58);
-insert into Trabajadores (id_persona, id_cargo) values ( 33, 8);
-insert into Trabajadores (id_persona, id_cargo) values ( 93, 41);
-insert into Trabajadores (id_persona, id_cargo) values ( 70, 40);
-insert into Trabajadores (id_persona, id_cargo) values ( 88, 26);
-insert into Trabajadores (id_persona, id_cargo) values ( 41, 67);
-insert into Trabajadores (id_persona, id_cargo) values ( 18, 94);
-insert into Trabajadores (id_persona, id_cargo) values ( 1, 86);
-insert into Trabajadores (id_persona, id_cargo) values ( 51, 1);
-insert into Trabajadores (id_persona, id_cargo) values ( 21, 75);
-insert into Trabajadores (id_persona, id_cargo) values ( 51, 50);
-insert into Trabajadores (id_persona, id_cargo) values ( 59, 12);
-insert into Trabajadores (id_persona, id_cargo) values ( 76, 44);
-insert into Trabajadores (id_persona, id_cargo) values ( 5, 46);
-insert into Trabajadores (id_persona, id_cargo) values ( 78, 55);
-insert into Trabajadores (id_persona, id_cargo) values ( 19, 98);
-insert into Trabajadores (id_persona, id_cargo) values ( 6, 26);
-insert into Trabajadores (id_persona, id_cargo) values ( 20, 91);
-insert into Trabajadores (id_persona, id_cargo) values ( 27, 22);
-insert into Trabajadores (id_persona, id_cargo) values ( 72, 11);
-insert into Trabajadores (id_persona, id_cargo) values ( 9, 99);
-insert into Trabajadores (id_persona, id_cargo) values ( 8, 28);
-insert into Trabajadores (id_persona, id_cargo) values ( 18, 73);
-insert into Trabajadores (id_persona, id_cargo) values ( 63, 80);
-insert into Trabajadores (id_persona, id_cargo) values ( 64, 15);
-insert into Trabajadores (id_persona, id_cargo) values ( 9, 5);
-insert into Trabajadores (id_persona, id_cargo) values ( 41, 55);
-insert into Trabajadores (id_persona, id_cargo) values ( 32, 88);
-insert into Trabajadores (id_persona, id_cargo) values ( 14, 29);
-insert into Trabajadores (id_persona, id_cargo) values ( 11, 37);
-insert into Trabajadores (id_persona, id_cargo) values ( 20, 1);
-insert into Trabajadores (id_persona, id_cargo) values ( 94, 67);
-insert into Trabajadores (id_persona, id_cargo) values ( 23, 80);
-insert into Trabajadores (id_persona, id_cargo) values ( 28, 69);
-insert into Trabajadores (id_persona, id_cargo) values ( 38, 48);
-insert into Trabajadores (id_persona, id_cargo) values ( 43, 74);
-insert into Trabajadores (id_persona, id_cargo) values ( 21, 37);
-insert into Trabajadores (id_persona, id_cargo) values ( 64, 26);
-insert into Trabajadores (id_persona, id_cargo) values ( 15, 62);
-insert into Trabajadores (id_persona, id_cargo) values ( 13, 31);
-insert into Trabajadores (id_persona, id_cargo) values ( 66, 6);
-insert into Trabajadores (id_persona, id_cargo) values ( 34, 100);
-insert into Trabajadores (id_persona, id_cargo) values ( 25, 10);
-insert into Trabajadores (id_persona, id_cargo) values ( 48, 21);
-insert into Trabajadores (id_persona, id_cargo) values ( 55, 99);
-insert into Trabajadores (id_persona, id_cargo) values ( 14, 22);
-insert into Trabajadores (id_persona, id_cargo) values ( 67, 89);
-insert into Trabajadores (id_persona, id_cargo) values ( 2, 64);
-insert into Trabajadores (id_persona, id_cargo) values ( 39, 50);
-insert into Trabajadores (id_persona, id_cargo) values ( 99, 10);
-insert into Trabajadores (id_persona, id_cargo) values ( 98, 70);
-insert into Trabajadores (id_persona, id_cargo) values ( 48, 61);
-insert into Trabajadores (id_persona, id_cargo) values ( 4, 49);
-insert into Trabajadores (id_persona, id_cargo) values ( 24, 66);
-insert into Trabajadores (id_persona, id_cargo) values ( 44, 44);
-insert into Trabajadores (id_persona, id_cargo) values ( 11, 98);
-insert into Trabajadores (id_persona, id_cargo) values ( 49, 1);
-insert into Trabajadores (id_persona, id_cargo) values ( 31, 54);
-insert into Trabajadores (id_persona, id_cargo) values ( 73, 17);
-insert into Trabajadores (id_persona, id_cargo) values ( 32, 13);
-insert into Trabajadores (id_persona, id_cargo) values ( 57, 99);
-insert into Trabajadores (id_persona, id_cargo) values ( 1, 85);
-insert into Trabajadores (id_persona, id_cargo) values ( 89, 32);
-insert into Trabajadores (id_persona, id_cargo) values ( 42, 64);
-insert into Trabajadores (id_persona, id_cargo) values ( 57, 23);
+INSERT INTO Trabajadores (id_persona, id_cargo) VALUES 
+(100, 12), 
+(101, 25), 
+(102, 47), 
+(103, 89), 
+(104, 36), 
+(105, 58), 
+(106, 73), 
+(107, 15), 
+(108, 92), 
+(109, 37), 
+(110, 67), 
+(111, 83), 
+(112, 44), 
+(113, 19), 
+(114, 66), 
+(115, 27), 
+(116, 41), 
+(117, 78), 
+(118, 99), 
+(119, 52), 
+(120, 34), 
+(121, 60), 
+(122, 14), 
+(123, 85), 
+(124, 11), 
+(125, 91), 
+(126, 26), 
+(127, 76), 
+(128, 22), 
+(129, 58), 
+(130, 46), 
+(131, 84), 
+(132, 31), 
+(133, 16), 
+(134, 100), 
+(135, 48), 
+(136, 72), 
+(137, 65), 
+(138, 10), 
+(139, 99), 
+(140, 53), 
+(141, 90), 
+(142, 39), 
+(143, 18), 
+(144, 33), 
+(145, 61), 
+(146, 80), 
+(147, 24), 
+(148, 14), 
+(149, 88), 
+(150, 59), 
+(151, 42), 
+(152, 77), 
+(153, 38), 
+(154, 30), 
+(155, 20), 
+(156, 68), 
+(157, 11), 
+(158, 94), 
+(159, 17), 
+(160, 87), 
+(161, 49), 
+(162, 70), 
+(163, 75), 
+(164, 3), 
+(165, 56), 
+(166, 2), 
+(167, 4), 
+(168, 45), 
+(169, 69), 
+(170, 8), 
+(171, 62), 
+(172, 50), 
+(173, 13), 
+(174, 1), 
+(175, 63), 
+(176, 86), 
+(177, 40), 
+(178, 95), 
+(179, 35), 
+(180, 54), 
+(181, 5), 
+(182, 97), 
+(183, 7), 
+(184, 32), 
+(185, 74), 
+(186, 81), 
+(187, 43), 
+(188, 96), 
+(189, 6), 
+(190, 82), 
+(191, 71), 
+(192, 23), 
+(193, 65), 
+(194, 64), 
+(195, 55), 
+(196, 26), 
+(197, 24), 
+(198, 93), 
+(199, 15), 
+(200, 19);
+
+
 
 
 insert into Comidas (nombre_comida) values ('Pork - Sausage Casing');
@@ -1973,7 +1877,7 @@ insert into Menu_cine (id_comida, precio) values ( 91, '$279.73');
 insert into Menu_cine (id_comida, precio) values (70, '$216.50');
 insert into Menu_cine (id_comida, precio) values ( 42, '$134.93');
 insert into Menu_cine (id_comida, precio) values ( 26, '$121.32');
-insert into Menu_cine (id_comida, precio) values ( 164, '$157.18');
+insert into Menu_cine (id_comida, precio) values ( 16, '$157.18');
 insert into Menu_cine (id_comida, precio) values ( 15, '$227.31');
 insert into Menu_cine (id_comida, precio) values ( 6, '$260.89');
 insert into Menu_cine (id_comida, precio) values ( 50, '$97.98');
@@ -2022,7 +1926,7 @@ insert into Menu_cine (id_comida, precio) values ( 38, '$295.98');
 insert into Menu_cine (id_comida, precio) values ( 41, '$267.98');
 insert into Menu_cine (id_comida, precio) values ( 37, '$93.18');
 insert into Menu_cine (id_comida, precio) values ( 13, '$54.44');
-insert into Menu_cine (id_comida, precio) values ( 182, '$189.36');
+insert into Menu_cine (id_comida, precio) values ( 82, '$189.36');
 insert into Menu_cine (id_comida, precio) values ( 86, '$52.55');
 
 

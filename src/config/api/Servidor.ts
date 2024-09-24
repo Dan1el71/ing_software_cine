@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import apiSalaRuta from "../../app/salas/route/SalaRuta";
+import apiPeliculaCarteleraRuta from "../../app/carteleras/route/PeliculaCarteleraRuta"
 
 class Servidor{
     public app: express.Application;
@@ -14,6 +15,7 @@ class Servidor{
 
     public exponerEndPoint() :void {
         this.app.use("/room", apiSalaRuta);
+        this.app.use("/billboard", apiPeliculaCarteleraRuta);
     }
     
     public cargarConfiguracion() :void {

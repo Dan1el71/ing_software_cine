@@ -7,6 +7,10 @@ class ClienteControlador extends ClienteDAO {
     ClienteDAO.obtenerTodos(res)
   }
 
+  public paginationClientes(req: Request, res: Response) {
+    ClienteDAO.pagination(req, res)
+  }
+
   public obtenerClientePorId(req: Request, res: Response) {
     ClienteDAO.obtenerPorId(req, res)
   }

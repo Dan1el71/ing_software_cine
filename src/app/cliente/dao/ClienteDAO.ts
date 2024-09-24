@@ -33,6 +33,24 @@ class ClienteDAO {
       })
   }
 
+  protected static async pagination(req: any, res: Response) {
+    const page = parseInt(req.query.page) || 1
+    const limit = parseInt(req.query.limit) || 10
+    const offset = (page - 1) * limit
+
+    await pool
+      .result(SQL_CLIENTES.PAGINATION, [limit, offset])
+      .then((resultado) => {
+        res.status(200).json(resultado.rows)
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).json({
+          respuesta: 'Error al obtener la información de los clientes',
+        })
+      })
+  }
+
   protected static async crear(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {

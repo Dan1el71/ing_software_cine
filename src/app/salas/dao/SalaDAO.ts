@@ -24,7 +24,7 @@ class SalaDAO {
         let queHacer = 1
         let respuBase: any
         const cubi = await consulta.one(SQL_SALAS.HOW_MANY, [datos.idCine])
-        if (cubi.existe == 0) {
+        if (cubi.existe < 5) {
           queHacer = 2
           respuBase = await consulta.one(SQL_SALAS.ADD, [
             datos.idSala,

@@ -19,11 +19,11 @@ class SalaDAO {
             .task(async (consulta) =>{
                 let queHacer = 1;
                 let respuBase: any;
-                const cubi = await consulta.one(SQL_SALAS.HOW_MANY, [datos.idCine]);
-                if(cubi.existe == 0){
+                //const cubi = await consulta.one(SQL_SALAS.HOW_MANY, [datos.idSala]);
+                //if(cubi.existe == 0){
                     queHacer = 2;
-                    respuBase = await consulta.one(SQL_SALAS.ADD, [datos.capacidadSala, datos.idCine]);
-                }
+                    respuBase = await consulta.one(SQL_SALAS.ADD, [datos.idSala, datos.capacidadSala, datos.idCine]);
+                //}
                 return {queHacer, respuBase};
             })
             .then(({queHacer, respuBase}) =>{

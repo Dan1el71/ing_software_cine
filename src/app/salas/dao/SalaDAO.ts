@@ -20,7 +20,7 @@ class SalaDAO {
                 let queHacer = 1;
                 let respuBase: any;
                 const cubi = await consulta.one(SQL_SALAS.HOW_MANY, [datos.idCine]);
-                if(cubi.existe == 0){
+                if(cubi.existe < 5){
                     queHacer = 2;
                     respuBase = await consulta.one(SQL_SALAS.ADD, [datos.capacidadSala, datos.idCine]);
                 }
@@ -29,7 +29,7 @@ class SalaDAO {
             .then(({queHacer, respuBase}) =>{
                 switch(queHacer){
                     case 1:
-                        res.status(400).json({respuesta: "La sala ya existe"});
+                        res.status(400).json({respuesta: "un cine solo puede tener 4 salas"});
                         break;
                     default:
                         res.status(200).json(respuBase);
@@ -60,8 +60,8 @@ class SalaDAO {
             .task(async (consulta) =>{
                 let queHacer = 1;
                 let respuBase: any;
-                const cubi = await consulta.one(SQL_SALAS.HOW_MANY, [datos.idSala]);
-                if(cubi.existe == 0){
+                const cubi = await consulta.one(SQL_SALAS.EXIST, [datos.idSala]);
+                if(cubi.existe == 1){
                     queHacer = 2;
                     respuBase = await consulta.none(SQL_SALAS.UPDATE, [datos.idSala, datos.capacidadSala, datos.idCine]);
                 }
@@ -70,7 +70,7 @@ class SalaDAO {
             .then(({queHacer, respuBase}) =>{
                 switch(queHacer){
                     case 1:
-                        res.status(400).json({respuesta: "Compita ya existe"});
+                        res.status(400).json({respuesta: "Compita no puedes actualizar algo que no existe crealo"});
                         break;
                     default:
                         res.status(200).json({actualizado: "ok"});

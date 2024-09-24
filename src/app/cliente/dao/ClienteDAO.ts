@@ -36,12 +36,7 @@ class ClienteDAO {
   protected static async crear(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const { idPersona, nombrePersona, fechaNacPersona, idUbicacion } = data
-        const clienteExiste = await this.clienteExiste(idPersona)
-
-        if (clienteExiste) {
-          throw new Error('El cliente ya existe')
-        }
+        const { nombrePersona, fechaNacPersona, idUbicacion } = data
 
         const persona = await consulta.one(SQL_CLIENTES.INSERT_PERSONA, [
           nombrePersona,
@@ -49,12 +44,15 @@ class ClienteDAO {
           idUbicacion,
         ])
 
+        await consulta.none(SQL_CLIENTES.INSERT_CLIENTE, [persona.idPersona])
+
         return persona
       })
       .then((resultado: any) => {
+        console.log(resultado)
         res.status(200).json({
           respuesta: 'Cliente creado exitosamente',
-          idCliente: resultado.rows[0].id_persona,
+          idCliente: resultado.id_persona,
         })
       })
       .catch((err) => {

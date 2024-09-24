@@ -19,7 +19,7 @@ class ReservacionesDAO{
             .task(async(consulta) =>{
                 let queHacer = 1;
                 let respuBase: any;
-                const cubi = await consulta.one(SQL_RESERVACIONES.HOW_MANY, [datos.idReservacion]);
+                const cubi = await consulta.one(SQL_RESERVACIONES.EXIST, [datos.idSilla, datos.idHorario]);
                 if(cubi.existe == 0){
                     queHacer = 2;
                     respuBase = await consulta.one(SQL_RESERVACIONES.ADD, [datos.idCliente, datos.idSilla, datos.idHorario, datos.precio]);
@@ -60,8 +60,7 @@ class ReservacionesDAO{
             .task(async(consulta) =>{
                 let queHacer = 1;
                 let respuBase: any;
-                const cubi = await consulta.one(SQL_RESERVACIONES.HOW_MANY, [datos.idReservacion]);
-                console.log(cubi.existe == 1);
+                const cubi = await consulta.one(SQL_RESERVACIONES.EXIST, [datos.idSilla, datos.idHorario]);
                 if(cubi.existe == 1){
                     queHacer = 2;
                     respuBase = await consulta.one(SQL_RESERVACIONES.UPDATE, [datos.idReservacion, datos.idCliente, datos.idSilla, datos.idHorario, datos.precio]);

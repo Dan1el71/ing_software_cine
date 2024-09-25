@@ -6,10 +6,11 @@ class Cliente extends Persona {
   constructor(
     idPersona: number,
     nombre: string,
+    numeroIdentidad: number,
     fechaNacimiento: Date,
     ubicacion: number
   ) {
-    super(idPersona, nombre, fechaNacimiento, ubicacion)
+    super(idPersona, nombre, numeroIdentidad, fechaNacimiento, ubicacion)
     this.idPersona = idPersona
   }
 }

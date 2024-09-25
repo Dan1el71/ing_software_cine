@@ -39,7 +39,7 @@ CREATE TABLE Personas (
   "state" boolean,
   "fecha_nac_persona" date
 );
-CREATE TABLE Clientes ("id_persona" serial PRIMARY KEY);
+CREATE TABLE Clientes ("id_persona" serial NOT NULL PRIMARY KEY);
 
 CREATE TABLE Trabajadores (
   "id_persona" serial PRIMARY KEY,
@@ -112,7 +112,9 @@ ADD FOREIGN KEY ("id_pelicula") REFERENCES Peliculas ("id_pelicula");
 ALTER TABLE Personas
 ADD FOREIGN KEY ("id_ubicacion") REFERENCES Ubicaciones ("id_ubicacion");
 ALTER TABLE Clientes
-ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
+ADD CONSTRAINT fk_persona_cliente
+FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
+ON DELETE RESTRICT;
 ALTER TABLE Trabajadores
 ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
 ALTER TABLE Trabajadores

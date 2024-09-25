@@ -36,6 +36,7 @@ CREATE TABLE Personas (
   "numero_identidad" varchar(255),
   "nombre_persona" varchar(255),
   "id_ubicacion" integer,
+  "state" boolean,
   "fecha_nac_persona" date
 );
 CREATE TABLE Clientes ("id_persona" serial PRIMARY KEY);

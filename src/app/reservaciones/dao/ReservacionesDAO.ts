@@ -82,6 +82,20 @@ class ReservacionesDAO{
                 res.status(400).json({respuesta: "Pailas, sql totiado"});
             })
     } 
+
+    protected static async paginarReservaciones(page:number, limit:number, res:Response){
+        const offset = (page - 1)*limit;
+
+        await pool
+            .result(SQL_RESERVACIONES.PAGINATION, [limit,offset])
+            .then((respuesta) =>{
+                res.status(200).json(respuesta.rows);
+            })
+            .catch((miError) =>{
+                console.log(miError);
+                res.status(400).json({respuesta: "Error al obtener las reservaciones"});
+            })
+    }
 }
 
 export default ReservacionesDAO;

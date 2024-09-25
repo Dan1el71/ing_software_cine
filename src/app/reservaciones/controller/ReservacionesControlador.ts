@@ -35,6 +35,12 @@ class ResevacionesControlador extends ReservacionesDAO{
         objCubi.precio = req.body.precio;
         ReservacionesDAO.actualizarReservacion(objCubi, res);
     }
+
+    public paginarReservaciones(req:Request, res:Response){
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 1;
+        ReservacionesDAO.paginarReservaciones(page, limit, res);
+    }
 }
 
 const reservacionControlador = new ResevacionesControlador();

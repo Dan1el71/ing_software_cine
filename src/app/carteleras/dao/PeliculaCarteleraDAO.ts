@@ -17,19 +17,31 @@ class PeliculaCarteleraDAO {
   protected static async grabeloYa(datos: PeliculaCartelera, res: Response): Promise<any> {
     await pool
       .task(async (consulta) => {
-        let respuBase: any 
-        respuBase = await consulta.one(SQL_CARTELERAS.ADD, 
-          [ datos.idCine, datos.idPelicula, datos.fechaInicio, datos.fechaFinal])
-        
-        return {respuBase}
-        
+        let queHacer = 1;
+        let respuBase: any;
+        const cubi = await consulta.any(SQL_CARTELERAS.EXIST, 
+          [ datos.idCine, datos.idPelicula, datos.fechaInicio, datos.fechaFinal]);
+
+        if(cubi.length == 0){
+          queHacer = 2;
+          respuBase = await consulta.one(SQL_CARTELERAS.ADD, 
+            [ datos.idCine, datos.idPelicula, datos.fechaInicio, datos.fechaFinal]);
+        }
+        return {queHacer, respuBase}
       })
-      .then(({ respuBase }) => {
-        res.status(200).json(respuBase)
-      }).catch((miErrror) => {
-        console.log(miErrror);
-        res.status(400).json({respuesta: "Error al crear una cartelera"});
-      });
+      .then(({ queHacer, respuBase }) => {
+        switch (queHacer){
+          case 1:
+            res.status(400).json({respuesta: "compita ya existe la cartelera ;)"});
+            break;
+          default:
+            res.status(200).json(respuBase);
+        }
+      })
+      .catch((miError: any) => {
+        console.log(miError);
+        res.status(400).json({respuesta: "Se totió mano"})
+      })
   }
   
   protected static async borreloYa(datos: PeliculaCartelera, res: Response): Promise<any> {

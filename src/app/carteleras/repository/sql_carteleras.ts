@@ -4,6 +4,9 @@ export const SQL_CARTELERAS = ({
                
     ADD: "INSERT INTO peliculas_carteleras(id_cine, id_pelicula, fecha_inicio, fecha_final) \
     VALUES($1,$2,$3,$4) RETURNING id_pelicula_cartelera",
+
+    EXIST: "SELECT id_pelicula_cartelera FROM peliculas_carteleras \
+        WHERE id_cine = $1 AND id_pelicula = $2 AND fecha_inicio = $3 AND fecha_final = $4",
     
     DELETE: "DELETE FROM peliculas_carteleras WHERE id_pelicula_cartelera = $1",
 

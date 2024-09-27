@@ -2,10 +2,12 @@ import { Response } from "express";
 import { SQL_CARTELERAS } from "../repository/sql_carteleras";
 import pool from "../../../config/connection/dbConnection";
 import PeliculaCartelera from "../entity/PeliculaCartelera";
+import { ColumnSet } from "pg-promise";
 
 class PeliculaCarteleraDAO {
   protected static async obtenerTodo(params: any, res: Response) {
-    await pool.result(SQL_CARTELERAS.GET_ALL, params)
+    await pool
+    .result(SQL_CARTELERAS.GET_ALL, params)
     .then((resultado) => {
         res.status(200).json(resultado.rows);
     }).catch((miErrror) => {
@@ -47,13 +49,32 @@ class PeliculaCarteleraDAO {
   protected static async borreloYa(datos: PeliculaCartelera, res: Response): Promise<any> {
     await pool
       .task(async (consulta) => {
-        return consulta.result(SQL_CARTELERAS.DELETE, [datos.idPeliculaCartelera])
+        let respuBase: any;
+        let queHacer = 1;
+        const cubi = await consulta.one(SQL_CARTELERAS.EXIST_ID, [datos.idPeliculaCartelera]);
+        if(cubi.exist == 1){
+          //queHacer = 2;
+          //const cubi2 = await consulta.one(SQL_CARTELERAS.EXIST_OTHER_TABLE, [datos.idPeliculaCartelera]);
+          //if(cubi2.exist != 0){
+            queHacer = 3;
+            respuBase = await consulta.result(SQL_CARTELERAS.DELETE, [datos.idPeliculaCartelera]);
+          //}  
+        }
+        return {queHacer, respuBase}
       })
-      .then((respuesta) => {
-        res.status(200).json({
-          respuesta: 'La Cartelera se eliminó con éxito',
-          info: respuesta.rowCount,
-        })
+      .then(({queHacer, respuBase}) => {
+        switch (queHacer){
+          case 1:
+            res.status(400).json({respuesta: "compita no puedes eliminar algo que no existe"});
+            break;
+          case 2:
+            res.status(400).json({respuesta: "no creo que lo que piensas hacer sea una buena idea..."})
+            break
+          default:
+            res.status(200).json({
+              respuesta: 'La Cartelera se eliminó con éxito',
+              info: respuBase.rowCount});
+        }
       })
       .catch((miError) => {
         console.log(miError)

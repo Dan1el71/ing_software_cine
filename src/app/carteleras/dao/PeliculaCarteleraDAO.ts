@@ -106,17 +106,18 @@ class PeliculaCarteleraDAO {
     await pool
       .task(async (consulta) => {
         let respuBase: any
-        respuBase = await consulta.none(SQL_CARTELERAS.UPDATE_MASIVE, [
+        respuBase = await consulta.result(SQL_CARTELERAS.UPDATE_MASIVE, [
           datos.idPeliculaCartelera,
           datos.idPelicula,
           datos.idCine,
           datos.fechaInicio, datos.fechaFinal])
         
-        return { respuBase }
+        return respuBase
       })
       .then((respuBase) => {
         res.status(200).json({ 
-          actualizado: 'ok'})
+          actualizado: 'ok',
+          filasAfectadas: respuBase.rowCount})
       })
       .catch((miError) => {
         console.log(miError)

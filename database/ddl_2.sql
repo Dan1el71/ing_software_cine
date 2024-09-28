@@ -112,7 +112,7 @@ ADD FOREIGN KEY ("id_pelicula") REFERENCES Peliculas ("id_pelicula");
 ALTER TABLE Personas
 ADD FOREIGN KEY ("id_ubicacion") REFERENCES Ubicaciones ("id_ubicacion");
 ALTER TABLE Clientes
-ADD CONSTRAINT fk_persona_cliente
+ADD CONSTRAINT clientes_id_persona_fkey
 FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
 ON DELETE RESTRICT;
 ALTER TABLE Trabajadores

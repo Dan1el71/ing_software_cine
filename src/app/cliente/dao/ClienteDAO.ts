@@ -33,9 +33,9 @@ class ClienteDAO {
       })
   }
 
-  protected static async pagination(req: any, res: Response) {
-    const page = parseInt(req.query.page) || 1
-    const limit = parseInt(req.query.limit) || 10
+  protected static async pagination(data: any, res: Response) {
+    const page = parseInt(data.page) || 1
+    const limit = parseInt(data.limit) || 10
     const offset = (page - 1) * limit
 
     await pool
@@ -51,13 +51,51 @@ class ClienteDAO {
       })
   }
 
+  protected static async masiveUpdate(data: any, res: Response) {
+    await pool
+      .task(async (query) => {
+        const search = data.search || ''
+        const clients = await query.any(SQL_CLIENTES.SEARCH, [search])
+
+        if (clients.length === 0) {
+          throw new Error('No se encontraron clientes')
+        }
+
+        for (const client of clients) {
+          const status = !client.state
+
+          await query.any(SQL_CLIENTES.UPDATE_STATUS, [
+            status,
+            client.idPersona,
+          ])
+        }
+
+        return clients
+      })
+      .then((data) => {
+        res.status(200).json({
+          respuesta: 'Actualización masiva realizada',
+          resultados: data,
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).json({
+          respuesta: 'Error al actualizar los clientes',
+          mensaje: err.detail,
+        })
+      })
+  }
+
   protected static async crear(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const { nombrePersona, fechaNacPersona, idUbicacion } = data
+        const { nombrePersona, numeroIdentidad, fechaNacPersona, idUbicacion } =
+          data
 
         const persona = await consulta.one(SQL_CLIENTES.INSERT_PERSONA, [
           nombrePersona,
+          numeroIdentidad,
           fechaNacPersona,
           idUbicacion,
         ])
@@ -68,7 +106,7 @@ class ClienteDAO {
       })
       .then((resultado: any) => {
         console.log(resultado)
-        res.status(200).json({
+        res.status(201).json({
           respuesta: 'Cliente creado exitosamente',
           idCliente: resultado.id_persona,
         })

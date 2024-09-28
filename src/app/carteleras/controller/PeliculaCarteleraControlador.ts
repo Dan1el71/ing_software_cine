@@ -66,10 +66,10 @@ class PeliculaCarteleraControlador extends PeliculaCarteleraDAO {
         const limit = parseInt(req.query.limit as string); 
         const page = parseInt(req.query.page as string);   
 
-        if (!isNaN(limit) && !isNaN(page) && limit > 0 && page >= 0) {
+        if (!isNaN(limit) && !isNaN(page) && limit > 0 && page > 0) {
             PeliculaCarteleraDAO.paginacion([limit, page], res);
         } else {
-            res.status(400).json({ error: 'no puedo calcular la paginacion sin valores' });
+            res.status(400).json({ error: 'no puedo calcular la paginacion con esos valores' });
         }
     }
 

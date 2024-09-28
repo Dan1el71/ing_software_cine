@@ -1,6 +1,6 @@
 export const SQL_CARTELERAS = ({
-    GET_ALL: "SELECT pc.id_pelicula_cartelera, pc.nombre_pelicula, pc.nombre_cine, pc.fecha_inicio, pc.fecha_final \
-                FROM peliculas_carteleras pc",
+    GET_ALL: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
+                FROM peliculas_carteleras",
                
     ADD: "INSERT INTO peliculas_carteleras(id_cine, id_pelicula, fecha_inicio, fecha_final) \
     VALUES($1,$2,$3,$4) RETURNING id_pelicula_cartelera",
@@ -22,5 +22,8 @@ export const SQL_CARTELERAS = ({
     UPDATE_MASIVE: "UPDATE peliculas_carteleras SET id_cine = $2, id_pelicula = $3, \
             fecha_inicio = $4, fecha_final = $5 \
             WHERE cast(id_pelicula_cartelera AS TEXT) LIKE '%$1'",
+
+    PAGINATION: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
+                FROM peliculas_carteleras LIMIT $1 OFFSET $2"
 
 })

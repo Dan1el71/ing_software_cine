@@ -15,6 +15,7 @@ class PeliculaCarteleraRuta {
         this.apiRutaPeliculaCartelera.delete("/delete/:idPeliculaCartelera", peliculaCarteleraControlador.borraTuCartelera);
         this.apiRutaPeliculaCartelera.put("/update", peliculaCarteleraControlador.actualizaTuCartelera);
         this.apiRutaPeliculaCartelera.put("/updateMasivo", peliculaCarteleraControlador.actualizaTuCarteleraMasivo);
+        this.apiRutaPeliculaCartelera.get("/paginacion", peliculaCarteleraControlador.paginacionDeCarteleras);
     }
 }
 

@@ -42,7 +42,7 @@ class PeliculaCarteleraDAO {
       .catch((miError: any) => {
         console.log(miError);
         res.status(400).json({respuesta: "Se totió mano"})
-      })
+      });
   }
   
   protected static async borreloYa(datos: PeliculaCartelera, res: Response): Promise<any> {
@@ -78,7 +78,7 @@ class PeliculaCarteleraDAO {
       .catch((miError) => {
         console.log(miError)
         res.status(400).json({ respuesta: 'Error al eliminar la Cartelera' })
-      })
+      });
   }
 
   protected static async actualiceloYa(datos: PeliculaCartelera, res: Response): Promise<any> {
@@ -99,7 +99,7 @@ class PeliculaCarteleraDAO {
       .catch((miError) => {
         console.log(miError)
         res.status(400).json({ respuesta: 'Pailas, sql totiado' })
-      })
+      });
   }
 
   protected static async actualiceMasivo(datos: PeliculaCartelera, res: Response): Promise<any> {
@@ -121,7 +121,20 @@ class PeliculaCarteleraDAO {
       .catch((miError) => {
         console.log(miError)
         res.status(400).json({ respuesta: 'Pailas, sql totiado' })
-      })
+      });
+  }
+
+  protected static async paginacion([limit, page]: number[], res: Response): Promise<any> {
+    const offset = (page - 1) * limit;
+    await pool
+    .result(SQL_CARTELERAS.PAGINATION, [limit, offset])
+    .then((resultado) => {
+      res.status(200).json(resultado.rows)
+    })
+    .catch((miError) => {
+      console.log(miError);
+      res.status(400).json({respuesta:"uy se esmigajó al paginar carteleras"})
+    });
   }
 
 }

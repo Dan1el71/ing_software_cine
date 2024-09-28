@@ -6,7 +6,7 @@ export const SQL_CARTELERAS = ({
     VALUES($1,$2,$3,$4) RETURNING id_pelicula_cartelera",
 
     EXIST: "SELECT id_pelicula_cartelera FROM peliculas_carteleras \
-        WHERE id_cine = $1 AND id_pelicula = $2 AND fecha_inicio = $3 AND fecha_final = $4",
+        WHERE id_cine = $1 AND id_pelicula = $2 AND fecha_inicio = $3",
     
     DELETE: "DELETE FROM peliculas_carteleras WHERE id_pelicula_cartelera = $1",
 
@@ -16,7 +16,11 @@ export const SQL_CARTELERAS = ({
     EXIST_OTHER_TABLE: "SELECT COUNT(id_pelicula_cartelera) exist FROM laotraTabla \
             WHERE id_pelicula_cartelera = $1",
 
-    UPDATE: "UPDATE peliculas_carteleras set id_cine = $2, id_pelicula = $3, \
-            fecha_inicio = $4, fecha_final = $5 WHERE id_pelicula_cartelera  = $1"
+    UPDATE: "UPDATE peliculas_carteleras SET id_cine = $2, id_pelicula = $3, \
+            fecha_inicio = $4, fecha_final = $5 WHERE id_pelicula_cartelera  = $1",
     
+    UPDATE_MASIVE: "UPDATE peliculas_carteleras SET id_cine = $2, id_pelicula = $3, \
+            fecha_inicio = $4, fecha_final = $5 \
+            WHERE cast(id_pelicula_cartelera AS TEXT) LIKE '%$1'",
+
 })

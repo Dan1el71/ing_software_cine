@@ -2,7 +2,6 @@ import { Response } from "express";
 import { SQL_CARTELERAS } from "../repository/sql_carteleras";
 import pool from "../../../config/connection/dbConnection";
 import PeliculaCartelera from "../entity/PeliculaCartelera";
-import { ColumnSet } from "pg-promise";
 
 class PeliculaCarteleraDAO {
   protected static async obtenerTodo(params: any, res: Response) {
@@ -96,6 +95,28 @@ class PeliculaCarteleraDAO {
       })
       .then((respuBase) => {
         res.status(200).json({ actualizado: 'ok' })
+      })
+      .catch((miError) => {
+        console.log(miError)
+        res.status(400).json({ respuesta: 'Pailas, sql totiado' })
+      })
+  }
+
+  protected static async actualiceMasivo(datos: PeliculaCartelera, res: Response): Promise<any> {
+    await pool
+      .task(async (consulta) => {
+        let respuBase: any
+        respuBase = await consulta.none(SQL_CARTELERAS.UPDATE_MASIVE, [
+          datos.idPeliculaCartelera,
+          datos.idPelicula,
+          datos.idCine,
+          datos.fechaInicio, datos.fechaFinal])
+        
+        return { respuBase }
+      })
+      .then((respuBase) => {
+        res.status(200).json({ 
+          actualizado: 'ok'})
       })
       .catch((miError) => {
         console.log(miError)

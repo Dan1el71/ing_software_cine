@@ -93,6 +93,16 @@ class ClienteDAO {
         const { nombrePersona, numeroIdentidad, fechaNacPersona, idUbicacion } =
           data
 
+        const userExists = await consulta.oneOrNone(
+          SQL_CLIENTES.COUNT_BY_ID_NUMBER,
+          numeroIdentidad.toString()
+        )
+
+        if (userExists.existe !== '0') {
+          console.log('Entra aca')
+          throw new Error('El cliente ya existe')
+        }
+
         const persona = await consulta.one(SQL_CLIENTES.INSERT_PERSONA, [
           nombrePersona,
           numeroIdentidad,
@@ -115,7 +125,7 @@ class ClienteDAO {
         console.log(err)
         res.status(400).json({
           respuesta: 'Error al crear el cliente',
-          mensaje: err.detail,
+          mensaje: err.message,
         })
       })
   }

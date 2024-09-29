@@ -96,7 +96,9 @@ CREATE TABLE Tipos_accesos (
 );
 CREATE UNIQUE INDEX "unique_silla_horario" ON Reservaciones ("id_silla", "id_horario");
 ALTER TABLE Reservaciones
-ADD FOREIGN KEY ("id_cliente") REFERENCES Clientes ("id_persona");
+ADD FOREIGN KEY ("id_cliente") REFERENCES Clientes ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
 ALTER TABLE Reservaciones
 ADD FOREIGN KEY ("id_silla") REFERENCES Sillas ("id_silla");
 ALTER TABLE Reservaciones
@@ -114,9 +116,12 @@ ADD FOREIGN KEY ("id_ubicacion") REFERENCES Ubicaciones ("id_ubicacion");
 ALTER TABLE Clientes
 ADD CONSTRAINT clientes_id_persona_fkey
 FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
-ON DELETE RESTRICT;
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
 ALTER TABLE Trabajadores
-ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
+ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
 ALTER TABLE Trabajadores
 ADD FOREIGN KEY ("id_cine") REFERENCES Cines ("id_cine");
 ALTER TABLE Trabajadores
@@ -138,4 +143,6 @@ ADD FOREIGN KEY ("id_pelicula") REFERENCES Peliculas ("id_pelicula");
 ALTER TABLE Accesos
 ADD FOREIGN KEY ("id_tipo_acceso") REFERENCES Tipos_accesos ("id_tipo_acceso");
 ALTER TABLE Accesos
-ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
+ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;

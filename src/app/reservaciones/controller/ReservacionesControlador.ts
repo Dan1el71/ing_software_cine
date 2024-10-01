@@ -41,6 +41,12 @@ class ResevacionesControlador extends ReservacionesDAO{
         const limit = Number(req.query.limit) || 1;
         ReservacionesDAO.paginarReservaciones(page, limit, res);
     }
+
+    public actualizarMasivamenteReservaciones(req: Request, res:Response){
+        const like = req.body.like;
+        const precio = req.body.precio;
+        ReservacionesDAO.actualizarMasivamente(precio,like,res);
+    }
 }
 
 const reservacionControlador = new ResevacionesControlador();

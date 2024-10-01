@@ -96,6 +96,22 @@ class ReservacionesDAO{
                 res.status(400).json({respuesta: "Error al obtener las reservaciones"});
             })
     }
+
+    protected static async actualizarMasivamente(precio: number, like_inpt:String,  res:Response): Promise<any>{
+        await pool
+            .task(async(consulta) =>{
+                let like = "%" + like_inpt + ",00"; 
+                const filas = (await consulta.result(SQL_RESERVACIONES.UPADTE_MASIVO, [precio, like])).rowCount;
+                return filas;
+            })
+            .then((filas)=>{
+                res.status(200).json({respuesta: "Se han actualizado " + filas + " filas"});
+            })
+            .catch((error) =>{
+                console.log(error);
+                res.status(400).json({respuesta: "Ha ocurrido un error al actualizar las filas o puede que no existan filas con esta condicion"});
+            })
+    } 
 }
 
 export default ReservacionesDAO;

@@ -188,6 +188,38 @@ class ClienteDAO {
       })
   }
 
+  protected static async masiveDelete(data: any, res: Response) {
+    await pool
+      .task(async (consulta) => {
+        const search = data.search || ''
+        const clients = await consulta.any(SQL_CLIENTES.SEARCH, [search])
+
+        if (clients.length === 0) {
+          throw new Error('No se encontraron clientes')
+        }
+
+        for (const client of clients) {
+          await consulta.none(SQL_CLIENTES.DELETE_CLIENTE, [client.idPersona])
+          await consulta.none(SQL_CLIENTES.DELETE_PERSONA, [client.idPersona])
+        }
+
+        return clients
+      })
+      .then((data) => {
+        res.status(200).json({
+          respuesta: 'Eliminación masiva realizada',
+          resultados: data,
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).json({
+          respuesta: 'Error al eliminar los clientes',
+          mensaje: err.detail,
+        })
+      })
+  }
+
   private static async clienteExiste(id: number): Promise<boolean> {
     const resultado = await pool.one(SQL_CLIENTES.COUNT, [id])
     return resultado.existe > 0

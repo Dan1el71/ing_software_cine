@@ -53,6 +53,11 @@ class ClienteControlador extends ClienteDAO {
     const { search } = req.query
     ClienteDAO.masiveUpdate({ search }, res)
   }
+
+  public masiveDelete(req: Request, res: Response) {
+    const { search } = req.query
+    ClienteDAO.masiveDelete({ search }, res)
+  }
 }
 
 export default new ClienteControlador()

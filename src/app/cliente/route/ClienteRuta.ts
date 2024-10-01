@@ -15,6 +15,7 @@ class ClienteRuta {
     this.apiRutaCliente.post('/add', ClienteCOntrolador.crearCliente)
     this.apiRutaCliente.put('/update', ClienteCOntrolador.actualizarCliente)
     this.apiRutaCliente.put('/masiveUpdate', ClienteCOntrolador.masiveUpdate)
+    this.apiRutaCliente.delete('/masiveDelete', ClienteCOntrolador.masiveDelete)
     this.apiRutaCliente.delete(
       '/delete/:id',
       ClienteCOntrolador.eliminarCliente

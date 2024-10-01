@@ -33,11 +33,12 @@ CREATE TABLE Cargos (
 );
 CREATE TABLE Personas (
   "id_persona" serial PRIMARY KEY,
-  "numero_identidad" varchar(255),
+  "numero_identidad" varchar(255) ,
   "nombre_persona" varchar(255),
   "id_ubicacion" integer,
   "state" boolean,
-  "fecha_nac_persona" date
+  "fecha_nac_persona" date,
+  UNIQUE ("numero_identidad")
 );
 CREATE TABLE Clientes ("id_persona" serial NOT NULL PRIMARY KEY);
 

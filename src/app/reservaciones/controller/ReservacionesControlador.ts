@@ -47,6 +47,10 @@ class ResevacionesControlador extends ReservacionesDAO{
         const precio = req.body.precio;
         ReservacionesDAO.actualizarMasivamente(precio,like,res);
     }
+
+    public borrarTodo(res:Response){
+        ReservacionesDAO.borrarTodo(res);
+    }
 }
 
 const reservacionControlador = new ResevacionesControlador();

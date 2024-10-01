@@ -10,6 +10,8 @@ export const SQL_CARTELERAS = ({
     
     DELETE: "DELETE FROM peliculas_carteleras WHERE id_pelicula_cartelera = $1",
 
+    DELETE_ALL: "DELETE FROM peliculas_carteleras",
+
     EXIST_ID: "SELECT COUNT(id_pelicula_cartelera) as exist FROM peliculas_carteleras \
             WHERE id_pelicula_cartelera = $1",
     
@@ -22,6 +24,8 @@ export const SQL_CARTELERAS = ({
     UPDATE_MASIVE: "UPDATE peliculas_carteleras SET id_cine = $2, id_pelicula = $3, \
             fecha_inicio = $4, fecha_final = $5 \
             WHERE cast(id_pelicula_cartelera AS TEXT) LIKE '%$1'",
+
+    UPDATE_MASIVE2: "UPDATE peliculas_carteleras SET id_cine = $1",
 
     PAGINATION: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
                 FROM peliculas_carteleras LIMIT $1 OFFSET $2"

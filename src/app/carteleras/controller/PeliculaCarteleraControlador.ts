@@ -32,6 +32,10 @@ class PeliculaCarteleraControlador extends PeliculaCarteleraDAO {
         }
     }
 
+    public borraTodo(req: Request, res: Response){
+        PeliculaCarteleraDAO.borreloSinMiedo([], res);
+    }
+
     public actualizaTuCartelera(req: Request, res: Response){
         if (!req.body.idCine || !req.body.idPelicula || !req.body.fechaInicio) {
             res.status(400).json({ error: "Faltan parámetros requeridos" });
@@ -44,6 +48,17 @@ class PeliculaCarteleraControlador extends PeliculaCarteleraDAO {
             objCubi.fechaInicio = req.body.fechaInicio;
             objCubi.fechaFinal = req.body.fechaFinal;
             PeliculaCarteleraDAO.actualiceloYa(objCubi, res);
+        }
+    }
+
+    public actualizaTuCarteleraMasivoCine(req: Request, res: Response){
+        if (!req.body.idCine) {
+            res.status(400).json({ error: "Falta el cine mi vale!" });
+   
+        }else{
+            const objCubi: PeliculaCartelera = new PeliculaCartelera(0,0,0,new Date(),new Date());
+            objCubi.idCine = req.body.idCine;
+            PeliculaCarteleraDAO.actualiceMasivoIdCine(objCubi, res);
         }
     }
 

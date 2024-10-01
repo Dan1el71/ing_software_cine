@@ -13,8 +13,10 @@ class PeliculaCarteleraRuta {
         this.apiRutaPeliculaCartelera.get("/getall", peliculaCarteleraControlador.dameCarteleras);
         this.apiRutaPeliculaCartelera.post("/addcito", peliculaCarteleraControlador.cogeTuCartelera);
         this.apiRutaPeliculaCartelera.delete("/delete/:idPeliculaCartelera", peliculaCarteleraControlador.borraTuCartelera);
+        this.apiRutaPeliculaCartelera.delete("/borreloSinMiedo", peliculaCarteleraControlador.borraTodo);
         this.apiRutaPeliculaCartelera.put("/update", peliculaCarteleraControlador.actualizaTuCartelera);
         this.apiRutaPeliculaCartelera.put("/updateMasivo", peliculaCarteleraControlador.actualizaTuCarteleraMasivo);
+        this.apiRutaPeliculaCartelera.put("/updateMasivoCine", peliculaCarteleraControlador.actualizaTuCarteleraMasivoCine);
         this.apiRutaPeliculaCartelera.get("/paginacion", peliculaCarteleraControlador.paginacionDeCarteleras);
     }
 }

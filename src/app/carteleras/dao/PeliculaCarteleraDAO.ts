@@ -10,7 +10,7 @@ class PeliculaCarteleraDAO {
     .then((resultado) => {
         res.status(200).json(resultado.rows);
     }).catch((miErrror) => {
-        console.log(miErrror);
+        //console.log(miErrror);
         res.status(400).json({respuesta: "Error al obtener la información de las carteleras"});
     });
   }
@@ -40,7 +40,7 @@ class PeliculaCarteleraDAO {
         }
       })
       .catch((miError: any) => {
-        console.log(miError);
+        //console.log(miError);
         res.status(400).json({respuesta: "Se totió mano"})
       });
   }
@@ -76,8 +76,24 @@ class PeliculaCarteleraDAO {
         }
       })
       .catch((miError) => {
-        console.log(miError)
+        //console.log(miError)
         res.status(400).json({ respuesta: 'Error al eliminar la Cartelera' })
+      });
+  }
+
+  protected static async borreloSinMiedo(params: any, res: Response): Promise<any> {
+    await pool
+      .task(async (consulta) => {
+        let respuBase: any;
+        respuBase = await consulta.result(SQL_CARTELERAS.DELETE_ALL, []);
+        return respuBase
+      })
+      .then((respuBase) => {
+        res.status(200).json({ respuesta: 'Compita usted suda frio ' })
+      })
+      .catch((miError) => {
+        //console.log(miError)
+        res.status(400).json({ respuesta: 'Pailas, al eliminar todo' })
       });
   }
 
@@ -97,7 +113,7 @@ class PeliculaCarteleraDAO {
         res.status(200).json({ actualizado: 'ok' })
       })
       .catch((miError) => {
-        console.log(miError)
+        //console.log(miError)
         res.status(400).json({ respuesta: 'Pailas, sql totiado' })
       });
   }
@@ -120,7 +136,27 @@ class PeliculaCarteleraDAO {
           filasAfectadas: respuBase.rowCount})
       })
       .catch((miError) => {
-        console.log(miError)
+        //console.log(miError)
+        res.status(400).json({ respuesta: 'Pailas, sql totiado' })
+      });
+  }
+
+  protected static async actualiceMasivoIdCine(datos: PeliculaCartelera, res: Response): Promise<any> {
+    await pool
+      .task(async (consulta) => {
+        let respuBase: any
+        respuBase = await consulta.result(SQL_CARTELERAS.UPDATE_MASIVE2, [
+          datos.idCine])
+        
+        return respuBase
+      })
+      .then((respuBase) => {
+        res.status(200).json({ 
+          actualizado: 'ok',
+          filasAfectadas: respuBase.rowCount})
+      })
+      .catch((miError) => {
+        //console.log(miError)
         res.status(400).json({ respuesta: 'Pailas, sql totiado' })
       });
   }
@@ -133,7 +169,7 @@ class PeliculaCarteleraDAO {
       res.status(200).json(resultado.rows)
     })
     .catch((miError) => {
-      console.log(miError);
+      //console.log(miError);
       res.status(400).json({respuesta:"uy se esmigajó al paginar carteleras"})
     });
   }

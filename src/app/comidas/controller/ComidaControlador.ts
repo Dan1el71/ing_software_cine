@@ -4,11 +4,13 @@ import Comida from "../entity/Comida";
 
 class ComidaControlador extends ComidaDAO{
     public obtenerComidas(req: Request, res: Response){
-        ComidaDAO.obtenerTodo([], res);
-    }
+        const limit = Number(req.query.limit) || 10
+        const page = Number(req.query.page) || 1
+        ComidaDAO.obtenerTodo([limit, (page - 1) * limit], res);
+    }       
 
     public crearComida(req: Request, res: Response){
-        const objComida: Comida = new Comida(0,"");
+        const objComida: Comida = new Comida(0,"",0);
         objComida.nombreComida = req.body.nombreComida;
         ComidaDAO.saveOne(objComida,res);
     }
@@ -18,7 +20,7 @@ class ComidaControlador extends ComidaDAO{
         }
         else{
             const num = Number(req.params.idComida);
-            const objComida: Comida = new Comida(num,"");
+            const objComida: Comida = new Comida(num,"",0);
             ComidaDAO.eliminarUno(objComida, res);
         }
     }
@@ -28,9 +30,13 @@ class ComidaControlador extends ComidaDAO{
         }
         else{
             const num = Number(req.body.idComida);
-            const objComida: Comida = new Comida(num,req.body.nombreComida);
+            const objComida: Comida = new Comida(num,req.body.nombreComida,req.body.precioComida);
             ComidaDAO.actualizarUno(objComida, res)
-        }
+        }   
+    }
+    public actualizarMuchasComidas(req: Request, res: Response){
+        const objComida: Comida = new Comida(0,req.body.nombreComida,req.body.precioComida);
+        ComidaDAO.actualizarMuchos(objComida, res);
     }
 }
 

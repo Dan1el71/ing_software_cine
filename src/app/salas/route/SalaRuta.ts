@@ -6,7 +6,6 @@ class SalaRuta{
 
     constructor(){
         this.apiRutaSala = Router();
-        this.apiRutaSala.get("/getall", salaControlador.dameSalas);
         this.misRutas();
     }
 

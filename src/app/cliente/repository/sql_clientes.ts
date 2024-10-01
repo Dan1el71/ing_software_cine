@@ -25,7 +25,8 @@ export const SQL_CLIENTES = {
   INSERT_CLIENTE: 'INSERT INTO Clientes (id_persona) VALUES ($1)',
   UPDATE:
     'UPDATE Personas SET nombre_persona = $1, fecha_nac_persona = $2, id_ubicacion = $3 WHERE id_persona = $4',
-  UPDATE_STATUS: 'UPDATE Personas SET state = $1 WHERE id_persona = $2',
+  UPDATE_STATUS:
+    'UPDATE Personas SET numero_identidad = $1 WHERE id_persona = $2',
   DELETE_PERSONA: 'DELETE FROM Personas WHERE id_persona = $1 ',
   DELETE_CLIENTE: 'DELETE FROM Clientes WHERE id_persona = $1',
   SEARCH: "SELECT * FROM Personas p WHERE p.nombre_persona ILIKE $1 || '%'",

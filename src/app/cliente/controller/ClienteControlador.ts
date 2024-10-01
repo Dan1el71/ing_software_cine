@@ -50,8 +50,8 @@ class ClienteControlador extends ClienteDAO {
   }
 
   public masiveUpdate(req: Request, res: Response) {
-    const { search } = req.query
-    ClienteDAO.masiveUpdate({ search }, res)
+    const { search, set } = req.query
+    ClienteDAO.masiveUpdate({ search, set }, res)
   }
 
   public masiveDelete(req: Request, res: Response) {

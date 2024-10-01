@@ -55,19 +55,23 @@ class ClienteDAO {
     await pool
       .task(async (query) => {
         const search = data.search || ''
+        const set = data.set || ''
         const clients = await query.any(SQL_CLIENTES.SEARCH, [search])
 
         if (clients.length === 0) {
           throw new Error('No se encontraron clientes')
         }
 
-        for (const client of clients) {
-          const status = !client.state
+        const exists = await query.oneOrNone(SQL_CLIENTES.COUNT_BY_ID_NUMBER, [
+          set,
+        ])
 
-          await query.any(SQL_CLIENTES.UPDATE_STATUS, [
-            status,
-            client.idPersona,
-          ])
+        if (exists?.existe !== '0') {
+          throw new Error('El número de identidad ya existe')
+        }
+
+        for (const client of clients) {
+          await query.any(SQL_CLIENTES.UPDATE_STATUS, [set, client.idPersona])
         }
 
         return clients
@@ -83,6 +87,7 @@ class ClienteDAO {
         res.status(400).json({
           respuesta: 'Error al actualizar los clientes',
           mensaje: err.detail,
+          mensaje2: err.message,
         })
       })
   }

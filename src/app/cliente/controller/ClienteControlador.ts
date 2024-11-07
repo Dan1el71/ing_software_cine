@@ -44,7 +44,7 @@ class ClienteControlador extends ClienteDAO {
       return res.status(400).json({ respuesta: 'Y el código mi vale?' })
     }
     const id = Number(req.params.id)
-    const obj: Cliente = new Cliente(0, '', '', true, '', new Date())
+    const obj: Cliente = new Cliente(id, '', '', true, '', new Date())
 
     ClienteDAO.eliminar(obj, res)
   }

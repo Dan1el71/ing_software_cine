@@ -14,6 +14,9 @@ class ReservacionRuta{
         this.apiRutaReservacion.post('/add', reservacionControlador.guardarReservacion);
         this.apiRutaReservacion.delete('/delete/:idReservacion', reservacionControlador.borrarReservacion);
         this.apiRutaReservacion.put('/update', reservacionControlador.actualizarReservacion);
+        this.apiRutaReservacion.get('/pagination', reservacionControlador.paginarReservaciones);
+        this.apiRutaReservacion.put('/updatemasivo', reservacionControlador.actualizarMasivamenteReservaciones);
+        this.apiRutaReservacion.delete('/deleteall', reservacionControlador.borrarTodo);
     }
 }
 

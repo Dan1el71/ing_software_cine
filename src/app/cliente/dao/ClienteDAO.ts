@@ -95,7 +95,7 @@ class ClienteDAO {
   protected static async crear(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const { nombrePersona, numeroIdentidad, fechaNacPersona, idUbicacion } =
+        const { nombreCliente, numeroIdentidad, fechaNacimiento, ubicacion } =
           data
 
         const userExists = await consulta.oneOrNone(
@@ -109,10 +109,10 @@ class ClienteDAO {
         }
 
         const persona = await consulta.one(SQL_CLIENTES.INSERT_PERSONA, [
-          nombrePersona,
+          nombreCliente,
           numeroIdentidad,
-          fechaNacPersona,
-          idUbicacion,
+          fechaNacimiento,
+          ubicacion,
         ])
 
         await consulta.none(SQL_CLIENTES.INSERT_CLIENTE, [persona.idPersona])
@@ -123,7 +123,7 @@ class ClienteDAO {
         console.log(resultado)
         res.status(201).json({
           respuesta: 'Cliente creado exitosamente',
-          idCliente: resultado.id_persona,
+          idCliente: resultado,
         })
       })
       .catch((err) => {
@@ -138,18 +138,18 @@ class ClienteDAO {
   protected static async actualizar(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const { idPersona, nombrePersona, fechaNacPersona, idUbicacion } = data
-        const clienteExiste = await this.clienteExiste(idPersona)
+        const { idCliente, nombreCliente, fechaNacimiento, ubicacion } = data
+        const clienteExiste = await this.clienteExiste(idCliente!)
 
         if (!clienteExiste) {
           throw new Error('El cliente no existe')
         }
 
         await consulta.none(SQL_CLIENTES.UPDATE, [
-          nombrePersona,
-          fechaNacPersona,
-          idUbicacion,
-          idPersona,
+          nombreCliente,
+          fechaNacimiento,
+          ubicacion,
+          idCliente,
         ])
       })
       .then(() => {
@@ -169,8 +169,8 @@ class ClienteDAO {
   protected static async eliminar(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const id = data.idPersona
-        const clienteExiste = await this.clienteExiste(id)
+        const id = data.idCliente
+        const clienteExiste = await this.clienteExiste(id!)
 
         if (!clienteExiste) {
           throw new Error('El cliente no existe')

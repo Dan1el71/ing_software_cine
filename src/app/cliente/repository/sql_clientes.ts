@@ -7,15 +7,15 @@ export const SQL_CLIENTES = {
   COUNT_BY_ID_NUMBER:
     'SELECT COUNT (numero_identidad) as existe FROM personas p WHERE p.numero_identidad  = $1',
   COUNT:
-    'SELECT COUNT (id_persona) as existe FROM clientes c WHERE c.id_persona  = $1',
+    'SELECT COUNT(p.id_persona) as existe FROM personas p WHERE p.id_persona  = $1',
   PAGINATION:
-    'SELECT c.id_persona as id_cliente, p.nombre_persona as nombre_cliente, u.nombre_ubicacion as ubicacion, p.fecha_nac_persona as fecha_nacimiento, p.state as estado\
+    'SELECT c.id_persona as id_cliente, p.nombre_persona as nombre_cliente, p.numero_identidad as numero_identidad ,u.nombre_ubicacion as ubicacion, p.fecha_nac_persona as fecha_nacimiento, p.state as estado\
     FROM Clientes c \
     JOIN Personas p ON c.id_persona = p.id_persona \
     JOIN Ubicaciones u ON p.id_ubicacion = u.id_ubicacion \
     LIMIT $1 OFFSET $2',
   GET_BY_ID:
-    'SELECT c.id_persona, p.nombre_persona, u.nombre_ubicacion, p.fecha_nac_persona, p.state\
+    'SELECT c.id_persona as id_cliente, p.nombre_persona as nombre_cliente, p.numero_identidad as numero_identidad ,u.nombre_ubicacion as ubicacion, p.fecha_nac_persona as fecha_nacimiento, p.state as estado\
     FROM Clientes c \
     JOIN Personas p ON c.id_persona = p.id_persona \
     JOIN Ubicaciones u ON p.id_ubicacion = u.id_ubicacion \

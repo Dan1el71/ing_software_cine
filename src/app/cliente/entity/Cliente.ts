@@ -1,25 +1,25 @@
-import Persona from './Persona'
-
-class Cliente extends Persona {
-  public idPersona: number
+class Cliente {
+  idCliente?: number
+  nombreCliente: String
+  numeroIdentidad: String
+  estado: boolean
+  ubicacion: String
+  fechaNacimiento: Date
 
   constructor(
-    idPersona: number,
-    nombre: string,
-    numeroIdentidad: number,
-    fechaNacimiento: Date,
-    ubicacion: number,
-    estado: boolean
+    idCliente: number,
+    nombreCliente: String,
+    numeroIdentidad: String,
+    estado: boolean,
+    ubicacion: String,
+    fechaNacimiento: Date
   ) {
-    super(
-      idPersona,
-      nombre,
-      numeroIdentidad,
-      fechaNacimiento,
-      ubicacion,
-      estado
-    )
-    this.idPersona = idPersona
+    this.idCliente = idCliente
+    this.nombreCliente = nombreCliente
+    this.numeroIdentidad = numeroIdentidad
+    this.estado = estado
+    this.ubicacion = ubicacion
+    this.fechaNacimiento = fechaNacimiento
   }
 }
 

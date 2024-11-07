@@ -17,24 +17,24 @@ class ClienteControlador extends ClienteDAO {
   }
 
   public crearCliente(req: Request, res: Response) {
-    const obj: Cliente = new Cliente(0, '', 0, new Date(), 0, true)
+    const obj: Cliente = new Cliente(0, '', '', true, '', new Date())
 
-    obj.idPersona = req.body.idPersona
-    obj.nombrePersona = req.body.nombrePersona
+    obj.idCliente = req.body.idCliente
+    obj.nombreCliente = req.body.nombreCliente
     obj.numeroIdentidad = req.body.numeroIdentidad
-    obj.fechaNacPersona = req.body.fechaNacPersona
-    obj.idUbicacion = req.body.idUbicacion
+    obj.fechaNacimiento = req.body.fechaNacimiento
+    obj.ubicacion = req.body.ubicacion
 
     ClienteDAO.crear(obj, res)
   }
 
   public actualizarCliente(req: Request, res: Response) {
-    const obj: Cliente = new Cliente(0, '', 0, new Date(), 0, true)
+    const obj: Cliente = new Cliente(0, '', '', true, '', new Date())
 
-    obj.idPersona = req.body.idPersona
-    obj.nombrePersona = req.body.nombrePersona
-    obj.fechaNacPersona = req.body.fechaNacPersona
-    obj.idUbicacion = req.body.idUbicacion
+    obj.idCliente = req.body.idPersona
+    obj.nombreCliente = req.body.nombrePersona
+    obj.fechaNacimiento = req.body.fechaNacPersona
+    obj.ubicacion = req.body.idUbicacion
 
     ClienteDAO.actualizar(obj, res)
   }
@@ -44,7 +44,7 @@ class ClienteControlador extends ClienteDAO {
       return res.status(400).json({ respuesta: 'Y el código mi vale?' })
     }
     const id = Number(req.params.id)
-    const obj: Cliente = new Cliente(id, '', 0, new Date(), 0, true)
+    const obj: Cliente = new Cliente(id, '', '', true, '', new Date())
 
     ClienteDAO.eliminar(obj, res)
   }

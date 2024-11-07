@@ -3,7 +3,7 @@ class PeliculaCartelera {
   public idCine: number
   public idPelicula: number
   public fechaInicio: Date
-  public fechaFin: Date
+  public fechaFinal: Date
 
   constructor(
     cod: number,
@@ -16,7 +16,7 @@ class PeliculaCartelera {
     this.idCine = cin
     this.idPelicula = pel
     this.fechaInicio = fecIni
-    this.fechaFin = fecFin
+    this.fechaFinal = fecFin
   }
 }
 export default PeliculaCartelera

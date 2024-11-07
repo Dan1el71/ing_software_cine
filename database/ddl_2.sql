@@ -52,8 +52,9 @@ CREATE TABLE Peliculas (
 );
 CREATE TABLE Comidas (
   "id_comida" serial PRIMARY KEY,
-  "nombre_comida" varchar(255)
-);
+  "nombre_comida" varchar(255),
+  "precio_comida" money
+);  
 CREATE TABLE Salas (
   "id_sala" serial PRIMARY KEY,
   "capacidad" integer,

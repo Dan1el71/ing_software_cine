@@ -12,6 +12,7 @@ class ComidaControlador extends ComidaDAO{
     public crearComida(req: Request, res: Response){
         const objComida: Comida = new Comida(0,"",0);
         objComida.nombreComida = req.body.nombreComida;
+        objComida.precioComida = req.body.precioComida;
         ComidaDAO.saveOne(objComida,res);
     }
     public eliminarComida(req: Request, res: Response){

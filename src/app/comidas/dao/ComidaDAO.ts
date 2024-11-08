@@ -20,7 +20,7 @@ class ComidaDAO {
             if(existe.existe >= 1){
                 throw new Error("Ya existe una comida con el mismo nombre")
             }
-            return await response.one(SQL_COMIDAS.ADD , [params.nombreComida]);
+            return await response.one(SQL_COMIDAS.ADD , [params.nombreComida, params.precioComida]);
         })
         .then((response)=>{
             res.status(200).json(response);

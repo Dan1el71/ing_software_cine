@@ -81,6 +81,18 @@ class ComidaDAO {
             res.status(400).json({respuesta: "Error al actualizar varias comidas"})
         })
     }
+
+    protected static async getOneById(params:any, res:Response){
+        await pool.one(SQL_COMIDAS.GET_ONE_BY_ID,[params.idComida])
+        .then((response)=>{ 
+            res.status(200).json(response);
+            console.log(response)
+        })
+        .catch((error)=>{
+            console.error(error)
+            res.status(400).json({respuesta: "Error al obtener información de las comida"})
+        })
+    }
 }
 
 export default ComidaDAO;

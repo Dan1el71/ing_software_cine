@@ -17,6 +17,7 @@ class ReservacionRuta{
         this.apiRutaReservacion.get('/pagination', reservacionControlador.paginarReservaciones);
         this.apiRutaReservacion.put('/updatemasivo', reservacionControlador.actualizarMasivamenteReservaciones);
         this.apiRutaReservacion.delete('/deleteall', reservacionControlador.borrarTodo);
+        this.apiRutaReservacion.get('/:id',reservacionControlador.obtenerReservacionPorId)
     }
 }
 

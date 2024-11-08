@@ -22,6 +22,7 @@ class ReservacionesDAO {
                 const cubi = await consulta.one(SQL_RESERVACIONES.EXIST, [datos.idSilla, datos.idHorario]);
                 if (cubi.existe == 0) {
                     queHacer = 2;
+                    console.log(datos.idCliente);
                     respuBase = await consulta.one(SQL_RESERVACIONES.ADD, [datos.idCliente, datos.idSilla, datos.idHorario, datos.precio]);
                 }
                 return { queHacer, respuBase };
@@ -129,6 +130,19 @@ class ReservacionesDAO {
             .catch((error) => {
                 //console.log(error);
                 res.status(400).json({ respuesta: "Error al eliminar todas las reservaciones de la tabla" });
+            })
+    }
+
+    protected static async buscarPorID(req:any, res:Response): Promise<any>{
+        const id = parseInt(req.params.id)
+        await pool
+            .result(SQL_RESERVACIONES.GET_BY_ID, [id])
+            .then((respuesta) => {
+                res.status(200).json(respuesta.rows)
+            })
+            .catch((error) => {
+                //console.log(error);
+                res.status(400).json({ respuesta: "Error al obtener la reservacion" });
             })
     }
 }

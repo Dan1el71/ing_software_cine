@@ -7,5 +7,6 @@ export const SQL_COMIDAS = ({
     DELETE: "DELETE FROM comidas WHERE id_comida = $1",
     UPDATE: "UPDATE comidas set nombre_comida = $2, precio_comida = $3 WHERE id_comida = $1",
     UPDATE_MANY: "UPDATE comidas set precio_comida = $2 WHERE nombre_comida LIKE $1",
-    GET_ONE_BY_ID:"SELECT c.id_comida, c.nombre_comida, c.precio_comida FROM comidas c WHERE c.id_comida=$1"
+    GET_ONE_BY_ID:"SELECT c.id_comida, c.nombre_comida, c.precio_comida FROM comidas c WHERE c.id_comida=$1",
+    GET_MANY_BY_NAME:"SELECT c.id_comida, c.nombre_comida, c.precio_comida FROM comidas c WHERE c.nombre_comida LIKE '%' || $3 || '%' LIMIT $1 OFFSET $2 "
 })

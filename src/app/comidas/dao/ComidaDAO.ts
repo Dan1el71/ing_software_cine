@@ -89,8 +89,16 @@ class ComidaDAO {
             console.log(response)
         })
         .catch((error)=>{
-            console.error(error)
             res.status(400).json({respuesta: "Error al obtener información de las comida"})
+        })
+    }
+    protected static async obtenerMuchosPorNombre(params: any, res: Response){
+        await pool.result( SQL_COMIDAS.GET_MANY_BY_NAME,params)
+        .then((response)=>{ 
+            res.status(200).json(response.rows);
+        })
+        .catch((error)=>{
+            res.status(400).json({respuesta: "Error al obtener información de las comidas"})
         })
     }
 }

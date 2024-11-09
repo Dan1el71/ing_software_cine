@@ -18,6 +18,20 @@ class ClienteDAO {
       })
   }
 
+  protected static async obtenerUbicaciones(res: Response) {
+    await pool
+      .result(SQL_CLIENTES.GET_LOCATIONS)
+      .then((resultado) => {
+        res.status(200).json(resultado.rows)
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).json({
+          respuesta: 'Error al obtener la información de las ubicaciones',
+        })
+      })
+  }
+
   protected static async obtenerPorId(req: any, res: Response) {
     const id = parseInt(req.params.id)
     await pool
@@ -47,7 +61,7 @@ class ClienteDAO {
           data: resultado.rows,
           currentPage,
           totalPages,
-          limit
+          limit,
         })
       })
       .catch((err) => {

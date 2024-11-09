@@ -4,6 +4,7 @@ export const SQL_CLIENTES = {
     FROM Clientes c \
     JOIN Personas p ON c.id_persona = p.id_persona \
     JOIN Ubicaciones u ON p.id_ubicacion = u.id_ubicacion',
+  GET_LOCATIONS: 'SELECT * FROM Ubicaciones',
   COUNT_BY_ID_NUMBER:
     'SELECT COUNT (numero_identidad) as existe FROM personas p WHERE p.numero_identidad  = $1',
   COUNT:

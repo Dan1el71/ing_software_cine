@@ -7,6 +7,10 @@ class ClienteControlador extends ClienteDAO {
     ClienteDAO.obtenerTodos(res)
   }
 
+  public obtenerUbicaciones(req: Request, res: Response) {
+    ClienteDAO.obtenerUbicaciones(res)
+  }
+
   public paginationClientes(req: Request, res: Response) {
     const { page, limit } = req.query
     ClienteDAO.pagination({ page, limit }, res)

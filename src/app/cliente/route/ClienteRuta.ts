@@ -1,11 +1,13 @@
 import { Router } from 'express'
 import ClienteCOntrolador from '../controller/ClienteControlador'
+import ClienteControlador from '../controller/ClienteControlador'
 
 class ClienteRuta {
   public apiRutaCliente: Router
 
   constructor() {
     this.apiRutaCliente = Router()
+    this.apiRutaCliente.get('/getLocations', ClienteControlador.obtenerUbicaciones)
     this.apiRutaCliente.get('/getall', ClienteCOntrolador.obtenerClientes)
     this.apiRutaCliente.get(
       '/pagination',

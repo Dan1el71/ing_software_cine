@@ -202,7 +202,8 @@ class ClienteDAO {
       })
       .then(() => {
         res.status(200).json({
-          respuesta: 'Cliente eliminado exitosamente',
+          response: 'Cliente eliminado exitosamente',
+          status: 200,
         })
       })
       .catch((err) => {

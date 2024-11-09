@@ -8,6 +8,9 @@ export const SQL_CLIENTES = {
     'SELECT COUNT (numero_identidad) as existe FROM personas p WHERE p.numero_identidad  = $1',
   COUNT:
     'SELECT COUNT(p.id_persona) as existe FROM personas p WHERE p.id_persona  = $1',
+  COUNT_ALL:
+    'SELECT COUNT(p.id_persona) FROM personas p \
+    JOIN Clientes c ON c.id_persona = p.id_persona',
   PAGINATION:
     'SELECT c.id_persona as id_cliente, p.nombre_persona as nombre_cliente, p.numero_identidad as numero_identidad ,u.nombre_ubicacion as ubicacion, p.fecha_nac_persona as fecha_nacimiento, p.state as estado\
     FROM Clientes c \

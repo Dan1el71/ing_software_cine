@@ -143,7 +143,8 @@ class ClienteDAO {
       .then((resultado: any) => {
         console.log(resultado)
         res.status(201).json({
-          respuesta: 'Cliente creado exitosamente',
+          response: 'Cliente creado exitosamente',
+          status: 201,
           idCliente: resultado,
         })
       })

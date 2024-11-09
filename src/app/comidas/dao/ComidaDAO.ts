@@ -20,7 +20,7 @@ class ComidaDAO {
             if(existe.existe >= 1){
                 throw new Error("Ya existe una comida con el mismo nombre")
             }
-            return await response.one(SQL_COMIDAS.ADD , [params.nombreComida]);
+            return await response.one(SQL_COMIDAS.ADD , [params.nombreComida, params.precioComida]);
         })
         .then((response)=>{
             res.status(200).json(response);
@@ -79,6 +79,26 @@ class ComidaDAO {
         .catch((error)=>{
             console.error(error);
             res.status(400).json({respuesta: "Error al actualizar varias comidas"})
+        })
+    }
+
+    protected static async getOneById(params:any, res:Response){
+        await pool.one(SQL_COMIDAS.GET_ONE_BY_ID,[params.idComida])
+        .then((response)=>{ 
+            res.status(200).json(response);
+            console.log(response)
+        })
+        .catch((error)=>{
+            res.status(400).json({respuesta: "Error al obtener información de las comida"})
+        })
+    }
+    protected static async obtenerMuchosPorNombre(params: any, res: Response){
+        await pool.result( SQL_COMIDAS.GET_MANY_BY_NAME,params)
+        .then((response)=>{ 
+            res.status(200).json(response.rows);
+        })
+        .catch((error)=>{
+            res.status(400).json({respuesta: "Error al obtener información de las comidas"})
         })
     }
 }

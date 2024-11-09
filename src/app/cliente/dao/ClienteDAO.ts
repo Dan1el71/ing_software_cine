@@ -125,7 +125,6 @@ class ClienteDAO {
         )
 
         if (userExists.existe !== '0') {
-          console.log('Entra aca')
           throw new Error('El cliente ya existe')
         }
 
@@ -134,6 +133,7 @@ class ClienteDAO {
           numeroIdentidad,
           fechaNacimiento,
           ubicacion,
+          true,
         ])
 
         await consulta.none(SQL_CLIENTES.INSERT_CLIENTE, [persona.idPersona])

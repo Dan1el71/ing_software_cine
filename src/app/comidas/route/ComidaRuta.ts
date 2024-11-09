@@ -16,6 +16,8 @@ class ComidaRuta{
         this.apiRutaComida.delete("/delete/:idComida",comidaControlador.eliminarComida);
         this.apiRutaComida.put("/update",comidaControlador.actualizarComida);
         this.apiRutaComida.put("/updateMany",comidaControlador.actualizarMuchasComidas);
+        this.apiRutaComida.get("/get/:idComida",comidaControlador.obtenerComidaPorId);
+        this.apiRutaComida.get("/getByName", comidaControlador.obtenerComidasPorNombre);
     }
 }
 

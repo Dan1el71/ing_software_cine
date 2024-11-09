@@ -34,14 +34,21 @@ class ClienteDAO {
   }
 
   protected static async pagination(data: any, res: Response) {
-    const page = parseInt(data.page) || 1
+    const currentPage = parseInt(data.page) || 1
     const limit = parseInt(data.limit) || 10
-    const offset = (page - 1) * limit
+    const offset = (currentPage - 1) * limit
+    const { count } = await pool.one(SQL_CLIENTES.COUNT_ALL)
+    const totalPages = Math.ceil(count / limit)
 
     await pool
       .result(SQL_CLIENTES.PAGINATION, [limit, offset])
       .then((resultado) => {
-        res.status(200).json(resultado.rows)
+        res.status(200).json({
+          data: resultado.rows,
+          currentPage,
+          totalPages,
+          limit
+        })
       })
       .catch((err) => {
         console.log(err)

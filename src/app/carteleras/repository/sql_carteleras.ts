@@ -1,6 +1,8 @@
 export const SQL_CARTELERAS = ({
     GET_ALL: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
                 FROM peliculas_carteleras",
+    GET_ONE: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
+                FROM peliculas_carteleras where id_pelicula_cartelera = $1",     
                
     ADD: "INSERT INTO peliculas_carteleras(id_cine, id_pelicula, fecha_inicio, fecha_final) \
     VALUES($1,$2,$3,$4) RETURNING id_pelicula_cartelera",

@@ -15,6 +15,17 @@ class PeliculaCarteleraDAO {
     });
   }
 
+  protected static async obtenerUna(datos: PeliculaCartelera, res: Response) {
+    await pool
+    .result(SQL_CARTELERAS.GET_ONE, [datos.idPeliculaCartelera])
+    .then((resultado) => {
+        res.status(200).json(resultado.rows);
+    }).catch((miErrror) => {
+        //console.log(miErrror);
+        res.status(400).json({respuesta: "Error al obtener la información de las carteleras"});
+    });
+  }
+
   protected static async grabeloYa(datos: PeliculaCartelera, res: Response): Promise<any> {
     await pool
       .task(async (consulta) => {

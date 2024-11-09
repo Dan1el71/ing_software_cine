@@ -11,6 +11,7 @@ class PeliculaCarteleraRuta {
 
     private misRutas(): void{
         this.apiRutaPeliculaCartelera.get("/getall", peliculaCarteleraControlador.dameCarteleras);
+        this.apiRutaPeliculaCartelera.get("/getall/:idPeliculaCartelera", peliculaCarteleraControlador.dameUna);
         this.apiRutaPeliculaCartelera.post("/addcito", peliculaCarteleraControlador.cogeTuCartelera);
         this.apiRutaPeliculaCartelera.delete("/delete/:idPeliculaCartelera", peliculaCarteleraControlador.borraTuCartelera);
         this.apiRutaPeliculaCartelera.delete("/borreloSinMiedo", peliculaCarteleraControlador.borraTodo);

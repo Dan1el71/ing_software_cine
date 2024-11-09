@@ -7,6 +7,16 @@ class PeliculaCarteleraControlador extends PeliculaCarteleraDAO {
     public dameCarteleras(req: Request, res: Response) {
         PeliculaCarteleraDAO.obtenerTodo([],res);    
     }
+
+    public dameUna(req: Request, res: Response) {
+        if(isNaN(Number(req.params.idPeliculaCartelera))){
+            res.status(400).json({respuesta: "Y el código mi vale?"});
+        }else{
+            const codiguito  = Number(req.params.idPeliculaCartelera);
+            const objCubi: PeliculaCartelera = new PeliculaCartelera(codiguito,0,0,new Date(),new Date());
+            PeliculaCarteleraDAO.obtenerUna(objCubi, res);
+        }   
+    }
     
     public cogeTuCartelera(req: Request, res: Response): void{
         if (!req.body.idCine || !req.body.idPelicula || !req.body.fechaInicio) {

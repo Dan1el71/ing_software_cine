@@ -33,11 +33,14 @@ CREATE TABLE Cargos (
 );
 CREATE TABLE Personas (
   "id_persona" serial PRIMARY KEY,
+  "numero_identidad" varchar(255) ,
   "nombre_persona" varchar(255),
   "id_ubicacion" integer,
-  "fecha_nac_persona" date
+  "state" boolean,
+  "fecha_nac_persona" date,
+  UNIQUE ("numero_identidad")
 );
-CREATE TABLE Clientes ("id_persona" serial PRIMARY KEY);
+CREATE TABLE Clientes ("id_persona" serial NOT NULL PRIMARY KEY);
 
 CREATE TABLE Trabajadores (
   "id_persona" serial PRIMARY KEY,
@@ -52,8 +55,9 @@ CREATE TABLE Peliculas (
 );
 CREATE TABLE Comidas (
   "id_comida" serial PRIMARY KEY,
-  "nombre_comida" varchar(255)
-);
+  "nombre_comida" varchar(255),
+  "precio_comida" money
+);  
 CREATE TABLE Salas (
   "id_sala" serial PRIMARY KEY,
   "capacidad" integer,
@@ -94,7 +98,9 @@ CREATE TABLE Tipos_accesos (
 );
 CREATE UNIQUE INDEX "unique_silla_horario" ON Reservaciones ("id_silla", "id_horario");
 ALTER TABLE Reservaciones
-ADD FOREIGN KEY ("id_cliente") REFERENCES Clientes ("id_persona");
+ADD FOREIGN KEY ("id_cliente") REFERENCES Clientes ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
 ALTER TABLE Reservaciones
 ADD FOREIGN KEY ("id_silla") REFERENCES Sillas ("id_silla");
 ALTER TABLE Reservaciones
@@ -110,9 +116,14 @@ ADD FOREIGN KEY ("id_pelicula") REFERENCES Peliculas ("id_pelicula");
 ALTER TABLE Personas
 ADD FOREIGN KEY ("id_ubicacion") REFERENCES Ubicaciones ("id_ubicacion");
 ALTER TABLE Clientes
-ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
+ADD CONSTRAINT clientes_id_persona_fkey
+FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
 ALTER TABLE Trabajadores
-ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
+ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
 ALTER TABLE Trabajadores
 ADD FOREIGN KEY ("id_cine") REFERENCES Cines ("id_cine");
 ALTER TABLE Trabajadores
@@ -134,4 +145,6 @@ ADD FOREIGN KEY ("id_pelicula") REFERENCES Peliculas ("id_pelicula");
 ALTER TABLE Accesos
 ADD FOREIGN KEY ("id_tipo_acceso") REFERENCES Tipos_accesos ("id_tipo_acceso");
 ALTER TABLE Accesos
-ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona");
+ADD FOREIGN KEY ("id_persona") REFERENCES Personas ("id_persona")
+ON DELETE RESTRICT
+ON UPDATE CASCADE;

@@ -18,6 +18,20 @@ class ClienteDAO {
       })
   }
 
+  protected static async obtenerUbicaciones(res: Response) {
+    await pool
+      .result(SQL_CLIENTES.GET_LOCATIONS)
+      .then((resultado) => {
+        res.status(200).json(resultado.rows)
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).json({
+          respuesta: 'Error al obtener la información de las ubicaciones',
+        })
+      })
+  }
+
   protected static async obtenerPorId(req: any, res: Response) {
     const id = parseInt(req.params.id)
     await pool
@@ -47,7 +61,7 @@ class ClienteDAO {
           data: resultado.rows,
           currentPage,
           totalPages,
-          limit
+          limit,
         })
       })
       .catch((err) => {
@@ -111,7 +125,6 @@ class ClienteDAO {
         )
 
         if (userExists.existe !== '0') {
-          console.log('Entra aca')
           throw new Error('El cliente ya existe')
         }
 
@@ -120,6 +133,7 @@ class ClienteDAO {
           numeroIdentidad,
           fechaNacimiento,
           ubicacion,
+          true,
         ])
 
         await consulta.none(SQL_CLIENTES.INSERT_CLIENTE, [persona.idPersona])
@@ -129,7 +143,8 @@ class ClienteDAO {
       .then((resultado: any) => {
         console.log(resultado)
         res.status(201).json({
-          respuesta: 'Cliente creado exitosamente',
+          response: 'Cliente creado exitosamente',
+          status: 201,
           idCliente: resultado,
         })
       })
@@ -188,7 +203,8 @@ class ClienteDAO {
       })
       .then(() => {
         res.status(200).json({
-          respuesta: 'Cliente eliminado exitosamente',
+          response: 'Cliente eliminado exitosamente',
+          status: 200,
         })
       })
       .catch((err) => {

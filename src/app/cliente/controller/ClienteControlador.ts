@@ -35,10 +35,11 @@ class ClienteControlador extends ClienteDAO {
   public actualizarCliente(req: Request, res: Response) {
     const obj: Cliente = new Cliente(0, '', '', true, '', new Date())
 
-    obj.idCliente = req.body.idPersona
-    obj.nombreCliente = req.body.nombrePersona
-    obj.fechaNacimiento = req.body.fechaNacPersona
-    obj.ubicacion = req.body.idUbicacion
+    obj.idCliente = req.body.idCliente
+    obj.nombreCliente = req.body.nombreCliente
+    obj.fechaNacimiento = req.body.fechaNacimiento
+    obj.ubicacion = req.body.ubicacion
+    obj.estado = req.body.estado
 
     ClienteDAO.actualizar(obj, res)
   }

@@ -29,7 +29,11 @@ export const SQL_CARTELERAS = ({
 
     UPDATE_MASIVE2: "UPDATE peliculas_carteleras SET id_cine = $1",
 
-    PAGINATION: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
-                FROM peliculas_carteleras LIMIT $1 OFFSET $2"
+    PAGINATION: "SELECT p.id_pelicula_cartelera, u.nombre_ubicacion, pe.nombre_pelicula, fecha_inicio, fecha_final \
+                FROM peliculas_carteleras p \
+                JOIN Cines c  ON p.id_cine = c.id_cine \
+                JOIN Ubicaciones u  ON u.id_ubicacion = c.id_ubicacion \
+                JOIN peliculas pe ON p.id_pelicula = pe.id_pelicula \
+                LIMIT $1 OFFSET $2"
 
 })

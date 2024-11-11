@@ -160,7 +160,8 @@ class ClienteDAO {
   protected static async actualizar(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const { idCliente, nombreCliente, fechaNacimiento, ubicacion } = data
+        const { idCliente, nombreCliente, fechaNacimiento, ubicacion, estado } =
+          data
         const clienteExiste = await this.clienteExiste(idCliente!)
 
         if (!clienteExiste) {
@@ -171,6 +172,7 @@ class ClienteDAO {
           nombreCliente,
           fechaNacimiento,
           ubicacion,
+          estado,
           idCliente,
         ])
       })

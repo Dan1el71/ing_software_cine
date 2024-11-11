@@ -11,7 +11,11 @@ class PeliculaCarteleraRuta {
 
     private misRutas(): void{
         this.apiRutaPeliculaCartelera.get("/getall", peliculaCarteleraControlador.dameCarteleras);
-        this.apiRutaPeliculaCartelera.get("/getall/:idPeliculaCartelera", peliculaCarteleraControlador.dameUna);
+        this.apiRutaPeliculaCartelera.get("/getall/nombreUbicacion/:nombre", peliculaCarteleraControlador.dameIdUbicacionCine);
+        this.apiRutaPeliculaCartelera.get("/getall/idUbicacion/:idUbicacion", peliculaCarteleraControlador.dameCartelerasByUbicacion);
+        this.apiRutaPeliculaCartelera.get("/getall/idCine/:idCine", peliculaCarteleraControlador.dameCartelerasByCine);
+        this.apiRutaPeliculaCartelera.get("/getall/cine", peliculaCarteleraControlador.dameCines);
+        this.apiRutaPeliculaCartelera.get("/getall/pelicula", peliculaCarteleraControlador.damePeliculas);
         this.apiRutaPeliculaCartelera.post("/addcito", peliculaCarteleraControlador.cogeTuCartelera);
         this.apiRutaPeliculaCartelera.delete("/delete/:idPeliculaCartelera", peliculaCarteleraControlador.borraTuCartelera);
         this.apiRutaPeliculaCartelera.delete("/borreloSinMiedo", peliculaCarteleraControlador.borraTodo);

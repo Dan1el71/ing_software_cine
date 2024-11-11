@@ -15,14 +15,57 @@ class PeliculaCarteleraDAO {
     });
   }
 
-  protected static async obtenerUna(datos: PeliculaCartelera, res: Response) {
+  protected static async obtenerIdUbicacionCine(nombre: string, res:Response){
     await pool
-    .result(SQL_CARTELERAS.GET_ONE, [datos.idPeliculaCartelera])
+    .result(SQL_CARTELERAS.GET_ID_UBICACION_CINE_BY_UBICACION_NOMBRE, [nombre])
+    .then((resultado) => {
+      res.status(200).json(resultado.rows)
+    }).catch((miError) => {
+      res.status(400).json({respuesta: "Error al obtener el id"});
+    });
+  }
+
+  protected static async obtenerCartelerasByUbicacion(codiguito: number, res: Response) {
+    await pool
+    .result(SQL_CARTELERAS.GET_CARTELERAS_BY_UBICACION, [codiguito])
     .then((resultado) => {
         res.status(200).json(resultado.rows);
     }).catch((miErrror) => {
         //console.log(miErrror);
         res.status(400).json({respuesta: "Error al obtener la información de las carteleras"});
+    });
+  }
+
+  protected static async obtenerCartelerasByCine(codiguito: number, res: Response) {
+    await pool
+    .result(SQL_CARTELERAS.GET_CARTELERAS_BY_CINE, [codiguito])
+    .then((resultado) => {
+        res.status(200).json(resultado.rows);
+    }).catch((miErrror) => {
+        //console.log(miErrror);
+        res.status(400).json({respuesta: "Error al obtener la información de las carteleras"});
+    });
+  }
+
+  protected static async obtenerCines(params: any, res: Response) {
+    await pool
+    .result(SQL_CARTELERAS.GET_CINES)
+    .then((resultado) => {
+        res.status(200).json(resultado.rows);
+    }).catch((miErrror) => {
+        //console.log(miErrror);
+        res.status(400).json({respuesta: "Error al obtener la información de los Cines"});
+    });
+  }
+
+  protected static async obtenerPeliculas(params: any, res: Response) {
+    await pool
+    .result(SQL_CARTELERAS.GET_PELICULAS)
+    .then((resultado) => {
+        res.status(200).json(resultado.rows);
+    }).catch((miErrror) => {
+        //console.log(miErrror);
+        res.status(400).json({respuesta: "Error al obtener la información de las Peliculas"});
     });
   }
 
@@ -32,7 +75,7 @@ class PeliculaCarteleraDAO {
         let queHacer = 1;
         let respuBase: any;
         const cubi = await consulta.any(SQL_CARTELERAS.EXIST, 
-          [ datos.idCine, datos.idPelicula, datos.fechaInicio, datos.fechaFinal]);
+          [ datos.idCine, datos.idPelicula, datos.fechaInicio]);
 
         if(cubi.length == 0){
           queHacer = 2;
@@ -44,14 +87,13 @@ class PeliculaCarteleraDAO {
       .then(({ queHacer, respuBase }) => {
         switch (queHacer){
           case 1:
-            res.status(400).json({respuesta: "compita ya existe la cartelera ;)"});
+            res.status(409).json({respuesta: "compita ya existe la cartelera ;)"});
             break;
           default:
             res.status(200).json(respuBase);
         }
       })
       .catch((miError: any) => {
-        //console.log(miError);
         res.status(400).json({respuesta: "Se totió mano"})
       });
   }
@@ -87,7 +129,6 @@ class PeliculaCarteleraDAO {
         }
       })
       .catch((miError) => {
-        //console.log(miError)
         res.status(400).json({ respuesta: 'Error al eliminar la Cartelera' })
       });
   }
@@ -103,7 +144,6 @@ class PeliculaCarteleraDAO {
         res.status(200).json({ respuesta: 'Compita usted suda frio ' })
       })
       .catch((miError) => {
-        //console.log(miError)
         res.status(400).json({ respuesta: 'Pailas, al eliminar todo' })
       });
   }
@@ -112,20 +152,19 @@ class PeliculaCarteleraDAO {
     await pool
       .task(async (consulta) => {
         let respuBase: any
-        respuBase = await consulta.none(SQL_CARTELERAS.UPDATE, [
+        respuBase = await consulta.oneOrNone(SQL_CARTELERAS.UPDATE, [
           datos.idPeliculaCartelera,
-          datos.idPelicula,
           datos.idCine,
+          datos.idPelicula,
           datos.fechaInicio, datos.fechaFinal])
         
-        return { respuBase }
+        return respuBase
       })
       .then((respuBase) => {
-        res.status(200).json({ actualizado: 'ok' })
+        res.status(200).json({ actualizado: 'ok', respuBase })
       })
       .catch((miError) => {
-        //console.log(miError)
-        res.status(400).json({ respuesta: 'Pailas, sql totiado' })
+        res.status(400).json({ respuesta: 'Pailas, sql totiado', miError })
       });
   }
 
@@ -174,10 +213,14 @@ class PeliculaCarteleraDAO {
 
   protected static async paginacion([limit, page]: number[], res: Response): Promise<any> {
     const offset = (page - 1) * limit;
+    const total = await pool.one(SQL_CARTELERAS.COUNT);
     await pool
     .result(SQL_CARTELERAS.PAGINATION, [limit, offset])
     .then((resultado) => {
-      res.status(200).json(resultado.rows)
+      res.status(200).json({
+        data: resultado.rows,
+        total
+      })
     })
     .catch((miError) => {
       //console.log(miError);

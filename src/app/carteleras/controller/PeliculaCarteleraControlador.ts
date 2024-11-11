@@ -8,14 +8,39 @@ class PeliculaCarteleraControlador extends PeliculaCarteleraDAO {
         PeliculaCarteleraDAO.obtenerTodo([],res);    
     }
 
-    public dameUna(req: Request, res: Response) {
-        if(isNaN(Number(req.params.idPeliculaCartelera))){
+    public dameIdUbicacionCine(req: Request, res: Response) {
+        if(!req.params.nombre){
+            res.status(400).json({respuesta: "Y el nombre mi vale?"});
+        }else{
+            const nombre  = req.params.nombre;
+            PeliculaCarteleraDAO.obtenerIdUbicacionCine(nombre, res);
+        }   
+    }
+
+    public dameCartelerasByUbicacion(req: Request, res: Response) {
+        if(isNaN(Number(req.params.idUbicacion))){
             res.status(400).json({respuesta: "Y el código mi vale?"});
         }else{
-            const codiguito  = Number(req.params.idPeliculaCartelera);
-            const objCubi: PeliculaCartelera = new PeliculaCartelera(codiguito,0,0,new Date(),new Date());
-            PeliculaCarteleraDAO.obtenerUna(objCubi, res);
+            const codiguito  = Number(req.params.idUbicacion);
+            PeliculaCarteleraDAO.obtenerCartelerasByUbicacion(codiguito, res);
         }   
+    }
+
+    public dameCartelerasByCine(req: Request, res: Response) {
+        if(isNaN(Number(req.params.idCine))){
+            res.status(400).json({respuesta: "Y el código mi vale?"});
+        }else{
+            const codiguito  = Number(req.params.idCine);
+            PeliculaCarteleraDAO.obtenerCartelerasByCine(codiguito, res);
+        }   
+    }
+
+    public dameCines(req: Request, res: Response) {
+        PeliculaCarteleraDAO.obtenerCines([],res);    
+    }
+
+    public damePeliculas(req: Request, res: Response) {
+        PeliculaCarteleraDAO.obtenerPeliculas([],res);    
     }
     
     public cogeTuCartelera(req: Request, res: Response): void{

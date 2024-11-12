@@ -3,9 +3,19 @@ import CineDAO from "../dao/CineDao";
 import Cine from "../entity/Cine";
 
 class CineControlador extends CineDAO {
+
+  public dameCine(req: Request, res: Response): void {
+    const { id } = req.params; // Obtiene el ID desde los parámetros de la ruta
+    CineDAO.obtenerCine([id], res); // Pasa el ID como un parámetro a obtenerCine
+  }
+
     
     public dameCines(req: Request, res: Response): void {
         CineDAO.obtenerTodo([], res);
+    }
+
+    public eliminaCines(req: Request, res: Response): void{
+        CineDAO.borraloTodoYa(res);
     }
 
     public cogeTuCine(req: Request, res: Response): void {
@@ -17,14 +27,18 @@ class CineControlador extends CineDAO {
     }
 
     public borraTuCine(req: Request, res: Response): void {
-        if (isNaN(Number(req.params.idCine))) {
-            res.status(400).json({ respuesta: "El código del cine no es válido" });
-        } else {
-            const codiguito = Number(req.params.idCine);
-            const objCine: Cine = new Cine(codiguito, 0, "");
-            CineDAO.borreloYa(objCine, res);
-        }
+      // Obtener idCine desde los parámetros de la ruta
+      const idCine = Number(req.params.idCine);
+  
+      // Validar si es un número válido
+      if (isNaN(idCine)) {
+          res.status(400).json({ respuesta: "El código del cine no es válido" });
+      } else {
+          const objCine: Cine = new Cine(idCine, 0, "");
+          CineDAO.borreloYa(objCine, res);
+      }
     }
+  
 
     public actualizaTuCine(req: Request, res: Response): void {
         const objCine: Cine = new Cine(0, 0, "");
@@ -33,6 +47,23 @@ class CineControlador extends CineDAO {
         objCine.nombreCine = req.body.nombreCine;
         CineDAO.actualiceloYa(objCine, res);
     }
+
+    public dameCinesPaginados(req: Request, res: Response): void {
+      const pagina = parseInt(req.query.page as string, 10) || 1; // Página actual, por defecto es 1
+      const limite = parseInt(req.query.limit as string, 10) || 10; // Límite de resultados por página, por defecto 10
+      const offset = (pagina - 1) * limite; // Calculamos el offset
+
+      CineDAO.obtenerCinesPaginados(limite, offset, res);
+  }
+
+  public actualizaCinesMasivo(req: Request, res: Response): void {
+    const objCine: Cine = new Cine(0, 0, "");
+    objCine.idCine = req.body.idCine;
+    objCine.idUbicacion = req.body.idUbicacion;
+    objCine.nombreCine = req.body.nombreCine;
+    let patronBusqueda = req.body.patronBusqueda;
+    CineDAO.actualizacionMasiva(objCine, patronBusqueda ,res);
+  } 
 }
 
 const cineControlador = new CineControlador();

@@ -8,5 +8,6 @@ export const SQL_RESERVACIONES = ({
     PAGINATION: "SELECT r.id_reservacion, p.nombre_persona, r.id_silla, r.id_horario, r.precio FROM reservaciones r JOIN Personas p ON r.id_cliente = p.id_persona ORDER BY r.id_reservacion LIMIT $1 OFFSET $2",
     UPADTE_MASIVO: "UPDATE reservaciones set precio = (precio::numeric + $1)::money WHERE precio::text LIKE $2",
     DELETE_ALL: "DELETE FROM reservaciones",
-    GET_BY_ID: "SELECT r.id_reservacion, p.nombre_persona, r.id_silla, r.id_horario, r.precio FROM reservaciones r JOIN Personas p ON r.id_cliente = p.id_persona WHERE id_reservacion = $1"
+    GET_BY_ID: "SELECT r.id_reservacion, p.nombre_persona, r.id_silla, r.id_horario, r.precio FROM reservaciones r JOIN Personas p ON r.id_cliente = p.id_persona WHERE id_reservacion = $1",
+    GET_BY_ID_NO_NAME: "SELECT r.id_reservacion, r.id_cliente, r.id_silla, r.id_horario, r.precio FROM reservaciones r WHERE id_reservacion = $1"
 })

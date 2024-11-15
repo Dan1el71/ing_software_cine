@@ -29,7 +29,7 @@ class ResevacionesControlador extends ReservacionesDAO{
     public actualizarReservacion(req: Request, res: Response){
         const objCubi: Reservacion = new Reservacion(0,0,0,0,0);
         objCubi.idReservacion = req.body.idReservacion;
-        objCubi.idCliente = req.body.idCliente;
+        objCubi.idCliente = Number(req.body.nombrePersona);
         objCubi.idSilla = req.body.idSilla;
         objCubi.idHorario = req.body.idHorario;
         objCubi.precio = req.body.precio;
@@ -54,6 +54,10 @@ class ResevacionesControlador extends ReservacionesDAO{
 
     public obtenerReservacionPorId(req: Request, res: Response){
         ReservacionesDAO.buscarPorID(req,res);
+    }
+
+    public obtenerReservacionPorIdSinNombre(req: Request, res:Response){
+        ReservacionesDAO.buscarSinNombre(req,res);
     }
 }
 

@@ -145,6 +145,19 @@ class ReservacionesDAO {
                 res.status(400).json({ respuesta: "Error al obtener la reservacion" });
             })
     }
+
+    protected static async buscarSinNombre(req:any, res:Response): Promise<any>{
+        const id = parseInt(req.params.id)
+        await pool
+            .result(SQL_RESERVACIONES.GET_BY_ID_NO_NAME, [id])
+            .then((respuesta) => {
+                res.status(200).json(respuesta.rows)
+            })
+            .catch((error) => {
+                //console.log(error);
+                res.status(400).json({ respuesta: "Error al obtener la reservacion" });
+            })
+    }
 }
 
 export default ReservacionesDAO;

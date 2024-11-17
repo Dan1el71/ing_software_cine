@@ -27,7 +27,7 @@ class Servidor {
     }
 
     public cargarConfiguracion(): void {
-        this.app.set("PORT", 3124);
+        this.app.set("PORT", 3123);
         this.app.use(cors());
         this.app.use(morgan("dev"));
         // Tamaño máximo de archivo

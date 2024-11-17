@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import apiSalaRuta from "../../app/salas/route/SalaRuta";
+import apiCineRuta from "../../app/cines/route/CineRuta";
 import apiRutaComida from "../../app/comidas/route/ComidaRuta";
 import apiReservacionRuta from "../../app/reservaciones/route/ReservacionesRuta";
 import { apiClienteRuta } from "../../app/cliente/route/ClienteRuta";
@@ -22,10 +23,11 @@ class Servidor {
         this.app.use("/reservation", apiReservacionRuta);
         this.app.use("/cliente", apiClienteRuta);
         this.app.use("/billboard", apiPeliculaCarteleraRuta);
+        this.app.use("/cine", apiCineRuta);
     }
 
     public cargarConfiguracion(): void {
-        this.app.set("PORT", 3123);
+        this.app.set("PORT", 3124);
         this.app.use(cors());
         this.app.use(morgan("dev"));
         // Tamaño máximo de archivo

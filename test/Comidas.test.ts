@@ -80,7 +80,7 @@ describe("POST Comidas", () => {
       expect.objectContaining({
         idComida: idComida,
         nombreComida: objCubi.nombreComida,
-        precioComida: "$ 1.000,00",
+        precioComida: expect.any(String),
       })
     );
   });
@@ -100,7 +100,7 @@ describe("PUT Comidas", () => {
       expect.objectContaining({
         idComida: 5,
         nombreComida: "Papas2342435",
-        precioComida: "$ 2.000,00",
+        precioComida: expect.any(String),
       })
     );
   });

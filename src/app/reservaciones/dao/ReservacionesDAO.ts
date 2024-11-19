@@ -22,7 +22,6 @@ class ReservacionesDAO {
                 const cubi = await consulta.one(SQL_RESERVACIONES.EXIST, [datos.idSilla, datos.idHorario]);
                 if (cubi.existe == 0) {
                     queHacer = 2;
-                    console.log(datos.idCliente);
                     respuBase = await consulta.one(SQL_RESERVACIONES.ADD, [datos.idCliente, datos.idSilla, datos.idHorario, datos.precio]);
                 }
                 return { queHacer, respuBase };
@@ -38,7 +37,7 @@ class ReservacionesDAO {
                 }
             })
             .catch((miError) => {
-                //console.log(miError);
+                console.log(miError);
                 res.status(400).json({ respuesta: "Error al guardar la reservacion" });
             });
     }
@@ -83,7 +82,7 @@ class ReservacionesDAO {
                 }
             })
             .catch((miError) => {
-                //console.log(miError);
+                console.log(miError);
                 res.status(400).json({ respuesta: "Hay un error en los datos para el SQL" });
             })
     }

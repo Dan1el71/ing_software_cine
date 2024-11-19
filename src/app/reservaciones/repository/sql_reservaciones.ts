@@ -5,7 +5,7 @@ export const SQL_RESERVACIONES = ({
     DELETE: "DELETE FROM reservaciones WHERE id_reservacion = $1",
     UPDATE: "UPDATE reservaciones set id_cliente = $2, id_silla = $3, id_horario = $4, precio = $5 WHERE id_reservacion = $1 RETURNING id_reservacion",
     EXIST: "SELECT COUNT (id_reservacion) as existe FROM reservaciones WHERE id_silla = $1 AND id_horario = $2",
-    PAGINATION: "SELECT r.id_reservacion, p.nombre_persona, r.id_silla, r.id_horario, r.precio FROM reservaciones r JOIN Personas p ON r.id_cliente = p.id_persona ORDER BY r.id_reservacion LIMIT $1 OFFSET $2",
+    PAGINATION: "SELECT r.id_reservacion, p.nombre_persona, r.id_silla, r.id_horario, r.precio FROM reservaciones r LEFT JOIN Personas p ON r.id_cliente = p.id_persona ORDER BY r.id_reservacion LIMIT $1 OFFSET $2",
     UPADTE_MASIVO: "UPDATE reservaciones set precio = (precio::numeric + $1)::money WHERE precio::text LIKE $2",
     DELETE_ALL: "DELETE FROM reservaciones",
     GET_BY_ID: "SELECT r.id_reservacion, p.nombre_persona, r.id_silla, r.id_horario, r.precio FROM reservaciones r JOIN Personas p ON r.id_cliente = p.id_persona WHERE id_reservacion = $1",

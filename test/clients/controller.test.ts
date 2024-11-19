@@ -1,8 +1,9 @@
 import { describe, test, expect, afterAll, beforeAll } from '@jest/globals'
 import request, { Response } from 'supertest'
 import Cliente from '../../src/app/cliente/entity/Cliente'
+import { API_URL } from '../config'
 
-const app = 'http://localhost:3123/cliente'
+const app = API_URL + '/cliente'
 
 describe('GET /clients', () => {
   let getClientResponse: Response

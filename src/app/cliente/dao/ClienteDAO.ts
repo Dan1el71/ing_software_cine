@@ -142,7 +142,7 @@ class ClienteDAO {
       })
       .then((resultado: any) => {
         res.status(201).json({
-          response: 'Cliente creado exitosamente',
+          respuesta: 'Cliente creado exitosamente',
           status: 201,
           idCliente: resultado,
         })
@@ -212,7 +212,7 @@ class ClienteDAO {
 
       .then(() => {
         res.status(200).json({
-          response: 'Cliente eliminado exitosamente',
+          respuesta: 'Cliente eliminado exitosamente',
           status: 200,
         })
       })

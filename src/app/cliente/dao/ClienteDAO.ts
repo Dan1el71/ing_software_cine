@@ -11,7 +11,7 @@ class ClienteDAO {
         res.status(200).json(resultado.rows)
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al obtener la información de los clientes',
         })
@@ -25,7 +25,7 @@ class ClienteDAO {
         res.status(200).json(resultado.rows)
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al obtener la información de las ubicaciones',
         })
@@ -40,7 +40,7 @@ class ClienteDAO {
         res.status(200).json(resultado.rows)
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al obtener la información del cliente',
         })
@@ -65,7 +65,7 @@ class ClienteDAO {
         })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al obtener la información de los clientes',
         })
@@ -104,7 +104,7 @@ class ClienteDAO {
         })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al actualizar los clientes',
           mensaje: err.detail,
@@ -141,15 +141,14 @@ class ClienteDAO {
         return persona
       })
       .then((resultado: any) => {
-        console.log(resultado)
         res.status(201).json({
-          response: 'Cliente creado exitosamente',
+          respuesta: 'Cliente creado exitosamente',
           status: 201,
           idCliente: resultado,
         })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al crear el cliente',
           mensaje: err.message,
@@ -160,8 +159,14 @@ class ClienteDAO {
   protected static async actualizar(data: Cliente, res: Response) {
     await pool
       .task(async (consulta) => {
-        const { idCliente, nombreCliente, fechaNacimiento, ubicacion, estado } =
-          data
+        const {
+          idCliente,
+          nombreCliente,
+          fechaNacimiento,
+          ubicacion,
+          numeroIdentidad,
+          estado,
+        } = data
         const clienteExiste = await this.clienteExiste(idCliente!)
 
         if (!clienteExiste) {
@@ -173,6 +178,7 @@ class ClienteDAO {
           fechaNacimiento,
           ubicacion,
           estado,
+          numeroIdentidad,
           idCliente,
         ])
       })
@@ -182,7 +188,7 @@ class ClienteDAO {
         })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al actualizar el cliente',
           mensaje: err.detail,
@@ -203,14 +209,15 @@ class ClienteDAO {
         await consulta.none(SQL_CLIENTES.DELETE_CLIENTE, [id])
         await consulta.none(SQL_CLIENTES.DELETE_PERSONA, [id])
       })
+
       .then(() => {
         res.status(200).json({
-          response: 'Cliente eliminado exitosamente',
+          respuesta: 'Cliente eliminado exitosamente',
           status: 200,
         })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al eliminar el cliente',
           mensaje: err.detail,
@@ -242,7 +249,7 @@ class ClienteDAO {
         })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         res.status(400).json({
           respuesta: 'Error al eliminar los clientes',
           mensaje: err.detail,

@@ -166,9 +166,13 @@ describe('PUT /clients', () => {
   let updatedClientResponse: Response
   let findUpdatedClientResponse: Response
   let createdClientId: number
-  const idNumber = getRandomIdNumber()
+  let idNumber: string
+  let newRandomIdNumber: string
 
   beforeAll(async () => {
+    idNumber = getRandomIdNumber()
+    newRandomIdNumber = getRandomIdNumber()
+
     const originalClient = new Cliente(
       0,
       'John',
@@ -189,7 +193,7 @@ describe('PUT /clients', () => {
       ...originalClient,
       nombreCliente: 'UpdatedClient',
       estado: false,
-      numeroIdentidad: '12345678',
+      numeroIdentidad: newRandomIdNumber,
       idCliente: createdClientId,
     }
 
@@ -233,7 +237,7 @@ describe('PUT /clients', () => {
 
     expect(body[0]).toMatchObject({
       nombreCliente: 'UpdatedClient',
-      numeroIdentidad: '12345678',
+      numeroIdentidad: newRandomIdNumber,
       estado: false,
     })
   })

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "build": "tsc -w",
-    "dev": "nodemon build/index.js"
+    "dev": "nodemon build/src/index.js"
   },
   "keywords": [
     "node",

@@ -1,5 +1,5 @@
 import request from "supertest";
-import { describe, test, expect } from "@jest/globals";
+import { describe, test, expect, beforeAll } from "@jest/globals";
 import Comida from "../src/app/comidas/entity/Comida";
 import { API_URL } from "./config";
 
@@ -36,7 +36,7 @@ describe("GET Comidas", () => {
   });
 
   test('Prueba obtener una comida por id', async () => {
-    const respuesta = await request(miUrl).get('/food/get/1');
+    const respuesta = await request(miUrl).get('/food/get/5');
     expect(respuesta.body).toEqual(
       expect.objectContaining({
         idComida: expect.any(Number),
@@ -60,8 +60,8 @@ describe("GET Comidas", () => {
 });
 
 
+const objCubi: Comida = new Comida(0, `Papas${Math.random()}`, 1000);
 describe("POST Comidas", () => {
-  const objCubi: Comida = new Comida(0, `Papas${Math.random()}`, 1000);
 
   test("Probando status code nueva comida", async () => {
     const respuesta = await request(miUrl).post("/food/add").send(objCubi);
@@ -87,18 +87,19 @@ describe("POST Comidas", () => {
 });
 
 describe("PUT Comidas", () => {
-  const objCubi: Comida = new Comida(1, "Papas2342435", 2000);
+  const objCubi2: Comida = new Comida(5, "Papas2342435", 2000);
+
   test("Probando status code", async () => {
-    const respuesta = await request(miUrl).put("/food/update").send(objCubi);
+    const respuesta = await request(miUrl).put("/food/update").send(objCubi2);
     expect(respuesta.statusCode).toBe(200);
   });
 
   test("Probando contenido", async () => {
-    const respuesta = await request(miUrl).get("/food/get/1");
+    const respuesta = await request(miUrl).get(`/food/get/5`);
     expect(respuesta.body).toEqual(
       expect.objectContaining({
-        idComida: 1,
-        nombreComida: objCubi.nombreComida,
+        idComida: 5,
+        nombreComida: "Papas2342435",
         precioComida: "$2,000.00",
       })
     );

@@ -6,7 +6,13 @@ class CineControlador extends CineDAO {
 
   public dameCine(req: Request, res: Response): void {
     const { id } = req.params; // Obtiene el ID desde los parámetros de la ruta
-    CineDAO.obtenerCine([id], res); // Pasa el ID como un parámetro a obtenerCine
+    const idCine = Number(id); // Convierte el ID a número
+    if (isNaN(idCine)) {
+      // Maneja el caso donde el ID no es un número válido
+      res.status(400).json({ respuesta: "ID inválido" });
+      return;
+    }
+    CineDAO.obtenerCine({idCine}, res); 
   }
 
     
@@ -34,8 +40,7 @@ class CineControlador extends CineDAO {
       if (isNaN(idCine)) {
           res.status(400).json({ respuesta: "El código del cine no es válido" });
       } else {
-          const objCine: Cine = new Cine(idCine, 0, "");
-          CineDAO.borreloYa(objCine, res);
+          CineDAO.borreloYa(idCine, res);
       }
     }
   

@@ -22,7 +22,7 @@ class CineRuta {
 
         this.apiRutaCine.put("/massiveUpdate", cineControlador.actualizaCinesMasivo);
 
-        this.apiRutaCine.get("/getcine/:id", cineControlador.dameCine);
+        this.apiRutaCine.get("/getcine/:idCine", cineControlador.dameCine);
 
         this.apiRutaCine.get("/getall", cineControlador.dameCines);
 

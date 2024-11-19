@@ -199,6 +199,11 @@ insert into Cines (id_ubicacion, nombre_cine) values (33, 'First Trust RBA Quali
 insert into Cines (id_ubicacion, nombre_cine) values (91, 'Time Warner Inc.');
 insert into Cines (id_ubicacion, nombre_cine) values (43, 'Allot Communications Ltd.');
 insert into Cines (id_ubicacion, nombre_cine) values (95, 'NextEra Energy, Inc.');
+insert into Cines (id_ubicacion, nombre_cine) values (1, 'cineDeMás1');
+insert into Cines (id_ubicacion, nombre_cine) values (1, 'cineDeMás2');
+insert into Cines (id_ubicacion, nombre_cine) values (1, 'cineDeMás3');
+insert into Cines (id_ubicacion, nombre_cine) values (1, 'cineDeMás4');
+insert into Cines (id_ubicacion, nombre_cine) values (1, 'cineDeMás5');
 
 
 insert into Generos (nombre_genero) values ('Documentary');

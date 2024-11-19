@@ -8,6 +8,15 @@ class PeliculaCarteleraControlador extends PeliculaCarteleraDAO {
         PeliculaCarteleraDAO.obtenerTodo([],res);    
     }
 
+    public dameCartelerasPorsuID(req: Request, res: Response){
+        if(isNaN(Number(req.params.idPeliculaCartelera))){
+            res.status(400).json({respuesta: "Y el id mi vale?"});
+        }else{
+            const id  = Number(req.params.idPeliculaCartelera);
+            PeliculaCarteleraDAO.obtenerCartelerasPorId(id, res);
+        } 
+    }
+
     public dameIdUbicacionCine(req: Request, res: Response) {
         if(!req.params.nombre){
             res.status(400).json({respuesta: "Y el nombre mi vale?"});

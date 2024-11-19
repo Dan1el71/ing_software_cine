@@ -6,9 +6,6 @@ import { API_URL } from "./config";
 
 const miUrl = API_URL
 
-const miUrl = "http://localhost:3123/billboard";
-let idCine: number = 6;
-
 describe("GET Carteleras", () => {
     test("Prueba de status", async () => {
         const respuesta = await request(miUrl).get("/getall");

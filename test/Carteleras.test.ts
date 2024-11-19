@@ -102,7 +102,6 @@ describe("DELETE Carteleras", () => {
 
     test("Comprobar comida eliminada", async () => {
         const respuesta = await request(miUrl).get(`/getall/idCartelera/${idPeliculaCartelera}`);
-        console.log(respuesta.body)
         expect(respuesta.statusCode).toBe(200);
         expect(respuesta.body).toHaveLength(0);
     });

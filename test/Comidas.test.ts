@@ -1,14 +1,9 @@
 import request from "supertest";
 import { describe, test, expect } from "@jest/globals";
 import Comida from "../src/app/comidas/entity/Comida";
-import dotenv from "dotenv";
+import { API_URL } from "./config";
 
-dotenv.config({
-  path: "variables.env",
-});
-
-const port = process.env.HOST_PORT || 3123;
-const miUrl = `http://localhost:${port}`;
+const miUrl = API_URL
 let idComida: number = 0;
 
 describe("GET Comidas", () => {

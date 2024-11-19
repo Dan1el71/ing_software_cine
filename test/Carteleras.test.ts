@@ -4,7 +4,7 @@ import { describe, test, expect } from "@jest/globals";
 import PeliculaCartelera from "../src/app/carteleras/entity/PeliculaCartelera";
 import { API_URL } from "./config";
 
-const miUrl = API_URL
+const miUrl = API_URL + '/billboard'
 
 describe("GET Carteleras", () => {
     test("Prueba de status", async () => {

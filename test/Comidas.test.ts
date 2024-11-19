@@ -4,11 +4,12 @@ import Comida from "../src/app/comidas/entity/Comida";
 import dotenv from "dotenv";
 
 dotenv.config({
-    path: "variables.env",
+  path: "variables.env",
 });
 
 const port = process.env.HOST_PORT || 3123;
 const miUrl = `http://localhost:${port}`;
+let idComida: number = 0;
 
 describe("GET Comidas", () => {
   test("Prueba de status", async () => {
@@ -63,7 +64,6 @@ describe("GET Comidas", () => {
   });
 });
 
-let idComida: number = 0;
 
 describe("POST Comidas", () => {
   const objCubi: Comida = new Comida(0, `Papas${Math.random()}`, 1000);
@@ -107,5 +107,17 @@ describe("PUT Comidas", () => {
         precioComida: "$2,000.00",
       })
     );
+  });
+});
+
+describe ("DELETE Comidas", () => {
+  test("Probando status code", async () => {
+    const respuesta = await request(miUrl).delete(`/food/delete/${idComida}`);
+    expect(respuesta.statusCode).toBe(200);
+  });
+
+  test("Comprobar comida eliminada", async () => {
+    const respuesta = await request(miUrl).get(`/food/get/${idComida}`);
+    expect(respuesta.statusCode).toBe(400);
   });
 });

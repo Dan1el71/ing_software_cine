@@ -28,7 +28,7 @@ export const SQL_CLIENTES = {
     'INSERT INTO Personas (nombre_persona,numero_identidad ,fecha_nac_persona, id_ubicacion,state) VALUES ($1, $2, $3, $4, $5) RETURNING id_persona',
   INSERT_CLIENTE: 'INSERT INTO Clientes (id_persona) VALUES ($1)',
   UPDATE:
-    'UPDATE Personas SET nombre_persona = $1, fecha_nac_persona = $2, id_ubicacion = $3, state = $4 WHERE id_persona = $5',
+    'UPDATE Personas SET nombre_persona = $1, fecha_nac_persona = $2, id_ubicacion = $3, state = $4, numero_identidad = $5 WHERE id_persona = $6',
   UPDATE_STATUS:
     'UPDATE Personas SET numero_identidad = $1 WHERE id_persona = $2',
   DELETE_PERSONA: 'DELETE FROM Personas WHERE id_persona = $1 ',

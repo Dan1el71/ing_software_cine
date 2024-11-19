@@ -6,7 +6,6 @@ class ComidaRuta{
     
     constructor(){
         this.apiRutaComida = Router();
-        this.apiRutaComida.get("/getall", comidaControlador.obtenerComidas);
         this.misRutas();
     }
 

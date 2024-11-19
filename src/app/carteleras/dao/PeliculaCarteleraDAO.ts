@@ -117,10 +117,10 @@ class PeliculaCarteleraDAO {
       .then(({queHacer, respuBase}) => {
         switch (queHacer){
           case 1:
-            res.status(400).json({respuesta: "compita no puedes eliminar algo que no existe"});
+            res.status(401).json({respuesta: "compita no puedes eliminar algo que no existe"});
             break;
           case 2:
-            res.status(400).json({respuesta: "no creo que lo que piensas hacer sea una buena idea..."})
+            res.status(402).json({respuesta: "no creo que lo que piensas hacer sea una buena idea..."})
             break
           default:
             res.status(200).json({

@@ -2,6 +2,9 @@ import request from "supertest";
 import { afterAll } from "@jest/globals";
 import { describe, test, expect } from "@jest/globals";
 import PeliculaCartelera from "../src/app/carteleras/entity/PeliculaCartelera";
+import { API_URL } from "./config";
+
+const miUrl = API_URL
 
 const miUrl = "http://localhost:3123/billboard";
 let idCine: number = 6;
@@ -36,7 +39,6 @@ describe("GET Carteleras", () => {
     });
 
 });
-
 
 const objCubi = new PeliculaCartelera(0, 9, 10, new Date(), new Date());
 describe("POST Cartelera", () => {

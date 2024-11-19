@@ -3,7 +3,7 @@ import pgPromise from "pg-promise";
 import { optionsPG } from "./optionsPG";
 
 dotenv.config({
-    path: "variables.env",
+    path: 'variables.env',
 });
 
 const nombre = String(process.env.NOMBRE_BASE_DE_DATOS);
@@ -18,7 +18,7 @@ const pool = pgp({
     password: clave,
     port: puerto,
     database: nombre,
-    host: servidor
+    host: servidor,
 });
 
 pool.connect().then((miCone) => {

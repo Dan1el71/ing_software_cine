@@ -38,6 +38,7 @@ class ClienteControlador extends ClienteDAO {
     obj.idCliente = req.body.idCliente
     obj.nombreCliente = req.body.nombreCliente
     obj.fechaNacimiento = req.body.fechaNacimiento
+    obj.numeroIdentidad = req.body.numeroIdentidad
     obj.ubicacion = req.body.ubicacion
     obj.estado = req.body.estado
 

@@ -19,7 +19,9 @@ const pool = pgp({
     port: puerto,
     database: nombre,
     host: servidor,
-    ssl: false
+    ssl: {
+        rejectUnauthorized: false,
+    }
 });
 
 pool.connect().then((miCone) => {

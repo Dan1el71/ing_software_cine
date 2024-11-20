@@ -20,7 +20,7 @@ export const SQL_CINES = {
 
   CHECK_IF_EXISTS_ANOTHER_ID: "SELECT COUNT(*) as existe FROM Cines WHERE nombre_cine = $1 AND id_ubicacion = $2 AND id_cine <> $3",
 
-  GET_CINE_BY_ID:"SELECT id_cine, id_ubicacion, nombre_cine FROM Cines WHERE id_cine = $1",
+  GET_CINE_BY_ID:"SELECT id_cine, id_ubicacion, nombre_cine FROM Cines WHERE id_cine = $1 AND id_cine IS NOT NULL;",
 
   MASIVE_UPDATE:"UPDATE cines SET nombre_cine = $1, id_ubicacion = $2 WHERE nombre_cine LIKE $3;",
 

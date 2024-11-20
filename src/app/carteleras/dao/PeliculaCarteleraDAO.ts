@@ -15,6 +15,16 @@ class PeliculaCarteleraDAO {
     });
   }
 
+  protected static async obtenerCartelerasPorId(id: Number, res:Response){
+    await pool
+    .result(SQL_CARTELERAS.PORID, [id])
+    .then((resultado) => {
+      res.status(200).json(resultado.rows)
+    }).catch((miError) => {
+      res.status(400).json({respuesta: "Error al obtener el id"});
+    });
+  }
+
   protected static async obtenerIdUbicacionCine(nombre: string, res:Response){
     await pool
     .result(SQL_CARTELERAS.GET_ID_UBICACION_CINE_BY_UBICACION_NOMBRE, [nombre])

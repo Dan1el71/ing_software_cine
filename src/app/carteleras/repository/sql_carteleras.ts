@@ -1,6 +1,12 @@
 export const SQL_CARTELERAS = ({
     GET_ALL: "SELECT id_pelicula_cartelera, id_cine, id_pelicula, fecha_inicio, fecha_final \
                 FROM peliculas_carteleras",
+    PORID: "SELECT p.id_pelicula_cartelera, u.nombre_ubicacion, pe.nombre_pelicula, fecha_inicio, fecha_final \
+                FROM peliculas_carteleras p \
+                JOIN Cines c  ON p.id_cine = c.id_cine \
+                JOIN Ubicaciones u  ON u.id_ubicacion = c.id_ubicacion \
+                JOIN peliculas pe ON p.id_pelicula = pe.id_pelicula \
+                WHERE p.id_pelicula_cartelera = $1" ,
 
     GET_ID_UBICACION_CINE_BY_UBICACION_NOMBRE:  "SELECT DISTINCT u.id_ubicacion \
                 FROM peliculas_carteleras p \

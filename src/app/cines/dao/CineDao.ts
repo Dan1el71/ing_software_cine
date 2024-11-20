@@ -4,32 +4,38 @@ import pool from "../../../config/connection/dbConnection";
 import Cine from "../entity/Cine";
 
 class CineDAO {
-    
+  protected static async obtenerCine(params: any, res: Response): Promise<void> {
+    const idCine = parseInt(params.idCine as unknown as string, 10); // Convierte el ID a número
+    await pool
+        .oneOrNone(SQL_CINES.GET_CINE, [idCine])
+        .then((resultado) => {
+            if (!resultado) { // Si el resultado es nulo o no existe
+                res.status(404).json({ respuesta: "Cine no encontrado" });
+            } else {
+                res.status(200).json(resultado); // Enviar solo el objeto
+            }
+        })
+        .catch((miError) => {
+            console.error(miError);
+            res.status(400).json({ respuesta: "Error al obtener la información del cine" });
+        });
+  }
+
+
     // protected static async obtenerCine(params: any, res: Response){
-    //   await pool.result(SQL_CINES.GET_CINE, params)
+    //   await pool.one(SQL_CINES.GET_CINE, [params.idCine])
     //   .then((resultado) => {
-    //       res.status(200).json(resultado.rows);
+    //       if (resultado.rows.length === 0) {
+    //           res.status(404).json({ respuesta: "Cine no encontrado" });
+    //       } else {
+    //           res.status(200).json(resultado.rows);
+    //       }
     //   })
     //   .catch((miError) => {
-    //       // console.error(miError);
+    //       console.error(miError);
     //       res.status(400).json({ respuesta: "Error al obtener la información de el cine" });
     //   });
     // }
-
-    protected static async obtenerCine(params: any, res: Response){
-      await pool.result(SQL_CINES.GET_CINE, params)
-      .then((resultado) => {
-          if (resultado.rows.length === 0) {
-              res.status(404).json({ respuesta: "Cine no encontrado" });
-          } else {
-              res.status(200).json(resultado.rows);
-          }
-      })
-      .catch((miError) => {
-          console.error(miError);
-          res.status(400).json({ respuesta: "Error al obtener la información de el cine" });
-      });
-    }
 
     // Método para obtener todos los cines
     protected static async obtenerTodo(params: any, res: Response) {
@@ -93,13 +99,22 @@ class CineDAO {
     }
 
     // Método para eliminar un cine
-    protected static async borreloYa(datos: Cine, res: Response): Promise<any> {
+    protected static async borreloYa(idCine : Number, res: Response): Promise<any> {
       try {
-          // Verificar si el cine está siendo utilizado en alguna de las tablas relacionadas
-          const cineEnPeliculasCarteleras = await pool.one(SQL_CINES.CHECK_IF_USED_IN_PELICULAS_CARTELERAS, [datos.idCine]);
-          const cineEnTrabajadores = await pool.one(SQL_CINES.CHECK_IF_USED_IN_TRABAJADORES, [datos.idCine]);
-          const cineEnSalas = await pool.one(SQL_CINES.CHECK_IF_USED_IN_SALAS, [datos.idCine]);
-          const cineEnMenuCine = await pool.one(SQL_CINES.CHECK_IF_USED_IN_MENU_CINE, [datos.idCine]);
+
+          const cineExiste = await pool.oneOrNone(SQL_CINES.GET_CINE_BY_ID, [idCine]);
+
+          
+          if (!cineExiste ||  Object.keys(cineExiste).length === 0) {
+              // Si el cine no existe, devolver un error 404
+              return res.status(404).json({ respuesta: "El cine no existe" });
+          }
+
+          // Verificar si el cine está sindo utilizado en alguna de las tablas relacionadas
+          const cineEnPeliculasCarteleras = await pool.one(SQL_CINES.CHECK_IF_USED_IN_PELICULAS_CARTELERAS, [idCine]);
+          const cineEnTrabajadores = await pool.one(SQL_CINES.CHECK_IF_USED_IN_TRABAJADORES, [idCine]);
+          const cineEnSalas = await pool.one(SQL_CINES.CHECK_IF_USED_IN_SALAS, [idCine]);
+          const cineEnMenuCine = await pool.one(SQL_CINES.CHECK_IF_USED_IN_MENU_CINE, [idCine]);
   
           if (cineEnPeliculasCarteleras.total > 0 || cineEnTrabajadores.total > 0 || cineEnSalas.total > 0 || cineEnMenuCine.total > 0) {
               return res.status(400).json({
@@ -108,15 +123,15 @@ class CineDAO {
           }
   
           // Si no está en uso, proceder con la eliminación
-          await pool.result(SQL_CINES.DELETE, [datos.idCine]);
+          await pool.result(SQL_CINES.DELETE, [idCine]);
   
           res.status(200).json({
-              respuesta: "El cine se eliminó con éxito"
+              respuesta: "el cine fue elimnado correctamente"
           });
-          } catch (miError) {
-              // console.error(miError);
-              res.status(400).json({ respuesta: "Error al eliminar el cine" });
-          }
+      } catch (miError) {
+          // console.error(miError);
+          res.status(400).json({ respuesta: "Error al eliminar el cine" });
+      }
     }
 
     protected static async borreloYaSinMensaje(datos: Cine): Promise<boolean> {
@@ -141,56 +156,6 @@ class CineDAO {
       }
   }
   
-
-  //   protected static async borraloTodoYa(res: Response): Promise<any> {
-  //     try {
-  //         // Obtener todos los cines de la base de datos
-  //         const todosLosCines = await pool.any(SQL_CINES.GET_ALL);
-  
-  //         // Si no hay cines que eliminar
-  //         if (todosLosCines.length === 0) {
-  //             return res.status(200).json({
-  //                 respuesta: "No hay cines para eliminar."
-  //             });
-  //         }
-  
-  //         // Crear un array para acumular los resultados de cada eliminación
-  //         const resultados = [];
-  
-  //         // Iterar sobre cada cine y tratar de eliminarlo usando borreloYa
-  //         for (const cine of todosLosCines) {
-  //             try {
-  //                 // Usar la función borreloYa para eliminar cada cine uno por uno
-  //                 await this.borreloYa(cine, res);
-  
-  //                 // Si se eliminó correctamente, agregar el éxito a los resultados
-  //                 resultados.push({
-  //                     idCine: cine.idCine,
-  //                     exito: true,
-  //                     mensaje: `El cine con ID ${cine.idCine} se eliminó con éxito.`
-  //                 });
-  //             } catch (error) {
-  //                 // Si hubo un error, agregar el mensaje de error a los resultados
-  //                 resultados.push({
-  //                     idCine: cine.idCine,
-  //                     exito: false,
-  //                     mensaje: `No se pudo eliminar el cine con ID ${cine.idCine}`
-  //                 });
-  //             }
-  //         }
-  
-  //         // Enviar una respuesta con el resumen de los resultados
-  //         res.status(200).json({
-  //             respuesta: "Proceso de eliminación completado."+{resultados},
-  //         });
-  
-  //     } catch (miError) {
-  //         // Manejar errores en el proceso general
-  //         res.status(400).json({
-  //             respuesta: "Error al intentar eliminar todos los cines.",
-  //         });
-  //     }
-  // }
 
     protected static async borraloTodoYa(res: Response): Promise<any> {
         try {
@@ -265,10 +230,10 @@ class CineDAO {
           });
     }
 
-    protected static async actualizacionMasiva(nuevosDatos: Cine, patronBusqueda: string, res: Response): Promise<any> {
+    protected static async actualizacionMasiva(nuevosDatos: Cine, letraInicial: string, res: Response): Promise<any> {
       try {
           // Definir el patrón de búsqueda (ej. todos los nombres que empiezan con 'A')
-          // const patronBusqueda = `${letraInicial}%`; //letra incial
+          const patronBusqueda = `${letraInicial}%`; //letra incial
   
           // Ejecutar la consulta de actualización
           const resultado = await pool.result(SQL_CINES.MASIVE_UPDATE, [nuevosDatos.nombreCine, nuevosDatos.idUbicacion, patronBusqueda]);"%A"

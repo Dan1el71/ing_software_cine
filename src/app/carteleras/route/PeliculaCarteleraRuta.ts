@@ -11,6 +11,7 @@ class PeliculaCarteleraRuta {
 
     private misRutas(): void{
         this.apiRutaPeliculaCartelera.get("/getall", peliculaCarteleraControlador.dameCarteleras);
+        this.apiRutaPeliculaCartelera.get("/getall/idCartelera/:idPeliculaCartelera", peliculaCarteleraControlador.dameCartelerasPorsuID);
         this.apiRutaPeliculaCartelera.get("/getall/nombreUbicacion/:nombre", peliculaCarteleraControlador.dameIdUbicacionCine);
         this.apiRutaPeliculaCartelera.get("/getall/idUbicacion/:idUbicacion", peliculaCarteleraControlador.dameCartelerasByUbicacion);
         this.apiRutaPeliculaCartelera.get("/getall/idCine/:idCine", peliculaCarteleraControlador.dameCartelerasByCine);

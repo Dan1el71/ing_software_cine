@@ -10,9 +10,9 @@ class ResevacionesControlador extends ReservacionesDAO{
     public guardarReservacion(req: Request, res:Response): void{
         const objCubi: Reservacion = new Reservacion(0,0,0,0,0);
         objCubi.idCliente = Number(req.body.nombrePersona);
-        objCubi.idSilla = req.body.idSilla;
-        objCubi.idHorario = req.body.idHorario;
-        objCubi.precio = req.body.precio;
+        objCubi.idSilla = Number(req.body.idSilla);
+        objCubi.idHorario = Number(req.body.idHorario);
+        objCubi.precio = Number(req.body.precio);
         ReservacionesDAO.guardarReservacion(objCubi, res);
     }
 

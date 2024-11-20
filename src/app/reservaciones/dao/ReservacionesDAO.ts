@@ -29,6 +29,7 @@ class ReservacionesDAO {
             .then(({ queHacer, respuBase }) => {
                 switch (queHacer) {
                     case 1:
+                        console.log("epaaaaaaaa")
                         res.status(400).json({ respuesta: "La reservacion ya existe" });
                         break;
                     default:

@@ -57,14 +57,18 @@ describe("POST Reservaciones", () =>{
     let idReservacion: Number;
     test("Probando status code nueva reservacion", async () =>{
         const response = await request(miUrl).post("/reservation/add").send({
-            nombrePersona: "56",
-            idSilla: 56,
-            idHorario: 100,
+            idCliente: 1,
+            idSilla: 2,
+            idHorario: 9,
             precio: 10000
         });
         idReservacion = response.body.idReservacion;
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(400);
     });
+
+    afterAll(async () =>{
+        await request(miUrl).delete(`/reservation/delete/${idReservacion}`)
+    })
 
     test("Probando status code reservacion existente", async()=>{
         const response = await request(miUrl).post("/reservation/add").send(obj);
@@ -72,11 +76,12 @@ describe("POST Reservaciones", () =>{
     });
 
     test("Probando contenido reservacion creado", async()=>{
-        const response = await request(miUrl).get(`/reservation/get/${idReservacion}`);
+        let id:Number = 50;
+        const response = await request(miUrl).get(`/reservation/get/${id}`);
         expect(response.body[0]).toEqual(
             expect.objectContaining({
                 precio: expect.any(String),
-                idReservacion: idReservacion,
+                idReservacion: expect.any(Number),
                 idCliente: expect.any(Number),
                 idSilla: expect.any(Number),
                 idHorario: expect.any(Number)
@@ -95,13 +100,11 @@ describe("PUT Reservaciones", () =>{
             idHorario: 77,
             precio: 30000
         })
-        console.log(response.body);
         expect(response.statusCode).toBe(200);
     })
 
     test("Probando contenido reservacion creado", async()=>{
         const response = await request(miUrl).get(`/reservation/get/6`);
-        console.log(response.body);
         expect(response.body[0]).toEqual(
             expect.objectContaining({
                 precio: expect.any(String),

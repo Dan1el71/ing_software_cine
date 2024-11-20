@@ -53,7 +53,7 @@ class ComidaControlador extends ComidaDAO{
     public obtenerComidasPorNombre(req: Request, res: Response){
         const limit = Number(req.query.limit) || 10
         const page = Number(req.query.page) || 1
-        const nombre = req.query.nombre_comida || ""
+        const nombre = req.query.nombreComida || ""
         ComidaDAO.obtenerMuchosPorNombre([limit, (page - 1) * limit, nombre], res);
     } 
 }

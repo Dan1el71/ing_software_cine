@@ -37,7 +37,7 @@ describe("GET Carteleras", () => {
 
 });
 
-const objCubi = new PeliculaCartelera(0, 9, 10, new Date(), new Date());
+const objCubi = new PeliculaCartelera(0, 9, 11, new Date(), new Date());
 describe("POST Cartelera", () => {
     let idCartelera: Number = 0;
     test("Probando status code nueva cartelera", async () => {
@@ -45,14 +45,13 @@ describe("POST Cartelera", () => {
         idCartelera = respuesta.body.idPeliculaCartelera;
         expect(respuesta.statusCode).toBe(200);
     });
-    afterAll(async () => {
-        await request(miUrl).delete("/delete/" + idCartelera)
-    })
-
     test("Probando status code comida existente", async () => {
         const respuesta = await request(miUrl).post("/addcito").send(objCubi);
         expect(respuesta.statusCode).toBe(409);
     });
+    afterAll(async () => {
+        await request(miUrl).delete("/delete/" + idCartelera)
+    })
 
 });
 

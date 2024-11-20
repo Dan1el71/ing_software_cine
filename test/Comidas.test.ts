@@ -23,7 +23,7 @@ describe("GET Comidas", () => {
   });
 
   test("Prueba de contenido", async () => {
-    const respuesta = await request(miUrl).get("/food/getall");
+    const respuesta = await request(miUrl).get("/food/getall?page=1&limit=100");
     expect(respuesta.body).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -46,7 +46,7 @@ describe("GET Comidas", () => {
     );
   });
   test('Prueba obtener una comida por nombre', async () => {
-    const respuesta = await request(miUrl).get('/food/getByName?nombreComida=Papas');
+    const respuesta = await request(miUrl).get('/food/getByName?nombreComida=Papas2342435');
     expect(respuesta.body).toEqual(
       expect.arrayContaining([
         expect.objectContaining({

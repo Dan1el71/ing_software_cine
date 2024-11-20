@@ -4,22 +4,22 @@ import pool from "../../../config/connection/dbConnection";
 import Cine from "../entity/Cine";
 
 class CineDAO {
-  protected static async obtenerCine(params: any, res: Response): Promise<void> {
-    const idCine = parseInt(params.idCine as unknown as string, 10); // Convierte el ID a número
-    await pool
-        .oneOrNone(SQL_CINES.GET_CINE, [idCine])
-        .then((resultado) => {
-            if (!resultado) { // Si el resultado es nulo o no existe
-                res.status(404).json({ respuesta: "Cine no encontrado" });
-            } else {
-                res.status(200).json(resultado); // Enviar solo el objeto
-            }
-        })
-        .catch((miError) => {
-            console.error(miError);
-            res.status(400).json({ respuesta: "Error al obtener la información del cine" });
-        });
-  }
+    protected static async obtenerCine(params: any, res: Response): Promise<void> {
+        const idCine = parseInt(params.idCine as unknown as string, 10); // Convierte el ID a número
+        await pool
+            .oneOrNone(SQL_CINES.GET_CINE, [idCine])
+            .then((resultado) => {
+                if (!resultado) { // Si el resultado es nulo o no existe
+                    res.status(404).json({ respuesta: "Cine no encontrado" });
+                } else {
+                    res.status(200).json(resultado); // Enviar solo el objeto
+                }
+            })
+            .catch((miError) => {
+                console.error(miError);
+                res.status(400).json({ respuesta: "Error al obtener la información del cine" });
+            });
+    }
 
 
     // protected static async obtenerCine(params: any, res: Response){
@@ -63,8 +63,8 @@ class CineDAO {
 
     // Verificar si el cine ya existe
     protected static async cineYaExiste(nombreCine: string, idUbicacion: number): Promise<boolean> {
-      const resultado = await pool.one(SQL_CINES.CHECK_IF_EXISTS, [nombreCine, idUbicacion]);
-      return resultado.total > 0; // Si es mayor que 0, ya existe
+        const resultado = await pool.one(SQL_CINES.CHECK_IF_EXISTS, [nombreCine, idUbicacion]);
+        return resultado.total > 0; // Si es mayor que 0, ya existe
     }
 
     // Verificar si la ubicación existe
@@ -99,63 +99,63 @@ class CineDAO {
     }
 
     // Método para eliminar un cine
-    protected static async borreloYa(idCine : Number, res: Response): Promise<any> {
-      try {
+    protected static async borreloYa(idCine: Number, res: Response): Promise<any> {
+        try {
 
-          const cineExiste = await pool.oneOrNone(SQL_CINES.GET_CINE_BY_ID, [idCine]);
+            const cineExiste = await pool.oneOrNone(SQL_CINES.GET_CINE_BY_ID, [idCine]);
 
-          
-          if (!cineExiste ||  Object.keys(cineExiste).length === 0) {
-              // Si el cine no existe, devolver un error 404
-              return res.status(404).json({ respuesta: "El cine no existe" });
-          }
 
-          // Verificar si el cine está sindo utilizado en alguna de las tablas relacionadas
-          const cineEnPeliculasCarteleras = await pool.one(SQL_CINES.CHECK_IF_USED_IN_PELICULAS_CARTELERAS, [idCine]);
-          const cineEnTrabajadores = await pool.one(SQL_CINES.CHECK_IF_USED_IN_TRABAJADORES, [idCine]);
-          const cineEnSalas = await pool.one(SQL_CINES.CHECK_IF_USED_IN_SALAS, [idCine]);
-          const cineEnMenuCine = await pool.one(SQL_CINES.CHECK_IF_USED_IN_MENU_CINE, [idCine]);
-  
-          if (cineEnPeliculasCarteleras.total > 0 || cineEnTrabajadores.total > 0 || cineEnSalas.total > 0 || cineEnMenuCine.total > 0) {
-              return res.status(400).json({
-                  respuesta: "No se puede eliminar el cine porque está siendo usado en otras tablas (Películas Carteleras, Trabajadores, Salas, o Menú Cine)."
-              });
-          }
-  
-          // Si no está en uso, proceder con la eliminación
-          await pool.result(SQL_CINES.DELETE, [idCine]);
-  
-          res.status(200).json({
-              respuesta: "el cine fue elimnado correctamente"
-          });
-      } catch (miError) {
-          // console.error(miError);
-          res.status(400).json({ respuesta: "Error al eliminar el cine" });
-      }
+            if (!cineExiste || Object.keys(cineExiste).length === 0) {
+                // Si el cine no existe, devolver un error 404
+                return res.status(404).json({ respuesta: "El cine no existe" });
+            }
+
+            // Verificar si el cine está sindo utilizado en alguna de las tablas relacionadas
+            const cineEnPeliculasCarteleras = await pool.one(SQL_CINES.CHECK_IF_USED_IN_PELICULAS_CARTELERAS, [idCine]);
+            const cineEnTrabajadores = await pool.one(SQL_CINES.CHECK_IF_USED_IN_TRABAJADORES, [idCine]);
+            const cineEnSalas = await pool.one(SQL_CINES.CHECK_IF_USED_IN_SALAS, [idCine]);
+            const cineEnMenuCine = await pool.one(SQL_CINES.CHECK_IF_USED_IN_MENU_CINE, [idCine]);
+
+            if (cineEnPeliculasCarteleras.total > 0 || cineEnTrabajadores.total > 0 || cineEnSalas.total > 0 || cineEnMenuCine.total > 0) {
+                return res.status(400).json({
+                    respuesta: "No se puede eliminar el cine porque está siendo usado en otras tablas (Películas Carteleras, Trabajadores, Salas, o Menú Cine)."
+                });
+            }
+
+            // Si no está en uso, proceder con la eliminación
+            await pool.result(SQL_CINES.DELETE, [idCine]);
+
+            res.status(200).json({
+                respuesta: "el cine fue elimnado correctamente"
+            });
+        } catch (miError) {
+            // console.error(miError);
+            res.status(400).json({ respuesta: "Error al eliminar el cine" });
+        }
     }
 
     protected static async borreloYaSinMensaje(datos: Cine): Promise<boolean> {
-      try {
-          // Verificar si el cine está siendo utilizado en alguna de las tablas relacionadas
-          const cineEnPeliculasCarteleras = await pool.one(SQL_CINES.CHECK_IF_USED_IN_PELICULAS_CARTELERAS, [datos.idCine]);
-          const cineEnTrabajadores = await pool.one(SQL_CINES.CHECK_IF_USED_IN_TRABAJADORES, [datos.idCine]);
-          const cineEnSalas = await pool.one(SQL_CINES.CHECK_IF_USED_IN_SALAS, [datos.idCine]);
-          const cineEnMenuCine = await pool.one(SQL_CINES.CHECK_IF_USED_IN_MENU_CINE, [datos.idCine]);
-  
-          if (cineEnPeliculasCarteleras.total > 0 || cineEnTrabajadores.total > 0 || cineEnSalas.total > 0 || cineEnMenuCine.total > 0) {
-              // Si el cine está siendo utilizado en alguna tabla, no se elimina
-              return false; // No se eliminó
-          }
-  
-          // Si no está en uso, proceder con la eliminación
-          await pool.result(SQL_CINES.DELETE, [datos.idCine]);
-          return true; // El cine fue eliminado correctamente
-      } catch {
-          // Si ocurre un error, retornar false
-          return false;
-      }
-  }
-  
+        try {
+            // Verificar si el cine está siendo utilizado en alguna de las tablas relacionadas
+            const cineEnPeliculasCarteleras = await pool.one(SQL_CINES.CHECK_IF_USED_IN_PELICULAS_CARTELERAS, [datos.idCine]);
+            const cineEnTrabajadores = await pool.one(SQL_CINES.CHECK_IF_USED_IN_TRABAJADORES, [datos.idCine]);
+            const cineEnSalas = await pool.one(SQL_CINES.CHECK_IF_USED_IN_SALAS, [datos.idCine]);
+            const cineEnMenuCine = await pool.one(SQL_CINES.CHECK_IF_USED_IN_MENU_CINE, [datos.idCine]);
+
+            if (cineEnPeliculasCarteleras.total > 0 || cineEnTrabajadores.total > 0 || cineEnSalas.total > 0 || cineEnMenuCine.total > 0) {
+                // Si el cine está siendo utilizado en alguna tabla, no se elimina
+                return false; // No se eliminó
+            }
+
+            // Si no está en uso, proceder con la eliminación
+            await pool.result(SQL_CINES.DELETE, [datos.idCine]);
+            return true; // El cine fue eliminado correctamente
+        } catch {
+            // Si ocurre un error, retornar false
+            return false;
+        }
+    }
+
 
     protected static async borraloTodoYa(res: Response): Promise<any> {
         try {
@@ -190,72 +190,72 @@ class CineDAO {
         }
     }
 
-  
+
 
     protected static async actualiceloYa(datos: Cine, res: Response): Promise<any> {
-      await pool
-          .task(async (consulta) => {
-              // Paso 1: Verificar si el cine que queremos actualizar existe
-              const cineActual = await consulta.oneOrNone(SQL_CINES.GET_CINE_BY_ID, [datos.idCine]);
-  
-              if (!cineActual) {
-                  // Si el cine no existe, devolver un error 404
-                  res.status(404).json({ respuesta: "El cine no existe" });
-                  return;
-              }
-  
-              // Paso 2: Verificar si los nuevos valores son iguales a los actuales
-              if (cineActual.nombreCine === datos.nombreCine && cineActual.idUbicacion === datos.idUbicacion) {
-                  // Si los valores ya son los mismos, devolver un mensaje de que no hay cambios
-                  res.status(200).json({ respuesta: "El cine ya está actualizado con esos datos" });
-                  return;
-              }
-  
-              // Paso 3: Verificar si hay otro cine con el mismo nombre y ubicación, pero diferente ID
-              const cineDuplicado = await consulta.oneOrNone(SQL_CINES.CHECK_IF_EXISTS_ANOTHER_ID, [datos.nombreCine, datos.idUbicacion, datos.idCine]);
-  
-              if (cineDuplicado && cineDuplicado.existe > 0) {
-                  // Si hay duplicado, devolver un error 409 indicando conflicto
-                  res.status(409).json({ respuesta: "El cine ya existe en esa ubicación" });
-                  return;
-              }
-  
-              // Paso 4: Si todo está bien, proceder con la actualización
-              await consulta.none(SQL_CINES.UPDATE, [datos.idCine, datos.idUbicacion, datos.nombreCine]);
-              res.status(200).json({ actualizado: "ok" });
-          })
-          .catch((miError) => {
-              // console.error(miError);
-              res.status(400).json({ respuesta: "Error al actualizar el cine", detalle: miError.message || "Error desconocido" });
-          });
+        await pool
+            .task(async (consulta) => {
+                // Paso 1: Verificar si el cine que queremos actualizar existe
+                const cineActual = await consulta.oneOrNone(SQL_CINES.GET_CINE_BY_ID, [datos.idCine]);
+
+                if (!cineActual) {
+                    // Si el cine no existe, devolver un error 404
+                    res.status(404).json({ respuesta: "El cine no existe" });
+                    return;
+                }
+
+                // Paso 2: Verificar si los nuevos valores son iguales a los actuales
+                if (cineActual.nombreCine === datos.nombreCine && cineActual.idUbicacion === datos.idUbicacion) {
+                    // Si los valores ya son los mismos, devolver un mensaje de que no hay cambios
+                    res.status(200).json({ respuesta: "El cine ya está actualizado con esos datos" });
+                    return;
+                }
+
+                // Paso 3: Verificar si hay otro cine con el mismo nombre y ubicación, pero diferente ID
+                const cineDuplicado = await consulta.oneOrNone(SQL_CINES.CHECK_IF_EXISTS_ANOTHER_ID, [datos.nombreCine, datos.idUbicacion, datos.idCine]);
+
+                if (cineDuplicado && cineDuplicado.existe > 0) {
+                    // Si hay duplicado, devolver un error 409 indicando conflicto
+                    res.status(409).json({ respuesta: "El cine ya existe en esa ubicación" });
+                    return;
+                }
+
+                // Paso 4: Si todo está bien, proceder con la actualización
+                await consulta.none(SQL_CINES.UPDATE, [datos.idCine, datos.idUbicacion, datos.nombreCine]);
+                res.status(200).json({ actualizado: "ok" });
+            })
+            .catch((miError) => {
+                // console.error(miError);
+                res.status(400).json({ respuesta: "Error al actualizar el cine", detalle: miError.message || "Error desconocido" });
+            });
     }
 
     protected static async actualizacionMasiva(nuevosDatos: Cine, letraInicial: string, res: Response): Promise<any> {
-      try {
-          // Definir el patrón de búsqueda (ej. todos los nombres que empiezan con 'A')
-          const patronBusqueda = `${letraInicial}%`; //letra incial
-  
-          // Ejecutar la consulta de actualización
-          const resultado = await pool.result(SQL_CINES.MASIVE_UPDATE, [nuevosDatos.nombreCine, nuevosDatos.idUbicacion, patronBusqueda]);"%A"
-  
-          // Verificar si se actualizaron registros
-          if (resultado.rowCount > 0) {
-              res.status(200).json({
-                  respuesta: "Actualización masiva realizada con éxito",
-                  registrosActualizados: resultado.rowCount
-              });
-          } else {
-              res.status(404).json({
-                  respuesta: "No se encontraron cines para actualizar"
-              });
-          }
-      } catch (miError) {
-          // console.error(miError);
-          res.status(400).json({
-              respuesta: "Error al realizar la actualización masiva",
-              detalle: miError || "Error desconocido"
-          });
-      }
+        try {
+            // Definir el patrón de búsqueda (ej. todos los nombres que empiezan con 'A')
+            const patronBusqueda = `${letraInicial}%`; //letra incial
+
+            // Ejecutar la consulta de actualización
+            const resultado = await pool.result(SQL_CINES.MASIVE_UPDATE, [nuevosDatos.nombreCine, nuevosDatos.idUbicacion, patronBusqueda]); "%A"
+
+            // Verificar si se actualizaron registros
+            if (resultado.rowCount > 0) {
+                res.status(200).json({
+                    respuesta: "Actualización masiva realizada con éxito",
+                    registrosActualizados: resultado.rowCount
+                });
+            } else {
+                res.status(404).json({
+                    respuesta: "No se encontraron cines para actualizar"
+                });
+            }
+        } catch (miError) {
+            // console.error(miError);
+            res.status(400).json({
+                respuesta: "Error al realizar la actualización masiva",
+                detalle: miError || "Error desconocido"
+            });
+        }
     }
 }
 

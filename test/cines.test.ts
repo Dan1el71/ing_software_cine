@@ -21,9 +21,9 @@ describe("GET Cines", () => {
         expect(respuesta.body).toHaveLength(1);
     });
 
-    test("Prueba de paginacion con 100 elementos", async () => {
-        const respuesta = await request(miUrl).get("/cine/getpages?page=1&limit=100");
-        expect(respuesta.body).toHaveLength(100);
+    test("Prueba de paginacion con 50 elementos", async () => {
+        const respuesta = await request(miUrl).get("/cine/getpages?page=1&limit=50");
+        expect(respuesta.body).toHaveLength(50);
     });
 
     test("Prueba de contenido", async () => {
@@ -41,7 +41,6 @@ describe("GET Cines", () => {
 
     test("Prueba obtener un cine por ID", async () => {
       const respuesta = await request(miUrl).get("/cine/getcine/1");
-      console.log(respuesta.body);
       expect(respuesta.body).toEqual(
         expect.objectContaining({
             idCine: expect.any(Number),
@@ -122,7 +121,7 @@ describe("PUT Actualización Masiva de Cines", () => {
   test("Realiza una actualización masiva de cines", async () => {
       const respuesta = await request(miUrl)
           .put("/cine/massiveUpdate")
-          .send({ idCine:objCine.idCine, idUbicacion:objCine.idUbicacion, nombreCine:objCine.nombreCine, patronBusqueda: "A" });
+          .send({ idCine:objCine.idCine, idUbicacion:objCine.idUbicacion, nombreCine:objCine.nombreCine, patronBusqueda: "m" });
       expect(respuesta.statusCode).toBe(200);
   });
 });

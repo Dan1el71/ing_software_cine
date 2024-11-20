@@ -5,13 +5,7 @@ import Cine from "../entity/Cine";
 class CineControlador extends CineDAO {
 
   public dameCine(req: Request, res: Response): void {
-    const { id } = req.params; // Obtiene el ID desde los parámetros de la ruta
-    const idCine = Number(id); // Convierte el ID a número
-    if (isNaN(idCine)) {
-      // Maneja el caso donde el ID no es un número válido
-      res.status(400).json({ respuesta: "ID inválido" });
-      return;
-    }
+    const { idCine } = req.params; // Obtiene el ID desde los parámetros de la ruta
     CineDAO.obtenerCine({idCine}, res); 
   }
 

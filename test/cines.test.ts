@@ -116,20 +116,22 @@ describe("DELETE Cines", () => {
     });
 });
 
-// describe("DELETE Todos los Cines", () => {
-//     test("Elimina todos los cines", async () => {
-//         const respuesta = await request(miUrl).delete("/cine/deleteall");
-//         expect(respuesta.statusCode).toBe(200);
-//     });
-// });
-
 describe("PUT Actualización Masiva de Cines", () => {
-    const objCine = { idCine: 1, idUbicacion: 3, nombreCine: "Nuevo Nombre Cine" };
+  const objCine = { idCine: 1, idUbicacion: 3, nombreCine: "masiva cines" };
 
-    test("Realiza una actualización masiva de cines", async () => {
-        const respuesta = await request(miUrl)
-            .put("/cine/massiveUpdate")
-            .send({ ...objCine, patronBusqueda: "A%" });
+  test("Realiza una actualización masiva de cines", async () => {
+      const respuesta = await request(miUrl)
+          .put("/cine/massiveUpdate")
+          .send({ idCine:objCine.idCine, idUbicacion:objCine.idUbicacion, nombreCine:objCine.nombreCine, patronBusqueda: "A" });
+      expect(respuesta.statusCode).toBe(200);
+  });
+});
+
+describe("DELETE Todos los Cines", () => {
+    test("Elimina todos los cines", async () => {
+        const respuesta = await request(miUrl).delete("/cine/deleteall");
         expect(respuesta.statusCode).toBe(200);
     });
 });
+
+

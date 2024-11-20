@@ -230,10 +230,10 @@ class CineDAO {
           });
     }
 
-    protected static async actualizacionMasiva(nuevosDatos: Cine, patronBusqueda: string, res: Response): Promise<any> {
+    protected static async actualizacionMasiva(nuevosDatos: Cine, letraInicial: string, res: Response): Promise<any> {
       try {
           // Definir el patrón de búsqueda (ej. todos los nombres que empiezan con 'A')
-          // const patronBusqueda = `${letraInicial}%`; //letra incial
+          const patronBusqueda = `${letraInicial}%`; //letra incial
   
           // Ejecutar la consulta de actualización
           const resultado = await pool.result(SQL_CINES.MASIVE_UPDATE, [nuevosDatos.nombreCine, nuevosDatos.idUbicacion, patronBusqueda]);"%A"
